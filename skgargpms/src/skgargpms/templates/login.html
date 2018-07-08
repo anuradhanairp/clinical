@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>Login</title>
+<link rel="stylesheet" href="{{STATIC_URL}}jqmobile/css/jquery.mobile-1.0b3.min.css" />
+<script type="text/javascript" src="{{STATIC_URL}}jqmobile/js/jquery-1.6.2.min.js"></script>
+<script type="text/javascript" src="{{STATIC_URL}}jqmobile/js/jquery.mobile-1.0b3.min.js"></script>
+
+
+</head>
+<body>
+	<div data-role="page" data-theme="c">
+		<div data-role="header" data-theme="a">
+			<h1>PracticeServe User Login</h1>
+		</div>
+		<div data-role="content" role="main">
+			
+			<form action="{{ app_path }}" method="POST">
+			{% csrf_token %}
+				<div data-role="fieldcontain">
+					<label for="username "> User Name</label>
+					<input type="text" id="username" name="username">
+				</div>
+				<div data-role="fieldcontain">
+					<label for="password "> Password </label>
+					<input type="password" id="password" name="password">
+				</div>
+				<input type="hidden" name="this_is_the_login_form" value="1" />
+    			<input type="hidden" name="next" value="{{ next }}" />
+				<input type="submit" value="Submit" data-ajax="false" />		
+			</form>
+		</div>
+		<div data-role="footer" data-position="fixed">
+			<p> &copy; PracticeServe LLC </p>
+		</div>
+
+	</div>
+
+</body>
+</html>

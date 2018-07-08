@@ -1,0 +1,98 @@
+<!DOCTYPE html> 
+<html> 
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<title>Page Title</title> 
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0b2/jquery.mobile-1.0b2.min.css" />
+	<script src="http://code.jquery.com/jquery-1.6.2.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.0b2/jquery.mobile-1.0b2.min.js"></script>
+	
+	
+	<script type="text/javascript">
+	
+	$(function{
+		
+		console.log($.cookie('current_date'));
+		
+	});
+	
+	 $(". ui-shadow").click(function(){      
+	        $('.ui-dialog').dialog('close');
+    });
+    
+     
+     </script>
+</head> 
+
+     
+     
+  
+<!-- Main Page -->
+<body>
+ 
+<div  data-role="page" id="id_shadow_page" data-theme="a" >
+     <input type="hidden" id="header_id" name="header_id" value="{{ headerid}}" />
+      <input type="hidden" id="url_id" name="url_id" value="{{ home_url}}" />
+    
+     <div data-role="header">
+         <h3>Payment</h3>
+     </div>
+     
+		<div data-role="content" data-theme="b" >
+				<h2>  Payment  </h2>
+                 <div id="tabs-1">
+					
+					  <form method="post" id="id_add_payment_form" action="/">
+						    <ul class="payment-form" data-role="listview">
+						      <li>
+								<label for="id_payment_type">Payment type</label>
+								<span>
+								  <select name="payment_type" id="id_payment_type">
+								     <option value="cash">Cash</option>
+								    <option value="cc">Credit card</option>
+								   
+								  </select>
+								</span>
+						      </li>
+						      
+						      <li class="cc_info">
+								<label for="id_cc_info">CC info (last 4 digits)</label>
+								<span>
+								  <input name="cc_info" id="id_cc_info" type="text" size="4" maxlength="4">
+								</span>
+						      </li>
+						      <li>
+								<label for="id_payment_amount">Payment amount</label>
+								<span>
+								  <input name="payment_amount" id="id_payment_amount" type="text">
+								</span>
+						      </li>
+						      <li>
+								<input type="button" value="Add payment" name="" id="id_add_payment_button">
+						      </li>
+						    </ul>
+					  </form>
+					  
+					  <div > <button id='id_print_payment_receipt'> Print Receipt </button> </div>
+					
+				</div>
+				</div>
+        <div data-role="footer">
+        </div>
+    
+    
+
+
+
+
+</div>
+
+  </body>
+  </html> 
+  
+
+  
+
+ 

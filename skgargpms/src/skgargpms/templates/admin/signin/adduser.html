@@ -1,0 +1,128 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en-us" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us">
+<head>
+     <title>Add user | Django site admin</title>
+     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}adm/css/base.css" />
+     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}adm/css/forms.css" />
+     <script type="text/javascript">window.__admin_media_prefix__ = "{{ STATIC_URL }}adm/";</script>
+     <script src="/admin/jsi18n/" type="text/javascript"></script>
+     <script type="text/javascript" src="{{ STATIC_URL }}adm/js/core.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}adm/js/admin/RelatedObjectLookups.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}adm/js/jquery.min.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}adm/js/jquery.init.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}adm/js/actions.min.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}adm/js/calendar.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}adm/js/admin/DateTimeShortcuts.js"></script>
+     <script src="{{STATIC_URL}}alert_system.js" type="text/javascript"></script>
+    <meta content="NONE,NOARCHIVE" name="robots">
+</head>
+<body class="auth-user change-form">
+   <div id="container">
+     <div id="header">
+	<div id="branding">
+        	<h1 id="site-name">Django administration</h1>
+     	</div>
+        <div id="user-tools">
+            Welcome,
+            <strong>peter</strong>.
+            <a href="/admin/doc/">Documentation</a> /
+            <a href="/admin/password_change/">
+            Change password</a> /
+            <a href="/admin/logout/">
+            Log out</a>
+            
+        </div>
+     </div>
+     <div class="breadcrumbs">
+     	<a href="../../../">Home</a> ›
+        <a href="../../">Auth</a> ›
+	<a href="../">Users</a> ›
+     	Add user
+    </div>
+     <div id="content" class="colM">
+       <h1>Add user</h1>
+       <div id="content-main">
+          <form id="user_form" method="post" action="" enctype="multipart/form-data">
+          <div style="display: none;">
+             <input type="hidden" value="3a4f7b0bfbefc1fc2a31449a4fe09d77" name="csrfmiddlewaretoken">
+          </div>
+          <p>First, enter a username and password. Then, you'll be able to edit more user options.</p>
+          <div>
+            <fieldset class="module aligned wide">
+                     <div class="form-row username">
+                          <div>
+                 		<label class="required" for="id_username">Username:</label>
+                 		<input id="id_username" type="text" maxlength="30" name="username">
+                 		<p class="help">Required. 30 characters or fewer. Letters, digits and @/./+/-/_ only.</p>
+               		  </div>
+             	     </div>
+           	   <div class="form-row password1">
+            		<div>
+              			<label class="required" for="id_password1">Password:</label>
+             			<input id="id_password1" type="password" name="password1">
+            	       </div>
+           	  </div>
+          	  <div class="form-row password2">
+            		<div>
+              			<label class="required" for="id_password2">Password confirmation:</label>
+              			<input id="id_password2" type="password" name="password2">
+              			<p class="help">Enter the same password as above, for verification.</p>
+            		</div>
+          	 </div>
+	
+                
+		<div class="form-row is_staff">
+     			<div>
+			   <table>
+				<tr>	
+				   <td>	
+                    			<input type="checkbox" id="id_is_staff" name="is_staff" ><label class="vCheckboxLabel" for="id_is_staff"><b>Staff</b> </label>
+                    			<!--<p class="help">Designates whether the user can log into this admin site.</p>-->
+				    </td>
+				    <td>
+                                        <input type="checkbox" id="id_is_superuser" name="is_superuser" ><label class="vCheckboxLabel" for="id_is_superuser"><b>Superuser</b></label> 
+			            </td>				
+				</tr>
+			   </table>								
+                        </div>
+			<!--<div width="300px" height="75px">
+                		 <input type="checkbox" id="id_is_superuser" name="is_superuser" ><label class="vCheckboxLabel" for="id_is_superuser"><b>Superuser</b></label>
+                    		 <p class="help">Designates that this user has all permissions without explicitly assigning them.</p>
+                   	</div>	-->
+		</div>
+		<!--<div class="form-row is_superuser">
+           		<div>
+                		 <input type="checkbox" id="id_is_superuser" name="is_superuser" ><label class="vCheckboxLabel" for="id_is_superuser"><b>Superuser</b></label>
+                    		 <p class="help">Designates that this user has all permissions without explicitly assigning them.</p>
+                   	</div>
+            	</div>-->
+           </fieldset>
+	  <script type="text/javascript">
+		document.getElementById("id_username").focus();
+	 </script>
+	<div class="submit-row">
+		<input class="default" type="submit" name="_save" value="Save" onclick="save_user()">	
+		<input type="submit" name="_addanother" value="Save and add another">
+		<input type="submit" name="_continue" value="Save and continue editing">
+	</div>
+	<script type="text/javascript">
+		document.getElementById("id_username").focus();
+	</script>
+	<script type="text/javascript">
+
+		(function($) {
+				var field = null;
+
+
+			})(django.jQuery);
+	</script>
+   </div>
+   </form>
+   </div>
+  <br class="clear">
+ </div>
+ <div id="footer"></div>
+ </div>
+ </body>
+</html>
+

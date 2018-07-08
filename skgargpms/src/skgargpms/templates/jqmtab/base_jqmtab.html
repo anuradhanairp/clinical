@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>jQuery Mobile Docs - Content Grids</title>
+
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0rc1/jquery.mobile-1.0rc1.min.css" />
+<script type="text/javascript" src="{{STATIC_URL}}jqmobile/js/jquery-1.6.2.min.js"></script>
+
+<!--  <script type="text/javascript" src="{{STATIC_URL}}jqmobile/js/jqmtab_jquery_mobile_form_select.js"></script>-->
+
+<script src="{{STATIC_URL}}Orbited.js" type="text/javascript"></script>
+<script src="{{STATIC_URL}}JSON.js" type="text/javascript"></script>
+<script src="{{STATIC_URL}}protocols/stomp/stomp.js" type="text/javascript"></script>
+<script src="{{STATIC_URL}}jquery.cookie.js" type="text/javascript"></script>
+
+<script src="{{STATIC_URL}}jqmobile/js/jqmtab_frontdesk.js" type="text/javascript"></script>
+<script src="{{STATIC_URL}}jqmobile/js/jqmtab_shadow.js" type="text/javascript"></script>
+<script src="{{STATIC_URL}}jqmobile/js/jqmtab_event_attr.js" type="text/javascript"></script>
+<script src="{{STATIC_URL}}jqmobile/js/jqmtab_report.js" type="text/javascript"></script>
+
+
+<link rel="stylesheet" href="http://jquerymobile.com/demos/1.0a3/experiments/ui-datepicker/jquery.ui.datepicker.mobile.css" />
+<script src="http://jquerymobile.com/demos/1.0a3/experiments/ui-datepicker/jQuery.ui.datepicker.js"></script>
+<script src="http://jquerymobile.com/demos/1.0a3/experiments/ui-datepicker/jquery.ui.datepicker.mobile.js"></script>
+
+<script type="text/javascript">
+
+
+// Some Important Glogbal Variable scopes.
+
+var client; //Variable for the comet client connection to backend.
+
+					
+					 $(document).ready(function(){
+					  			
+					  		$("#id_changedate_page").live("pageshow",function(event){
+					  				
+					  				
+					  			$(".hasDatepicker").unbind('change').bind('change',function(){
+					  				
+					  				//console.log($("#change_date").val()); 
+					  					var date = $("#change_date").val();
+					  					 var new_date = date.split("/");
+					  					 var new_date_format = new_date[2]+"-"+ new_date[0]+"-"+ new_date[1];
+					  					 get_calender_date(new_date_format);
+					  					 
+					  					 $('#id_changedate_page').dialog('close');
+					  					   					 
+					  			});
+					  				 
+					  				 
+					  				 function  get_calender_date(new_date){
+					  					 
+					  					// console.log("cookiee setting...");
+					  					 
+					  					 $.cookie('current_date',new_date,{ path: '/jqmtab' });
+
+					  					 $('a').each(function(){
+						    				var current_href = $(this).attr('href')
+						    				if(current_href != undefined ){
+						    					current_href = current_href.split('&date=')[0];
+						    					
+						    					//var current_date = escape($('#id_header_tools_cal_value').val());
+						    					var new_href = current_href + '&date=' + new_date;
+						    					if(current_href.indexOf('clinicID') > -1){
+						    						//change only when clinicID is there and &date= is not in the date string.
+						    					    //alert($(this).attr('href') + " : " + $(this).html());
+						    						$(this).attr('href', new_href);
+						    					}
+						    				}//end-if
+						    				//alert(current_href);
+						    			
+						    			});	 
+					  					 
+					  				return false;
+					  				}
+					  				 
+					  				var cookie_date = $.cookie('current_date');
+
+					  				if(cookie_date != undefined )
+					  				{
+					  					
+					  			        get_calender_date(cookie_date);
+					  					
+					  					var date_field = cookie_date.split("-");
+					  					
+					  					$("#change_date").val(date_field[1]+"/"+date_field[2]+"/"+date_field[0]);
+					  					
+					  					//$('#id_header_tools_cal_value').attr('value',cookie_date);
+					  					//$('#id_header_tools_cal_alt').attr('value',cookie_date_gui);
+					  					
+					  					
+					  				}
+					  				
+					  				 
+					  				 
+					  				
+					  			});
+					  			
+					  			
+					  			/*$(".hasDatepicker").each(function(){
+					  				$(".hasDatepicker").hide();
+					  			});*/
+					  			
+					  			function update_urls(dateText){
+					  				$.cookie('current_date',dateText,{ path: '/jqmtab' });
+					    			//Search all a tags and set its href with new get parameter.
+					    			$('a').each(function(){
+					    				var current_href = $(this).attr('href')
+					    				if(current_href != undefined ){
+					    					current_href = current_href.split('&date=')[0];
+					    					
+					    					//var current_date = escape($('#id_header_tools_cal_value').val());
+					    					var new_href = current_href + '&date=' + dateText;
+					    					if(current_href.indexOf('clinicID') > -1){
+					    						//change only when clinicID is there and &date= is not in the date string.
+					    					    //alert($(this).attr('href') + " : " + $(this).html());
+					    						$(this).attr('href', new_href);
+					    					}
+					    				}//end-if
+					    				//alert(current_href);
+					    			
+					    			});
+					    			return false;
+					    		}
+					    		
+					    		
+					    		
+					    		var cookie_date = $.cookie('current_date');
+					    		//var cookie_date_gui = $.cookie('current_date_gui');
+					    		//alert($.cookie('current_date_gui'));
+	        					
+	        					if(cookie_date != undefined ){
+	        						
+	        						update_urls(cookie_date);
+	        						
+	        						//$('#id_header_tools_cal_value').attr('value',cookie_date);
+	        						//$('#id_header_tools_cal_alt').attr('value',cookie_date_gui);
+	        							        							        						
+	        					}
+				    		
+				          	});
+							
+					  		
+					  		
+				  			
+				  			$("#id_index_page").live("pageshow",function(event){
+				  				
+				  				//console.log($.cookie('current_date'));
+				  				
+				  				if ( $.cookie('current_date') != null )
+				  				{
+				  					//console.log('date set...checking ...');
+				  					
+				  					var ymd = $.cookie('current_date');//eg:2011-10-4
+				  					
+				  					var date_split = ymd.split("-");
+				  					
+				  					var date_format = date_split[1]+"/" + date_split[2]+"/"+ date_split[0];
+				  					
+				  					$("#show_date").html(date_format);
+				  				}
+				  				else
+				  				{
+				  									  					
+				  					var current_time = new Date();
+				  			    
+				  			    	var y = current_time.getFullYear();
+				  			    	var m = current_time.getMonth()+1;//in javascript january is taken as 0.So to get the correct month add 1 to the javascript value
+				  			    	var d = current_time.getDate();
+				  			    	$("#show_date").html( m+"/"+d+"/"+y);
+				  			    
+				  				}
+				  				
+				  				
+				  				
+				  				
+				  			 	
+				  			});
+				  			
+				  			
+				  			
+				  			
+					  		
+						</script>
+
+
+{% block includes %}
+
+{% endblock %}
+
+
+<!-- Main Jquery Mobile plugin, we will load it after all our user defined js's. -->
+<script type="text/javascript" src="http://code.jquery.com/mobile/1.0rc1/jquery.mobile-1.0rc1.min.js"></script>
+<script src="{{STATIC_URL}}jqmobile/js/jqmtab_intercept_url.js" typy="text/javascript"></script>
+
+</head>
+
+<body>
+	
+	{% block main_page %}
+	
+		<div data-role="page" class="type-interior" data-theme="a" id="id_frontdesk_page">
+			
+			{% block header %}
+			<div data-role="header" data-position="fixed">
+					
+					<table width="100%" align="right" data-position="fixed">
+						
+						<tr>
+							<td align="left">
+								<table>
+									<tr>
+									
+										<td><a href="/jqmtab/"  data-icon="home" type="submit" data-role="button">Home</a></td>
+										<td><a href="/jqmtab/reports/{% if clinic %}?clinicID={{clinic.id}}{% endif %}" id="url_report" type="submit" data-role="button">Reports</a></td>
+										<td><a href="/jqmtab/payment/{% if clinic %}?clinicID={{clinic.id}}{% endif %}" id ="url_payment" type="submit"  data-role="button">Payment history</a></td>
+										<td><a href="/jqmtab/signin/{% if clinic %}?locationID={{clinic.location.id}}{% endif %}" type="submit" data-role="button">Signin</a></td>
+										<td><a href="/jqmtab/logout/" type="submit" data-role="button">Log Out</a></td>
+		
+									</tr>
+		
+								</table>
+							</td>
+							<td></td>
+						</tr>
+						
+					</table>
+					  
+					
+				</div>
+			<!-- /header -->
+			
+			{% endblock %}
+			
+			
+			{% block content %}
+			{% endblock %} 
+			<!-- /content -->
+			
+			
+			{% block footer %}
+	
+			<div data-role="footer" class="footer-docs" data-position="fixed">
+				<p>&copy; 2011 PracticeServe</p>
+			</div>
+	
+			{% endblock %}
+	
+		</div>
+		
+	{% endblock %}
+	<!-- /page -->
+	
+	
+	
+	{% block extra_pages %}
+		
+		<!-- In this block we define extra Jquery pages that need to handled from the jqmobile main layout page. -->
+	
+		<div data-role="page" id="id_attr_page">
+	
+			<div data-role="header">
+				<h1>Patient Interrupts</h1>
+			</div>
+			<div data-role="content" data-theme="e" id="id_attr_content"></div>
+			<div data-role="footer"></div>
+		</div>
+	{% endblock %}
+	<iframe width="1" height="1" id="print_receipt_iframe" name='print_receipt_iframe'></iframe>
+
+</body>
+</html>

@@ -1,0 +1,103 @@
+{% extends "admin/base.html" %}
+{% load i18n %}
+
+{% block title %}{{ title }} | {% trans 'Django site admin' %}{% endblock %}
+
+{% block branding %}
+	<h1 id="site-name">{% trans 'Alert Home' %}</h1>
+{% endblock %}
+
+{% block nav-global %} {% endblock %}
+
+{% load i18n admin_modify adminmedia %}
+{% load url from future %}
+
+{% block extrahead %}{{ block.super }}
+
+	{% url 'admin:jsi18n' as jsi18nurl %}
+		<script type="text/javascript" src="{{ jsi18nurl|default:"../../../jsi18n/" }}"></script>
+	{{ media }}
+{% endblock %}
+
+
+{% block content %}
+<h3> Alert Configuration list </h3>
+<table border='1' >
+	<thead>
+		<th>
+			###
+		</th>
+		
+		<th>
+			 Enabled
+		</th>
+		
+		<th>
+			Name
+		</th>
+		
+		<th>
+			Clinic
+		</th>
+		
+		<th>
+			From Address
+		</th>
+		
+		<th>
+			To Address
+		</th>
+		
+		<th>
+			Waiting Time
+		</th>
+		
+		<th>
+			Date
+		</th>
+	</thead>
+	
+	<tbody>
+		{% for alert_conf in alert_confs %}
+			<tr>
+				<td>
+					{{forloop.conunter1}}
+				</td>
+				<td>
+					{{ alert_conf.enabled }}
+				</td>
+				
+				<td>
+					{{ alert_conf.name }}
+				</td>
+				
+				<td>
+					{{ alert_conf.clinic.name }}
+				</td>
+				
+				<td>
+					{{ alert_conf.from_addr }}
+				</td>
+				
+				<td>
+					{{ alert_conf.to_addr }}
+				</td>
+				
+				<td>
+					{{ alert_conf.waiting_time }}
+				</td>
+				
+				<td>	
+					{{ alert_conf.dateTime }}
+				</td>
+				
+			</tr>
+		{% endfor %}
+	</tbody>
+	
+</table>
+
+	
+
+{% endblock %}
+

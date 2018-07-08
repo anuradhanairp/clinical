@@ -1,0 +1,134 @@
+########################################################################
+Project Name - Clinic Workflow
+
+Platform     - Python, Django, Twisted and Realtime Web
+
+This file describes all steps required to deploy this project on a fresh server.
+
+########################################################################
+
+Currently we have very simple way to deploy the complete project with minimum changes on the settings.
+
+To deploy the code to any other server you can follow bellow steps,
+
+	1. Get Latest copy from SVN repo and copy it to the remote server at any location you prefer.
+	
+	2. Check the Server has proper hostname, and then Install the RabbitMQ server
+		
+		``apt-get install rabbitmq-server``
+		
+		After the installation make sure that it's litening on a port ``5672``
+	
+	
+	3. Create virtualevn for this python project so that we can install dependency files in that virtualenv.
+
+	****All  Steps specified bellow are need to be done under the virtual environment.
+
+	4. Then install the python packages required for this project, to do that,
+		
+		You can find the requirement.txt file with the project directory
+		
+		``pip install -r requirement.txt``
+
+	5. Also install the package listed in the ``packges`` folder of main project directory. Currently we have a 
+	   a package ``orbited`` which has no other mirror available in net. We are heavily dependent on this package 
+	   for the realtime comet connections. So you can install it from this source itself.
+	
+            a. First extract it and then from the extracted folder type,
+	    b. ``python setup.py install`` 
+	
+ 	6. Now you have been installed all required packages for this project, next step is configure your project settings
+	   with values specific to your server, ie;
+	
+   	    a. Hostname or IP of the server on which you are going deploy this project.
+	    b. Change the PORT on which this application listen, it is by default 80, so if you dont want to change then leave it.
+	
+	    To set these values, open the ``GLOBALS.sh`` file and change the corresponding variables there.
+	
+	7. Now you are ready to start you server, From your main project directory, type,
+		
+		a. ``sh twiested_server start``  --> to start every services relaed to your project.
+                     
+		     Make sure that, if you are running as a user then you wont have permission to access the port 80, so you
+                     should have to change port to any thing like 8000 or others.
+                     
+                     Check URL's and functionalites of the project to know if there is any problem with the setup.
+  
+		b. ``sh twiested_server stop``   --> to stop all services.
+
+	8. Thats, it. By following above steps every thing will work well. If you want to know more about the internals of above
+	   steps read bellow for more described informations about the installation steps.
+
+
+
+#############################################################################
+
+#The steps needs to do to start the server from scratch.
+Above installation steps are more abstracted, to get full
+idea of what is happening at backend read bellow.
+
+NB: If you had any error while doing above steps do check bellow steps too.
+
+#############################################################################
+
+
+1. Try to setup a virtualenv for this project and install all depandencies for this project.
+
+2. then install the required python packeges using ``pip``, check the 'requirements.txt' file to know list.
+
+	pip install -r requirements.txt 
+	
+	Install the RabbitMQ server, from your system package manager, for eg;
+	
+	``apt-get install rabbitmq-server`` --> for debian based systems.
+
+3. Check the module ``orbited``, specifically, because it's not currently maintained by any creators, and this project
+
+   heavily using this module to get the realtime feature to be worked. So we are please find this package under ``package``
+   folder and install it.
+
+   ***if there is any problem with ``logging`` module, try to do this fix.
+	
+	after importing the logging module ,  ie;
+		
+	import logging
+	logging.basicConfig()
+
+4. After we met the requirement specification we need to set some system variables on the startup scripts 
+
+	--- Main startup and related settings file that we need to check when we deploy the app on a fresh machine ---
+	
+	a). twisted_server.sh - Main startup file used to start every deamons,we need use only this script to  
+	    start and stop our app.
+		
+		twisted_server.sh start -- to start all the deamons required for our application.
+		twisted_server.sh stop  -- to stop all.
+		twisted_server.sh restart 
+
+	b). server_working.py     - Main Twisted server configuration, which spcify all Twisted Deamon settings.
+	c). celeryd               - Celery global settings for their worker threads.
+	d). celerybeat            - Celery Task schedular daemons settings, support the Database task scheduling.
+	e). skgargpms/settings.py - The main django project settins file
+	c). tracd (optional)      - start the track for the project management tasks.
+	
+
+	
+	
+	So all the above files, the project home, and django projejct home settins are given statically, so we need
+	to explicitly change this according to our environment changes.
+
+	THINGS WE NEED TO CHANGE FOR EVERY FRESH SERVER DEPOLYMENT ARE ---
+	
+	1.Change the ``hostname`` properly in the `server_working.py` and `settings.py` files.
+	2.Change the ``absolute`` path infos to other starts scrips too.
+
+	
+
+
+	
+
+   
+
+
+
+

@@ -1,0 +1,53 @@
+Template Structure Documentation:- 
+==================================
+Main layout strutcure - 
+
+<html>
+<head>
+
+include basic jquery js and css contents.
+
+{% block includes %}
+	Here we inlude all user defined Templteas.
+{% endblock %}
+
+{% hidden_header %}
+	<!-- blocking headers. -->
+{% endblock %}
+
+After all user js includes statement we include the jquery.mobile.js file.
+</head>
+<body>
+	{% block main_page %}
+		<div data-role="page" >
+			Main Page.
+			{% block header %}
+				Header of the main page.
+			{% endblock %}
+			
+			{% block content. %}
+				Content of the main page.
+			{% endblock %}
+			
+			{% block footer %}
+				Footer of the main page.
+			{% endblock %}
+			
+		</div>
+	{% endblock %}
+	
+	{% block extra_pages %}
+		
+		Extra jauery mobile page div comes here.
+
+	{% endblock %}
+	
+</body>
+</html>
+
+
+We import this basic template for all our main layout of the application and at add extra pages when requred for the
+popup or related operations.
+
+
+

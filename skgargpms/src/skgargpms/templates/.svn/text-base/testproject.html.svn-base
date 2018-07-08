@@ -1,0 +1,155 @@
+
+ 
+<html>
+    <head>
+      <title>IFrame printing example</title>
+      
+      <script type="text/javascript">
+      /*
+        function myPrint() {
+        	
+          document.getElementById('id_frame').setAttribute('src',"/printReceipt/?headerID=323&date=2011-05-26");
+          var browser = navigator.appName;
+          document.getElementById('id_frame').setAttribute('onload','javascript:window.print()')
+        */
+        
+        /*if (browser == "Microsoft Internet Explorer") {
+        	alert('inside');
+        	window.frames["id_frame"].focus();
+        	window.frames.print();
+        }
+        
+        else if( navigator.userAgent.toLowerCase().indexOf('chrome') > -1 ){
+        	//Chrome browser.
+        	//alert('chroome');
+        	
+        	//window.frames["id_frame"].print();
+        	
+        }
+        else if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1 ) {
+        	
+        	//Browser need plugin to display pdf files. Otherwise they will popup a window to download it 
+        	// along with the printing statement.
+        	
+          
+          //alert("Printing not supported in Firefox");
+          window.frames["id_frame"].print();
+      	}
+          
+         
+      	
+      	}
+      */
+      </script>
+    </head>
+    <body>
+       
+      <!-- 
+      <iframe id="id_frame" name="id_frame" width="50%"
+              height="50%">
+      </iframe>
+      
+      <a href="#" onclick="javascript:myPrint();">Print</a>
+      -->
+      
+      
+      <form action='/login/' method='POST'>
+      	
+      	User Name: 
+      	<input type='text' name='user'/> </br>
+      	
+      	Password: 
+      	<input type='password' name='pwd'/>
+      	
+      	<input type='submit' value='submit' />
+      	
+      </form>
+      
+    </body>
+  </html>
+<!-- 
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+  button { margin:10px; }
+</style>
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+  
+  
+  
+<script type="text/javascript">
+	
+	function disable_buttons(){
+		$("button:gt(1)").attr("disabled","disabled");
+		$('#but2').attr("disabled","disabled");
+		
+		//$('#but3').attr('name',"added new name ");
+		
+		document.getElementById('but3').setAttribute("name",'new button');
+		//$('#but3').attr('name','new button');
+		
+		
+		//alert(document.getElementById("but3").getAttribute("name"));
+		
+		//alert("Button3 name: " + $('#but3').attr('name'));
+		
+		document.getElementById('but2').setAttribute("disabled",'');
+	}
+	
+	function check_newattr(){
+		
+		alert(document.getElementById("but3").getAttribute("name"));
+		
+		alert($('#but3').attr('name'));
+	}
+
+</script>
+
+</head>
+<body>
+  
+  <button id="but1" onClick="disable_buttons()">0th Button</button>
+  <button id="but2" onClick="check_newattr()">1st Button</button>
+  <button id="but3">2nd Button</button>
+
+
+
+</body>
+</html>
+
+-->
+
+<!--
+
+<!DOCTYPE html> 
+<html> 
+<head> 
+  <style> 
+  img { padding:10px; } 
+  div { color:red; font-size:24px; } 
+</style> 
+  <script src="http://code.jquery.com/jquery-latest.js"></script> 
+</head> 
+<body> 
+   
+  <img /> 
+  <img /> 
+  <img /> 
+ 
+  <div><B>Attribute of Ajax</B></div> 
+ 
+<script> 
+$("img").attr({  
+  src: "/images/hat.gif", 
+  title: "jQuery", 
+  alt: "jQuery Logo" 
+}); 
+$("div").text($("img").attr("alt")); 
+</script> 
+ 
+</body> 
+</html>
+
+-->
+

@@ -1,0 +1,75 @@
+<!DOCTYPE html> 
+<html> 
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<title>Page Title</title> 
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0b2/jquery.mobile-1.0b2.min.css" />
+	<script src="http://code.jquery.com/jquery-1.6.2.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.0b2/jquery.mobile-1.0b2.min.js"></script>
+</head> 
+
+     
+     
+     
+
+<body>
+
+<!-- Main Page -->
+
+    <div  data-role="dialog" id="id_procedure_page" data-theme="a"  >
+
+     <input type="hidden" id="header_id" name="header_id" value="{{ headerid}}" />
+      <input type="hidden" id="url_id" name="url_id" value="{{ home_url}}" />
+     
+     <div data-role="header">
+         <h3>Procedures</h3>
+     </div>
+
+  
+   
+
+   		
+			<div data-role="content" data-theme="b" >
+			<h2> Procedures </h2>
+               <div id="tabs-4">
+					<h4>Procedures</h4>
+				  	  <ul data-role="listview">
+				  		{% for interrupt in interrupts %}
+				  			<li id="li_interrupt_{{interrupt.2}}">
+								<!--  <label for="interrupt"> {{interrupt.name}} <button type="button" name="started_{{interrupt.id}}" value="Start">Start</button> <button type="button" name="stopped_{{interrupt.id}}"  value="">End</button> </label> -->
+								<label for="interrupt"> {{interrupt.0}} 
+									<!--  <input type="button" name="started_{{interrupt.0}}" value="Start" id="started_{{interrupt.0}}" /> 
+									<input type="button" name="stopped_{{interrupt.0}}"  value="End" id="stopped_{{interrupt.0}}"/> -->
+									{% if interrupt.1 == "complete" %}
+									     complete
+									{% endif %}
+									{% if interrupt.1 == "stop" %}
+							            <select name="interrupt_slider" id="interrupt_{{interrupt.2}}" data-role="slider">
+          										<option value="off">stop</option>
+          										<option value="on">start</option>
+         									    
+        								</select> 
+							         {% endif %}  
+							         {% if interrupt.1 == "start" %}
+							            <select name="interrupt_slider" id="interrupt_{{interrupt.2}}" data-role="slider">
+          										<option value="on">start</option>
+          										<option value="off">stop</option>
+         									    
+        								</select> 
+							         {% endif %}   
+								</label>
+							</li>
+						{% endfor %}
+					</ul>
+				</div>
+                   
+			</div>
+     
+</body>
+</html>  
+
+  
+
+ 

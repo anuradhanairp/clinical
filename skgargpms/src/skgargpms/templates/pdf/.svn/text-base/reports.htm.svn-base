@@ -1,0 +1,35 @@
+<html>
+{% include "pdf/style.css" %}
+<body>
+<div id="headerDiv" >
+{% if clinic %}{{clinic}} ({{clinic.work_time}}){% endif %} [{{date|date:"M/d, Y"}}] &mdash; Page #<pdf:pagenumber>
+</div>
+
+<table width="100%" cellspacing="0" cellpadding="0" border="1" class="report" repeat="1">
+  <thead>
+    <tr>
+      <th style="width:5%">#</th>
+      <th style="width:50%">Patient</th>
+      {% for map in default_clinic_event_map %}
+		    <th align=center><b>{{ map }}</b></th>
+	  {% endfor %}
+     <!--   <th style="width:10%">Registration to Triage</th>
+      <th style="width:10%">Triage to Provider</th>
+      <th style="width:10%">Provider to Checkout</th>
+      <th style="width:5%">Apt</th>-->
+    </tr>
+  </thead>
+  <tbody>
+   {% for patient in patients %}
+     <tr>
+      <td align="right">{{forloop.counter}}</td>
+      <td style="text-align:left">{{ patient.patient_name }}</td>
+      {% for event_time in patient.events %}
+		   <td align="center"> {% if event_time %} {{ event_time }} {% else %} X {% endif %} </td>
+	  {% endfor %}
+	  </tr>
+	{% endfor %} 
+  </tbody>
+</table>
+</body>  
+</html>

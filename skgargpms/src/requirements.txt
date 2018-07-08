@@ -1,0 +1,13 @@
+Django==1.3
+twisted==11.0
+#orbited==0.7.11beta2 #Your may not goign to get this from the PyPI. Now added this package with project directory please install it from there directly.
+logging # Important one to avoid mess with orbited package.
+morbid==0.8.7
+pytz
+reportlab==2.5
+html5lib==0.90
+simplejson==2.1.3
+stompclient==0.3.1
+South==0.7.3
+pisa==3.0.33
+django-celery==2.2.4

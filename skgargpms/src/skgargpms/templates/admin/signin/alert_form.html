@@ -1,0 +1,251 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us" xml:lang="en-us" >
+<head>
+<title>Change alert configuration | Django site admin</title>
+<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}adm/css/base.css" />
+<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}adm/css/forms.css" />
+<!--[if lte IE 7]><link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}adm/css/ie.css" /><![endif]-->
+
+<script type="text/javascript">window.__admin_media_prefix__ = "{{ STATIC_URL }}adm/";</script>
+
+
+<script type="text/javascript" src="/admin/jsi18n/"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}adm/js/core.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}adm/js/admin/RelatedObjectLookups.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}adm/js/jquery.min.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}adm/js/jquery.init.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}adm/js/actions.min.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}adm/js/calendar.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}adm/js/admin/DateTimeShortcuts.js"></script>
+
+<script src="{{STATIC_URL}}alert_system.js" type="text/javascript"></script>
+
+<meta name="robots" content="NONE,NOARCHIVE" />
+</head>
+
+
+<body class="signin-alertconfiguration change-form">
+
+<!-- Container -->
+<div id="container">
+    <!-- Header -->
+    <div id="header">
+        <div id="branding">
+			<h1 id="site-name">EDIT: Alert Configuration</h1>
+        </div>
+        
+        <div id="user-tools">
+            Welcome,
+            <strong>suresh</strong>.
+                   <a href="/admin/doc/">Documentation</a> /
+                   <a href="/admin/password_change/"> Change password</a> /
+                   <a href="/admin/logout/">Log out</a>
+        </div>
+    </div>
+    
+    <!-- END Header -->
+    
+<div class="breadcrumbs">
+     <a href="../../../">Home</a> &rsaquo;
+     <a href="../../">Signin</a> &rsaquo;
+     <a href="../">Alert configurations</a> &rsaquo;
+     Main alert, Insurance, Pea Ridge
+</div>
+
+    <!-- Content -->
+    <div id="content" class="colM">
+        
+        <h1>Change alert configuration</h1>
+        <div id="content-main">
+
+
+  <ul class="object-tools">
+    
+    <li><a href="history/" class="historylink">History</a></li>
+    
+    
+  </ul>
+
+
+<form enctype="multipart/form-data" action="/alertConfSave/" method="post" id="alertconfiguration_form"><div style='display:none'>
+
+<input type='hidden' name='csrfmiddlewaretoken' value='7d93b2c112b000c5f1e5b8e6c9d3271e' /></div>
+<div>
+  <fieldset class="module aligned ">
+         <div class="form-row name">
+               <div>
+          			  <label for="id_name" class="required">Name</label>
+                      <input name="name" value="{{ alert_conf.name }}" class="vTextField" maxlength="100" type="text" id="id_name" />
+               </div>
+         </div>
+        <div class="form-row enabled">
+                <div>
+                        <label for="id_enabled" class="required">Enabled:</label>
+                        <select name="enabled" id="id_enabled">
+                        	{% if alert_conf.enabled == "Yes" %}
+								<option value="Yes" selected="selected">Enable</option>
+							{% else %}
+								<option value="Yes">Enable</option>
+							{% endif %}
+							
+							{% if alert_conf.enabled != "Yes" %}
+								<option value="No" selected="selected">Disable</option>
+							{% else %}
+								<option value="No"> Disable </option>
+							{% endif %}
+						</select>
+                </div>
+        </div>
+        
+        <!-- 
+        <div class="form-row clinic">
+                <div>
+                       <label for="id_clinic" class="required">Clinic:</label>
+                        
+                       <select name="clinic" id="id_clinic">
+							<option value="">---------</option>
+							{% for clinic in clinic_list %}
+								<option value='clinic.id'> {{ clinic }} </option>
+							{% endfor %}
+						</select><a href="/admin/signin/clinic/add/" class="add-another" id="add_id_clinic" onclick="return showAddAnotherPopup(this);"> <img src="{{ STATIC_URL }}img/admin/icon_addlink.gif" width="10" height="10" alt="Add Another"/></a>
+                </div>
+        </div>
+        
+        -->
+    
+        <div class="form-row from_addr">
+                <div>
+                       <label for="id_from_addr" class="required">From addr:</label>
+                       <input name="from_addr" value="{{ alert_conf.from_addr }}" class="vTextField" maxlength="100" type="text" id="id_from_addr" />
+                </div>
+        </div>
+    
+        <div class="form-row to_addr">
+                <div>
+                      <label for="id_to_addr" class="required">To addr:</label>
+                      <input name="to_addr" value="{{ alert_conf.to_addr }}" class="vTextField" maxlength="1000" type="text" id="id_to_addr" />
+                </div>
+        </div>
+    
+    	<div class="form-row location_list" >
+                <div>
+                        <label for="id_location_list" class="required">Location:</label>
+                        <select name="location_list" id="id_location_list">
+                        	<option value="">---------</option>
+							{% for location in location_list %}
+								{% if alert_conf.clinic.location == location %}
+									<option value="{{ location.id }}" selected='selected'> {{ location }}  </option>
+								{%else %}
+									<option value="{{ location.id }}"> {{ location }}  </option>
+								{% endif %}
+							{% endfor %}
+						</select>
+                </div>
+        </div>
+        
+        <div class="form-row clinic_list">
+                <div>
+                        <label for="id_clinic_list" class="required">Clinic:</label>
+                        <select name="clinic_list" id="id_clinic_list">
+                        	<option value="">---------</option>
+							{% for clinic in clinic_list %}
+								{% if alert_conf.clinic == clinic %}
+									<option value="{{clinic.id}}" selected="selected"> {{ clinic }}  </option>
+								{% else %}
+									<option value="{{clinic.id}}"> {{ clinic }} </option>
+								{% endif %}
+							{% endfor %}
+						</select>
+                </div>
+        </div>
+        
+        <div class="form-row event_list">
+                <div>
+                        <label for="id_event_list" class="required">Events:</label>
+                        <div id='id_event_list'>
+                                                		
+                        	{% for event in event_view %}
+                        		
+                        		{% if event.1 == 1 %}
+                        			
+                        			<input type='checkbox' name='event_names' value='{{ event.0 }}' checked /> {{ event.0 }}
+                        		{% else %}
+                        			<input type='checkbox' name='event_names' value='{{ event.0 }}'/> {{ event.0 }}
+                        		{% endif %}
+                        		 
+                        	{% endfor %}
+                        </div>
+                        
+                </div>
+        </div>
+    	
+        <div class="form-row waiting_time">
+                <div>
+                       <label for="id_waiting_time" class="required">Waiting time(Min):</label>
+                       <input id="id_waiting_time" type="text" class="vIntegerField" value="{{ alert_conf.waiting_time }}" name="waiting_time" />
+                </div>
+        </div>
+        
+        
+        <div class="form-row #Alert Retry">
+                <div>
+                       <label for="id_alert_retry" class="required">#Alert Retry</label>
+                       <input id="id_alert_retry" type="text" class="vIntegerField" value="{{ alert_conf.alert_retry }}" name="alert_retry" />
+                </div>
+        </div>
+        
+        <div class="form-row Alert Interval">
+                <div>
+                       <label for="id_alert_interv" class="required">Alert Interval(Min, <120m)</label>
+                       <input id="id_alert_interv" type="text" class="vIntegerField" value="{{ alert_conf.alert_interv }}" name="alert_interv" />
+                </div>
+        </div>
+        
+        <!-- 
+        <div class="form-row dateTime">
+                <div>
+                      <label for="id_dateTime_0" class="required">DateTime:</label>
+                      <p class="datetime">Date: <input name="dateTime_0" value="2011-06-01" class="vDateField" type="text" id="id_dateTime_0" size="10" /><br />Time: <input name="dateTime_1" value="16:33:11" class="vTimeField" type="text" id="id_dateTime_1" size="8" /></p>
+                </div>
+       </div>
+       -->
+       
+</fieldset>
+
+
+<div class="submit-row" >
+
+<input type="submit" value="Save" class="default" onclick="return save_alert_conf()"/>
+
+<!-- 
+<input type="submit" value="Save" class="default" name="_save" />
+<p class="deletelink-box"><a href="delete/" class="deletelink">Delete</a></p>
+<input type="submit" value="Save and add another" name="_addanother"  />
+<input type="submit" value="Save and continue editing" name="_continue" />
+-->
+
+</div>
+
+<script type="text/javascript">
+(function($) {
+    var field = null;
+
+
+})(django.jQuery);
+</script>
+
+
+</div>
+</form></div>
+       
+        <br class="clear" />
+</div>
+<!-- END Content -->
+    
+    <div id="footer"></div>
+    
+</div>
+<!-- END Container -->
+
+</body>
+</html>

@@ -1,0 +1,243 @@
+<%inherit file="base.htm" />
+<%def name="getTitle()">Sign-In</%def>
+
+<%def name="headerTitleImage()">
+ <img class="xr_ap" src="${STATIC_URL}index_htm_files/4.png" alt="" id="Repeating:58InnovateLogo" title="" style="left: 37px; top: 52px; width: 96px; height: 31px;"/>
+</%def>
+
+     
+ 
+<%def name="headerContent()">
+   <script src="${STATIC_URL}javascripts/jquery.min.js" type="text/javascript"></script>
+   <script src="${STATIC_URL}javascripts/jquery-ui.min.js" type="text/javascript"></script>
+   <script src="${STATIC_URL}javascripts/custom.js" type="text/javascript"></script>
+   
+<script type="text/javascript">
+
+
+function clearForm(){
+  $('input[type="text"]').each(function(){
+      $(this).val("");  
+  });
+  $('input[type="radio"]').each(function(){
+     $(this).attr('checked', false);
+
+  });
+ }
+
+
+function sendData(){
+	var fi;
+	fi = new Array(); 
+	
+	fi["month"] = $('#month').val();
+	fi["year"] = $('#year').val();
+	fi["day"] = $('#day').val();
+	fi["fname"] = $('#fname').val();
+	fi["lname"] = $('#lname').val();
+	//radio button value input!
+	fi["clinic"] = $("input[name='clinic']:checked").val();
+	fi["appointment"] = $("input[name='appointment']:checked").val();
+//	fi["affordableID"] = $('#affordableID').val();
+//	fi["insuranceID"] = $('#insuranceID').val();
+	fi["locationID"] = $('#locationID').val();
+	
+
+	$.ajax({
+
+   url: "/dataSignUp/",
+   datatype: "xml",
+      data: returnStringArray(fi),
+      type: "GET",
+   success: function(xml){
+	
+	clearForm(); 
+	alert("You have successfully signed in, please wait for the front desk to call you up."); 
+	//alert(xml);
+	
+}
+}); 
+}
+
+
+   function isValidDate2(value){
+                    var sdt = value.split(" ");
+                    var userDate = sdt[0];
+                    // Checks for the following valid date formats:
+                    
+                    // Also separates date into month, day, and year variables
+                    // MM/DD/YY   MM/DD/YYYY   MM-DD-YY   MM-DD-YYYY
+                    //var datePat = /^(\d{1,2})(\/|-)(\d{1,2})\2(\d{2}|\d{4})$/;
+                    
+                    // YYYY-MM-DD, YYYY/MM/DD, YYYY.MM.DD
+                    // To require a 4 digit year entry, use this line instead:
+                    var datePat = /^(\d{4})(\/|-|.|\s|\\)(\d{1,2})\2(\d{1,2})$/;
+                    var result = true;
+                    
+                    var matchArray = userDate.match(datePat); // is the format ok?
+                    if (matchArray === null) {
+                        //alert("Date is not in a valid format.");
+                        result = false;
+                    }
+                    
+                    try {
+                        month = matchArray[3]; // parse date into variables
+                    } 
+                    catch (err) {
+                        month = 0;
+                    }
+                    try {
+                        day = matchArray[4];
+                    } 
+                    catch (err) {
+                        day = 0;
+                    }
+                    try {
+                        year = matchArray[1];
+                    } 
+                    catch (err) {
+                        year = 0;
+                    }
+                    
+                    if (month < 1 || month > 12) { // check month range
+                        result = false;
+                    }
+                    if (day < 1 || day > 31) {
+                        result = false;
+                    }
+                    if ((month == 4 || month == 6 || month == 9 || month == 11) && day == 31) {
+                        result = false;
+                    }
+                    if (month == 2) { // check for february 29th
+                        var isleap = (year % 4 === 0 && (year % 100 !== 0 || year % 400 === 0));
+                        if (day > 29 || (day == 29 && !isleap)) {
+                            result = false;
+                        }
+                    }
+                    if (result === true && userDate.length > 0) {
+                        result = true;
+                    }
+                    return result;
+                }
+
+
+
+
+function submitButton(){
+	var success = true; 
+	
+	var month = $('#month').val();
+	var year = $('#year').val();
+	var day = $('#day').val();
+	var together;
+	together = year + '.' + month + '.' + day;
+	//alert(together);
+	var result = isValidDate2(together);
+	if(result == false){
+		alert("Please make sure that your month and date are inputted in as numbers and that your year is in a four digit format.")
+		success = result 
+		return ""; 
+	}
+
+	if($('#fname').val() == ""){
+		 success = false; 
+		 alert("Please enter your first name.")
+		 return "";
+	}
+
+	if($('#lname').val() == ""){
+		 success = false; 
+		 alert("Please enter your last name.")
+		 return "";
+	}
+
+	if (!$("input[@name='clinic']:checked").val()) {
+       alert('Please select the affordable or insurance clinic.');
+       success = false; 
+       return "";
+       
+    }
+
+
+
+	if(success == true){
+		sendData();
+		
+	}
+}
+
+
+
+$(document).ready(function(){
+	clearForm(); 
+	
+	
+});
+
+
+
+
+
+
+</script>
+</%def> 
+
+<%def name="getGraphicalHeader()">
+<!--[if IE]><div class="xr_ap" id="xr_xri" style="width: 950px; height: 600px; clip: rect(0px 950px 600px 0px);"><![endif]-->
+<!--[if !IE]>--><div class="xr_ap" id="xr_xri" style="width: 950px; height: 600px; clip: rect(0px, 950px, 600px, 0px);"><!--<![endif]-->
+ <img class="xr_ap" src="${STATIC_URL}index_htm_files/1.png" alt="" title="" style="left: 0px; top: 0px; width: 950px; height: 119px;"/>
+</%def>
+
+
+<%def name="mainContent()">
+
+
+ <img class="xr_ap" src="${STATIC_URL}index_htm_files/5.png" alt="" id="Panel3" title="" style="left: 1px; top: 118px; width: 950px; height: 440px;"/>
+ <span class="xr_s2" style="position: absolute; left:28px; top:141px;">
+  <span class="xr_tl" style="top: -11px;"><span id="Panel:32text2"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span>
+  
+  <span class="xr_tl xr_s3" style="left: 250px;  top: 170px;">
+  <input type=hidden id="locationID" name="locationID" value="${location.id}"><input type=hidden name="affordableID" id="affordableID" value="0"><input type=hidden id="insuranceID" name="insuranceID" value="0"><table width="600px">
+	<tr>
+		<td align="right" width="100">First Name:</td><td align="left"><input type=text id="fname"></td>
+	</tr>
+	<tr>
+		<td align="right" width="100">Last Name:</td><td align="left"><input type=text id="lname"></td>
+	</tr>
+
+	<tr>
+		<td align="right" width="100">Month of Birth:</td><td align="left"><input type=text id="month"></td>
+	</tr>
+
+	<tr>
+		<td align="right" width="100">Day of Birth:</td><td align="left"><input type=text id="day"></td>
+	</tr>
+	
+
+	<tr>
+		<td align="right">Year of Birth:</td><td align="left"><input type=text id="year"></td>
+	</tr>
+
+		
+	<tr>
+		<td align="left" colspan="2" ><br>Do you have an appointment?<br><input type="radio" id="appointment" name="appointment" value="yes" /> Yes <br><input type="radio" name="appointment" id="appointment" value="no" /> No</td>
+	</tr>
+
+	<tr>
+	  <td align="left" colspan="2" ><br>Please pick a clinic:<br>
+	    % for clinic in clinics:
+	    <input type="radio" id="id_clinic_${clinic.id}" name="clinic" value="${clinic.id}" /> <label for="id_clinic_${clinic.id}">${clinic.name}</label><br>
+	    % endfor 
+	  </td>
+	</tr>
+
+	<tr>
+		<td align="left" colspan="2" ><br><button onClick="submitButton();">Submit</button><button onClick="clearForm();">Cancel</button></td>
+	</tr>
+	
+  </table>  
+  </span>
+
+
+ 
+</%def> 

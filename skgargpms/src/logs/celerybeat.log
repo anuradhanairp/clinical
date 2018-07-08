@@ -1,0 +1,392 @@
+[2011-11-12 02:53:52,808: WARNING/MainProcess] celerybeat v2.3.3 is starting.
+[2011-11-12 02:53:52,823: WARNING/MainProcess] /usr/local/lib/python2.6/dist-packages/django_celery-2.3.3-py2.6.egg/djcelery/loaders.py:84: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn("Using settings.DEBUG leads to a memory leak, never "
+[2011-11-12 02:53:53,169: WARNING/MainProcess] /usr/lib/pymodules/python2.6/pyPdf/pdf.py:52: DeprecationWarning: the sets module is deprecated
+  from sets import ImmutableSet
+[2011-11-12 02:53:53,510: WARNING/MainProcess] __    '-''    ... __   ''-''        _\n''Configuration ->\n    . broker -> amqp://guest@localhost:5672//\n    . loader -> djcelery.loaders.DjangoLoader\n    . scheduler -> djcelery.schedulers.DatabaseScheduler\n\n    . logfile -> //home/users/anjali/workspace4/skgargpms/src/logs/celerybeat.log@INFO\n    . maxinterval -> 1 hour (3600.0s)'
+[2011-11-12 02:53:53,511: INFO/MainProcess] Celerybeat: Starting...
+[2011-11-12 04:27:00,800: INFO/MainProcess] process shutting down
+[2011-11-12 04:27:09,386: WARNING/MainProcess] celerybeat v2.3.3 is starting.
+[2011-11-12 04:27:09,386: WARNING/MainProcess] /usr/local/lib/python2.6/dist-packages/django_celery-2.3.3-py2.6.egg/djcelery/loaders.py:84: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn("Using settings.DEBUG leads to a memory leak, never "
+[2011-11-12 04:27:09,731: WARNING/MainProcess] /usr/lib/pymodules/python2.6/pyPdf/pdf.py:52: DeprecationWarning: the sets module is deprecated
+  from sets import ImmutableSet
+[2011-11-12 04:27:10,076: WARNING/MainProcess] __    '-''    ... __   ''-''        _\n''Configuration ->\n    . broker -> amqp://guest@localhost:5672//\n    . loader -> djcelery.loaders.DjangoLoader\n    . scheduler -> djcelery.schedulers.DatabaseScheduler\n\n    . logfile -> //home/users/anjali/workspace4/skgargpms/src/logs/celerybeat.log@INFO\n    . maxinterval -> 1 hour (3600.0s)'
+[2011-11-12 04:27:10,078: INFO/MainProcess] Celerybeat: Starting...
+[2011-11-12 04:28:20,705: INFO/MainProcess] process shutting down
+[2011-11-12 04:28:27,129: WARNING/MainProcess] celerybeat v2.3.3 is starting.
+[2011-11-12 04:28:27,129: WARNING/MainProcess] /usr/local/lib/python2.6/dist-packages/django_celery-2.3.3-py2.6.egg/djcelery/loaders.py:84: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn("Using settings.DEBUG leads to a memory leak, never "
+[2011-11-12 04:28:27,508: WARNING/MainProcess] /usr/lib/pymodules/python2.6/pyPdf/pdf.py:52: DeprecationWarning: the sets module is deprecated
+  from sets import ImmutableSet
+[2011-11-12 04:28:27,799: WARNING/MainProcess] __    '-''    ... __   ''-''        _\n''Configuration ->\n    . broker -> amqp://guest@localhost:5672//\n    . loader -> djcelery.loaders.DjangoLoader\n    . scheduler -> djcelery.schedulers.DatabaseScheduler\n\n    . logfile -> //home/users/anjali/workspace4/skgargpms/src/logs/celerybeat.log@INFO\n    . maxinterval -> 1 hour (3600.0s)'
+[2011-11-12 04:28:27,809: INFO/MainProcess] Celerybeat: Starting...
+[2011-11-12 11:47:07,075: INFO/MainProcess] process shutting down
+[2012-01-17 05:15:30,867: WARNING/MainProcess] celerybeat v2.3.3 is starting.
+[2012-01-17 05:15:30,882: WARNING/MainProcess] /usr/local/lib/python2.6/dist-packages/django_celery-2.3.3-py2.6.egg/djcelery/loaders.py:84: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn("Using settings.DEBUG leads to a memory leak, never "
+[2012-01-17 05:15:31,225: WARNING/MainProcess] /usr/lib/pymodules/python2.6/pyPdf/pdf.py:52: DeprecationWarning: the sets module is deprecated
+  from sets import ImmutableSet
+[2012-01-17 05:15:31,618: WARNING/MainProcess] __    '-''    ... __   ''-''        _\n''Configuration ->\n    . broker -> amqp://guest@localhost:5672//\n    . loader -> djcelery.loaders.DjangoLoader\n    . scheduler -> djcelery.schedulers.DatabaseScheduler\n\n    . logfile -> //home/users/anjali/workspace4/skgargpms/src/logs/celerybeat.log@INFO\n    . maxinterval -> 1 hour (3600.0s)'
+[2012-01-17 05:15:31,619: INFO/MainProcess] Celerybeat: Starting...
+[2012-01-17 05:36:46,048: WARNING/MainProcess] celerybeat v2.3.3 is starting.
+[2012-01-17 05:36:46,048: WARNING/MainProcess] /usr/local/lib/python2.6/dist-packages/django_celery-2.3.3-py2.6.egg/djcelery/loaders.py:84: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn("Using settings.DEBUG leads to a memory leak, never "
+[2012-01-17 05:36:46,456: WARNING/MainProcess] /usr/lib/pymodules/python2.6/pyPdf/pdf.py:52: DeprecationWarning: the sets module is deprecated
+  from sets import ImmutableSet
+[2012-01-17 05:36:46,733: INFO/MainProcess] process shutting down
+[2012-01-17 12:03:55,615: CRITICAL/MainProcess] celerybeat raised exception <class 'django.db.utils.DatabaseError'>: DatabaseError('disk I/O error',)
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.6/dist-packages/celery-2.3.3-py2.6.egg/celery/apps/beat.py", line 88, in start_scheduler
+    beat.start()
+  File "/usr/local/lib/python2.6/dist-packages/celery-2.3.3-py2.6.egg/celery/beat.py", line 393, in start
+    interval = self.scheduler.tick()
+  File "/usr/local/lib/python2.6/dist-packages/celery-2.3.3-py2.6.egg/celery/beat.py", line 184, in tick
+    for entry in self.schedule.itervalues():
+  File "/usr/local/lib/python2.6/dist-packages/celery-2.3.3-py2.6.egg/celery/beat.py", line 300, in schedule
+    return self.get_schedule()
+  File "/usr/local/lib/python2.6/dist-packages/django_celery-2.3.3-py2.6.egg/djcelery/schedulers.py", line 181, in get_schedule
+    if self.schedule_changed():
+  File "/usr/local/lib/python2.6/dist-packages/django_celery-2.3.3-py2.6.egg/djcelery/schedulers.py", line 139, in schedule_changed
+    ts = self.Changes.last_change()
+  File "/usr/local/lib/python2.6/dist-packages/django_celery-2.3.3-py2.6.egg/djcelery/models.py", line 165, in last_change
+    return cls.objects.get(ident=1).last_update
+  File "/usr/local/lib/python2.6/dist-packages/Django-1.3-py2.6.egg/django/db/models/manager.py", line 132, in get
+    return self.get_query_set().get(*args, **kwargs)
+  File "/usr/local/lib/python2.6/dist-packages/Django-1.3-py2.6.egg/django/db/models/query.py", line 344, in get
+    num = len(clone)
+  File "/usr/local/lib/python2.6/dist-packages/Django-1.3-py2.6.egg/django/db/models/query.py", line 82, in __len__
+    self._result_cache = list(self.iterator())
+  File "/usr/local/lib/python2.6/dist-packages/Django-1.3-py2.6.egg/django/db/models/query.py", line 273, in iterator
+    for row in compiler.results_iter():
+  File "/usr/local/lib/python2.6/dist-packages/Django-1.3-py2.6.egg/django/db/models/sql/compiler.py", line 680, in results_iter
+    for rows in self.execute_sql(MULTI):
+  File "/usr/local/lib/python2.6/dist-packages/Django-1.3-py2.6.egg/django/db/models/sql/compiler.py", line 735, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python2.6/dist-packages/Django-1.3-py2.6.egg/django/db/backends/util.py", line 34, in execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python2.6/dist-packages/Django-1.3-py2.6.egg/django/db/backends/sqlite3/base.py", line 234, in execute
+    return Database.Cursor.execute(self, query, params)
+DatabaseError: disk I/O error
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.6/dist-packages/celery-2.3.3-py2.6.egg/celery/apps/beat.py", line 88, in start_scheduler
+    beat.start()
+  File "/usr/local/lib/python2.6/dist-packages/celery-2.3.3-py2.6.egg/celery/beat.py", line 393, in start
+    interval = self.scheduler.tick()
+  File "/usr/local/lib/python2.6/dist-packages/celery-2.3.3-py2.6.egg/celery/beat.py", line 184, in tick
+    for entry in self.schedule.itervalues():
+  File "/usr/local/lib/python2.6/dist-packages/celery-2.3.3-py2.6.egg/celery/beat.py", line 300, in schedule
+    return self.get_schedule()
+  File "/usr/local/lib/python2.6/dist-packages/django_celery-2.3.3-py2.6.egg/djcelery/schedulers.py", line 181, in get_schedule
+    if self.schedule_changed():
+  File "/usr/local/lib/python2.6/dist-packages/django_celery-2.3.3-py2.6.egg/djcelery/schedulers.py", line 139, in schedule_changed
+    ts = self.Changes.last_change()
+  File "/usr/local/lib/python2.6/dist-packages/django_celery-2.3.3-py2.6.egg/djcelery/models.py", line 165, in last_change
+    return cls.objects.get(ident=1).last_update
+  File "/usr/local/lib/python2.6/dist-packages/Django-1.3-py2.6.egg/django/db/models/manager.py", line 132, in get
+    return self.get_query_set().get(*args, **kwargs)
+  File "/usr/local/lib/python2.6/dist-packages/Django-1.3-py2.6.egg/django/db/models/query.py", line 344, in get
+    num = len(clone)
+  File "/usr/local/lib/python2.6/dist-packages/Django-1.3-py2.6.egg/django/db/models/query.py", line 82, in __len__
+    self._result_cache = list(self.iterator())
+  File "/usr/local/lib/python2.6/dist-packages/Django-1.3-py2.6.egg/django/db/models/query.py", line 273, in iterator
+    for row in compiler.results_iter():
+  File "/usr/local/lib/python2.6/dist-packages/Django-1.3-py2.6.egg/django/db/models/sql/compiler.py", line 680, in results_iter
+    for rows in self.execute_sql(MULTI):
+  File "/usr/local/lib/python2.6/dist-packages/Django-1.3-py2.6.egg/django/db/models/sql/compiler.py", line 735, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python2.6/dist-packages/Django-1.3-py2.6.egg/django/db/backends/util.py", line 34, in execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python2.6/dist-packages/Django-1.3-py2.6.egg/django/db/backends/sqlite3/base.py", line 234, in execute
+    return Database.Cursor.execute(self, query, params)
+DatabaseError: disk I/O error
+[2012-01-17 12:03:56,118: INFO/MainProcess] process shutting down
+[2012-01-18 05:01:25,933: WARNING/MainProcess] celerybeat v2.3.3 is starting.
+[2012-01-18 05:01:25,947: WARNING/MainProcess] /usr/local/lib/python2.6/dist-packages/django_celery-2.3.3-py2.6.egg/djcelery/loaders.py:84: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn("Using settings.DEBUG leads to a memory leak, never "
+[2012-01-18 05:01:26,456: WARNING/MainProcess] /usr/lib/pymodules/python2.6/pyPdf/pdf.py:52: DeprecationWarning: the sets module is deprecated
+  from sets import ImmutableSet
+[2012-01-18 05:01:26,935: WARNING/MainProcess] __    '-''    ... __   ''-''        _\n''Configuration ->\n    . broker -> amqp://guest@localhost:5672//\n    . loader -> djcelery.loaders.DjangoLoader\n    . scheduler -> djcelery.schedulers.DatabaseScheduler\n\n    . logfile -> //home/users/anjali/workspace4/skgargpms/src/logs/celerybeat.log@INFO\n    . maxinterval -> 1 hour (3600.0s)'
+[2012-01-18 05:01:26,936: INFO/MainProcess] Celerybeat: Starting...
+[2012-01-18 05:03:28,112: INFO/MainProcess] process shutting down
+[2012-01-18 05:28:10,768: WARNING/MainProcess] celerybeat v2.3.3 is starting.
+[2012-01-18 05:28:10,769: WARNING/MainProcess] /usr/local/lib/python2.6/dist-packages/django_celery-2.3.3-py2.6.egg/djcelery/loaders.py:84: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn("Using settings.DEBUG leads to a memory leak, never "
+[2012-01-18 05:28:11,093: WARNING/MainProcess] /usr/lib/pymodules/python2.6/pyPdf/pdf.py:52: DeprecationWarning: the sets module is deprecated
+  from sets import ImmutableSet
+[2012-01-18 05:28:11,372: WARNING/MainProcess] __    '-''    ... __   ''-''        _\n''Configuration ->\n    . broker -> amqp://guest@localhost:5672//\n    . loader -> djcelery.loaders.DjangoLoader\n    . scheduler -> djcelery.schedulers.DatabaseScheduler\n\n    . logfile -> //home/users/anjali/workspace4/skgargpms/src/logs/celerybeat.log@INFO\n    . maxinterval -> 1 hour (3600.0s)'
+[2012-01-18 05:28:11,373: INFO/MainProcess] Celerybeat: Starting...
+[2012-01-18 07:38:56,593: WARNING/MainProcess] celerybeat v2.3.3 is starting.
+[2012-01-18 07:38:56,593: WARNING/MainProcess] /usr/local/lib/python2.6/dist-packages/django_celery-2.3.3-py2.6.egg/djcelery/loaders.py:84: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn("Using settings.DEBUG leads to a memory leak, never "
+[2012-01-18 07:38:56,816: WARNING/MainProcess] /usr/lib/pymodules/python2.6/pyPdf/pdf.py:52: DeprecationWarning: the sets module is deprecated
+  from sets import ImmutableSet
+[2012-01-18 07:38:56,965: INFO/MainProcess] process shutting down
+[2012-01-18 07:40:06,968: WARNING/MainProcess] celerybeat v2.3.3 is starting.
+[2012-01-18 07:40:06,969: WARNING/MainProcess] /usr/local/lib/python2.6/dist-packages/django_celery-2.3.3-py2.6.egg/djcelery/loaders.py:84: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn("Using settings.DEBUG leads to a memory leak, never "
+[2012-01-18 07:40:07,195: WARNING/MainProcess] /usr/lib/pymodules/python2.6/pyPdf/pdf.py:52: DeprecationWarning: the sets module is deprecated
+  from sets import ImmutableSet
+[2012-01-18 07:40:07,317: INFO/MainProcess] process shutting down
+[2012-01-18 07:44:13,842: WARNING/MainProcess] celerybeat v2.3.3 is starting.
+[2012-01-18 07:44:13,842: WARNING/MainProcess] /usr/local/lib/python2.6/dist-packages/django_celery-2.3.3-py2.6.egg/djcelery/loaders.py:84: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn("Using settings.DEBUG leads to a memory leak, never "
+[2012-01-18 07:44:14,168: WARNING/MainProcess] /usr/lib/pymodules/python2.6/pyPdf/pdf.py:52: DeprecationWarning: the sets module is deprecated
+  from sets import ImmutableSet
+[2012-01-18 07:44:14,457: INFO/MainProcess] process shutting down
+[2012-01-18 08:42:46,454: CRITICAL/MainProcess] celerybeat raised exception <class 'django.db.utils.DatabaseError'>: DatabaseError('disk I/O error',)
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.6/dist-packages/celery-2.3.3-py2.6.egg/celery/apps/beat.py", line 88, in start_scheduler
+    beat.start()
+  File "/usr/local/lib/python2.6/dist-packages/celery-2.3.3-py2.6.egg/celery/beat.py", line 393, in start
+    interval = self.scheduler.tick()
+  File "/usr/local/lib/python2.6/dist-packages/celery-2.3.3-py2.6.egg/celery/beat.py", line 184, in tick
+    for entry in self.schedule.itervalues():
+  File "/usr/local/lib/python2.6/dist-packages/celery-2.3.3-py2.6.egg/celery/beat.py", line 300, in schedule
+    return self.get_schedule()
+  File "/usr/local/lib/python2.6/dist-packages/django_celery-2.3.3-py2.6.egg/djcelery/schedulers.py", line 181, in get_schedule
+    if self.schedule_changed():
+  File "/usr/local/lib/python2.6/dist-packages/django_celery-2.3.3-py2.6.egg/djcelery/schedulers.py", line 139, in schedule_changed
+    ts = self.Changes.last_change()
+  File "/usr/local/lib/python2.6/dist-packages/django_celery-2.3.3-py2.6.egg/djcelery/models.py", line 165, in last_change
+    return cls.objects.get(ident=1).last_update
+  File "/usr/local/lib/python2.6/dist-packages/Django-1.3-py2.6.egg/django/db/models/manager.py", line 132, in get
+    return self.get_query_set().get(*args, **kwargs)
+  File "/usr/local/lib/python2.6/dist-packages/Django-1.3-py2.6.egg/django/db/models/query.py", line 344, in get
+    num = len(clone)
+  File "/usr/local/lib/python2.6/dist-packages/Django-1.3-py2.6.egg/django/db/models/query.py", line 82, in __len__
+    self._result_cache = list(self.iterator())
+  File "/usr/local/lib/python2.6/dist-packages/Django-1.3-py2.6.egg/django/db/models/query.py", line 273, in iterator
+    for row in compiler.results_iter():
+  File "/usr/local/lib/python2.6/dist-packages/Django-1.3-py2.6.egg/django/db/models/sql/compiler.py", line 680, in results_iter
+    for rows in self.execute_sql(MULTI):
+  File "/usr/local/lib/python2.6/dist-packages/Django-1.3-py2.6.egg/django/db/models/sql/compiler.py", line 735, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python2.6/dist-packages/Django-1.3-py2.6.egg/django/db/backends/util.py", line 34, in execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python2.6/dist-packages/Django-1.3-py2.6.egg/django/db/backends/sqlite3/base.py", line 234, in execute
+    return Database.Cursor.execute(self, query, params)
+DatabaseError: disk I/O error
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.6/dist-packages/celery-2.3.3-py2.6.egg/celery/apps/beat.py", line 88, in start_scheduler
+    beat.start()
+  File "/usr/local/lib/python2.6/dist-packages/celery-2.3.3-py2.6.egg/celery/beat.py", line 393, in start
+    interval = self.scheduler.tick()
+  File "/usr/local/lib/python2.6/dist-packages/celery-2.3.3-py2.6.egg/celery/beat.py", line 184, in tick
+    for entry in self.schedule.itervalues():
+  File "/usr/local/lib/python2.6/dist-packages/celery-2.3.3-py2.6.egg/celery/beat.py", line 300, in schedule
+    return self.get_schedule()
+  File "/usr/local/lib/python2.6/dist-packages/django_celery-2.3.3-py2.6.egg/djcelery/schedulers.py", line 181, in get_schedule
+    if self.schedule_changed():
+  File "/usr/local/lib/python2.6/dist-packages/django_celery-2.3.3-py2.6.egg/djcelery/schedulers.py", line 139, in schedule_changed
+    ts = self.Changes.last_change()
+  File "/usr/local/lib/python2.6/dist-packages/django_celery-2.3.3-py2.6.egg/djcelery/models.py", line 165, in last_change
+    return cls.objects.get(ident=1).last_update
+  File "/usr/local/lib/python2.6/dist-packages/Django-1.3-py2.6.egg/django/db/models/manager.py", line 132, in get
+    return self.get_query_set().get(*args, **kwargs)
+  File "/usr/local/lib/python2.6/dist-packages/Django-1.3-py2.6.egg/django/db/models/query.py", line 344, in get
+    num = len(clone)
+  File "/usr/local/lib/python2.6/dist-packages/Django-1.3-py2.6.egg/django/db/models/query.py", line 82, in __len__
+    self._result_cache = list(self.iterator())
+  File "/usr/local/lib/python2.6/dist-packages/Django-1.3-py2.6.egg/django/db/models/query.py", line 273, in iterator
+    for row in compiler.results_iter():
+  File "/usr/local/lib/python2.6/dist-packages/Django-1.3-py2.6.egg/django/db/models/sql/compiler.py", line 680, in results_iter
+    for rows in self.execute_sql(MULTI):
+  File "/usr/local/lib/python2.6/dist-packages/Django-1.3-py2.6.egg/django/db/models/sql/compiler.py", line 735, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python2.6/dist-packages/Django-1.3-py2.6.egg/django/db/backends/util.py", line 34, in execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python2.6/dist-packages/Django-1.3-py2.6.egg/django/db/backends/sqlite3/base.py", line 234, in execute
+    return Database.Cursor.execute(self, query, params)
+DatabaseError: disk I/O error
+[2012-01-18 08:42:46,927: INFO/MainProcess] process shutting down
+[2012-01-18 08:56:57,646: WARNING/MainProcess] celerybeat v2.3.3 is starting.
+[2012-01-18 08:56:57,668: WARNING/MainProcess] /usr/local/lib/python2.6/dist-packages/django_celery-2.3.3-py2.6.egg/djcelery/loaders.py:84: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn("Using settings.DEBUG leads to a memory leak, never "
+[2012-01-18 08:56:58,119: WARNING/MainProcess] /usr/lib/pymodules/python2.6/pyPdf/pdf.py:52: DeprecationWarning: the sets module is deprecated
+  from sets import ImmutableSet
+[2012-01-18 08:56:58,691: WARNING/MainProcess] __    '-''    ... __   ''-''        _\n''Configuration ->\n    . broker -> amqp://guest@localhost:5672//\n    . loader -> djcelery.loaders.DjangoLoader\n    . scheduler -> djcelery.schedulers.DatabaseScheduler\n\n    . logfile -> //home/users/anjali/workspace4/skgargpms/src/logs/celerybeat.log@INFO\n    . maxinterval -> 1 hour (3600.0s)'
+[2012-01-18 08:56:58,691: INFO/MainProcess] Celerybeat: Starting...
+[2012-01-18 08:58:42,297: INFO/MainProcess] process shutting down
+[2012-01-18 09:46:38,532: WARNING/MainProcess] celerybeat v2.3.3 is starting.
+[2012-01-18 09:46:38,532: WARNING/MainProcess] /usr/local/lib/python2.6/dist-packages/django_celery-2.3.3-py2.6.egg/djcelery/loaders.py:84: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn("Using settings.DEBUG leads to a memory leak, never "
+[2012-01-18 09:46:38,863: WARNING/MainProcess] /usr/lib/pymodules/python2.6/pyPdf/pdf.py:52: DeprecationWarning: the sets module is deprecated
+  from sets import ImmutableSet
+[2012-01-18 09:46:39,199: WARNING/MainProcess] __    '-''    ... __   ''-''        _\n''Configuration ->\n    . broker -> amqp://guest@localhost:5672//\n    . loader -> djcelery.loaders.DjangoLoader\n    . scheduler -> djcelery.schedulers.DatabaseScheduler\n\n    . logfile -> //home/users/anjali/workspace4/skgargpms/src/logs/celerybeat.log@INFO\n    . maxinterval -> 1 hour (3600.0s)'
+[2012-01-18 09:46:39,204: INFO/MainProcess] Celerybeat: Starting...
+[2012-01-18 10:18:19,393: INFO/MainProcess] process shutting down
+[2012-01-18 10:18:32,483: WARNING/MainProcess] celerybeat v2.3.3 is starting.
+[2012-01-18 10:18:32,483: WARNING/MainProcess] /usr/local/lib/python2.6/dist-packages/django_celery-2.3.3-py2.6.egg/djcelery/loaders.py:84: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn("Using settings.DEBUG leads to a memory leak, never "
+[2012-01-18 10:18:32,777: WARNING/MainProcess] /usr/lib/pymodules/python2.6/pyPdf/pdf.py:52: DeprecationWarning: the sets module is deprecated
+  from sets import ImmutableSet
+[2012-01-18 10:18:33,030: WARNING/MainProcess] __    '-''    ... __   ''-''        _\n''Configuration ->\n    . broker -> amqp://guest@localhost:5672//\n    . loader -> djcelery.loaders.DjangoLoader\n    . scheduler -> djcelery.schedulers.DatabaseScheduler\n\n    . logfile -> //home/users/anjali/workspace4/skgargpms/src/logs/celerybeat.log@INFO\n    . maxinterval -> 1 hour (3600.0s)'
+[2012-01-18 10:18:33,031: INFO/MainProcess] Celerybeat: Starting...
+[2012-01-18 10:18:38,187: INFO/MainProcess] process shutting down
+[2012-01-18 10:40:42,740: WARNING/MainProcess] celerybeat v2.3.3 is starting.
+[2012-01-18 10:40:42,741: WARNING/MainProcess] /usr/local/lib/python2.6/dist-packages/django_celery-2.3.3-py2.6.egg/djcelery/loaders.py:84: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn("Using settings.DEBUG leads to a memory leak, never "
+[2012-01-18 10:40:43,087: WARNING/MainProcess] /usr/lib/pymodules/python2.6/pyPdf/pdf.py:52: DeprecationWarning: the sets module is deprecated
+  from sets import ImmutableSet
+[2012-01-18 10:40:43,487: WARNING/MainProcess] __    '-''    ... __   ''-''        _\n''Configuration ->\n    . broker -> amqp://guest@localhost:5672//\n    . loader -> djcelery.loaders.DjangoLoader\n    . scheduler -> djcelery.schedulers.DatabaseScheduler\n\n    . logfile -> //home/users/anjali/workspace4/skgargpms/src/logs/celerybeat.log@INFO\n    . maxinterval -> 1 hour (3600.0s)'
+[2012-01-18 10:40:43,487: INFO/MainProcess] Celerybeat: Starting...
+[2012-01-18 10:44:04,262: WARNING/MainProcess] celerybeat v2.3.3 is starting.
+[2012-01-18 10:44:04,262: WARNING/MainProcess] /usr/local/lib/python2.6/dist-packages/django_celery-2.3.3-py2.6.egg/djcelery/loaders.py:84: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn("Using settings.DEBUG leads to a memory leak, never "
+[2012-01-18 10:44:04,417: WARNING/MainProcess] /usr/lib/pymodules/python2.6/pyPdf/pdf.py:52: DeprecationWarning: the sets module is deprecated
+  from sets import ImmutableSet
+[2012-01-18 10:44:04,535: INFO/MainProcess] process shutting down
+[2012-01-18 10:45:10,407: WARNING/MainProcess] celerybeat v2.3.3 is starting.
+[2012-01-18 10:45:10,407: WARNING/MainProcess] /usr/local/lib/python2.6/dist-packages/django_celery-2.3.3-py2.6.egg/djcelery/loaders.py:84: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn("Using settings.DEBUG leads to a memory leak, never "
+[2012-01-18 10:45:10,566: WARNING/MainProcess] /usr/lib/pymodules/python2.6/pyPdf/pdf.py:52: DeprecationWarning: the sets module is deprecated
+  from sets import ImmutableSet
+[2012-01-18 10:45:10,682: INFO/MainProcess] process shutting down
+[2012-01-18 10:45:45,955: WARNING/MainProcess] celerybeat v2.3.3 is starting.
+[2012-01-18 10:45:45,955: WARNING/MainProcess] /usr/local/lib/python2.6/dist-packages/django_celery-2.3.3-py2.6.egg/djcelery/loaders.py:84: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn("Using settings.DEBUG leads to a memory leak, never "
+[2012-01-18 10:45:46,257: WARNING/MainProcess] /usr/lib/pymodules/python2.6/pyPdf/pdf.py:52: DeprecationWarning: the sets module is deprecated
+  from sets import ImmutableSet
+[2012-01-18 10:45:46,530: INFO/MainProcess] process shutting down
+[2012-01-18 11:31:42,057: WARNING/MainProcess] celerybeat v2.3.3 is starting.
+[2012-01-18 11:31:42,117: WARNING/MainProcess] /usr/local/lib/python2.6/dist-packages/django_celery-2.3.3-py2.6.egg/djcelery/loaders.py:84: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn("Using settings.DEBUG leads to a memory leak, never "
+[2012-01-18 11:31:42,521: WARNING/MainProcess] /usr/lib/pymodules/python2.6/pyPdf/pdf.py:52: DeprecationWarning: the sets module is deprecated
+  from sets import ImmutableSet
+[2012-01-18 11:31:42,806: INFO/MainProcess] process shutting down
+[2012-01-18 12:34:18,251: WARNING/MainProcess] celerybeat v2.3.3 is starting.
+[2012-01-18 12:34:18,251: WARNING/MainProcess] /usr/local/lib/python2.6/dist-packages/django_celery-2.3.3-py2.6.egg/djcelery/loaders.py:84: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn("Using settings.DEBUG leads to a memory leak, never "
+[2012-01-18 12:34:18,683: WARNING/MainProcess] /usr/lib/pymodules/python2.6/pyPdf/pdf.py:52: DeprecationWarning: the sets module is deprecated
+  from sets import ImmutableSet
+[2012-01-18 12:34:18,945: INFO/MainProcess] process shutting down
+[2012-01-18 18:28:23,540: INFO/MainProcess] process shutting down
+[2012-01-19 03:23:26,641: WARNING/MainProcess] celerybeat v2.3.3 is starting.
+[2012-01-19 03:23:26,641: WARNING/MainProcess] /usr/local/lib/python2.6/dist-packages/django_celery-2.3.3-py2.6.egg/djcelery/loaders.py:84: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn("Using settings.DEBUG leads to a memory leak, never "
+[2012-01-19 03:23:27,067: WARNING/MainProcess] /usr/lib/pymodules/python2.6/pyPdf/pdf.py:52: DeprecationWarning: the sets module is deprecated
+  from sets import ImmutableSet
+[2012-01-19 03:23:27,443: WARNING/MainProcess] __    '-''    ... __   ''-''        _\n''Configuration ->\n    . broker -> amqp://guest@localhost:5672//\n    . loader -> djcelery.loaders.DjangoLoader\n    . scheduler -> djcelery.schedulers.DatabaseScheduler\n\n    . logfile -> //home/users/anjali/workspace4/skgargpms/src/logs/celerybeat.log@INFO\n    . maxinterval -> 1 hour (3600.0s)'
+[2012-01-19 03:23:27,444: INFO/MainProcess] Celerybeat: Starting...
+[2012-01-19 03:57:05,814: INFO/MainProcess] process shutting down
+[2012-01-19 05:25:35,362: WARNING/MainProcess] celerybeat v2.3.3 is starting.
+[2012-01-19 05:25:35,362: WARNING/MainProcess] /usr/local/lib/python2.6/dist-packages/django_celery-2.3.3-py2.6.egg/djcelery/loaders.py:84: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn("Using settings.DEBUG leads to a memory leak, never "
+[2012-01-19 05:25:35,752: WARNING/MainProcess] /usr/lib/pymodules/python2.6/pyPdf/pdf.py:52: DeprecationWarning: the sets module is deprecated
+  from sets import ImmutableSet
+[2012-01-19 05:25:36,179: WARNING/MainProcess] __    '-''    ... __   ''-''        _\n''Configuration ->\n    . broker -> amqp://guest@localhost:5672//\n    . loader -> djcelery.loaders.DjangoLoader\n    . scheduler -> djcelery.schedulers.DatabaseScheduler\n\n    . logfile -> //home/users/anjali/workspace4/skgargpms/src/logs/celerybeat.log@INFO\n    . maxinterval -> 1 hour (3600.0s)'
+[2012-01-19 05:25:36,185: INFO/MainProcess] Celerybeat: Starting...
+[2012-01-19 05:33:18,463: INFO/MainProcess] process shutting down
+[2012-01-19 05:33:30,165: WARNING/MainProcess] celerybeat v2.3.3 is starting.
+[2012-01-19 05:33:30,171: WARNING/MainProcess] /usr/local/lib/python2.6/dist-packages/django_celery-2.3.3-py2.6.egg/djcelery/loaders.py:84: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn("Using settings.DEBUG leads to a memory leak, never "
+[2012-01-19 05:33:30,569: WARNING/MainProcess] /usr/lib/pymodules/python2.6/pyPdf/pdf.py:52: DeprecationWarning: the sets module is deprecated
+  from sets import ImmutableSet
+[2012-01-19 05:33:30,869: WARNING/MainProcess] __    '-''    ... __   ''-''        _\n''Configuration ->\n    . broker -> amqp://guest@localhost:5672//\n    . loader -> djcelery.loaders.DjangoLoader\n    . scheduler -> djcelery.schedulers.DatabaseScheduler\n\n    . logfile -> //home/users/anjali/workspace4/skgargpms/src/logs/celerybeat.log@INFO\n    . maxinterval -> 1 hour (3600.0s)'
+[2012-01-19 05:33:30,870: INFO/MainProcess] Celerybeat: Starting...
+[2012-01-19 05:34:07,589: INFO/MainProcess] process shutting down
+[2012-01-19 06:56:54,993: WARNING/MainProcess] celerybeat v2.3.3 is starting.
+[2012-01-19 06:56:54,993: WARNING/MainProcess] /usr/local/lib/python2.6/dist-packages/django_celery-2.3.3-py2.6.egg/djcelery/loaders.py:84: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn("Using settings.DEBUG leads to a memory leak, never "
+[2012-01-19 06:56:55,348: WARNING/MainProcess] /usr/lib/pymodules/python2.6/pyPdf/pdf.py:52: DeprecationWarning: the sets module is deprecated
+  from sets import ImmutableSet
+[2012-01-19 06:56:55,658: WARNING/MainProcess] __    '-''    ... __   ''-''        _\n''Configuration ->\n    . broker -> amqp://guest@localhost:5672//\n    . loader -> djcelery.loaders.DjangoLoader\n    . scheduler -> djcelery.schedulers.DatabaseScheduler\n\n    . logfile -> //home/users/anjali/workspace4/skgargpms/src/logs/celerybeat.log@INFO\n    . maxinterval -> 1 hour (3600.0s)'
+[2012-01-19 06:56:55,660: INFO/MainProcess] Celerybeat: Starting...
+[2012-01-19 07:18:10,242: INFO/MainProcess] process shutting down
+[2012-01-19 09:59:29,830: WARNING/MainProcess] celerybeat v2.3.3 is starting.
+[2012-01-19 09:59:29,831: WARNING/MainProcess] /usr/local/lib/python2.6/dist-packages/django_celery-2.3.3-py2.6.egg/djcelery/loaders.py:84: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn("Using settings.DEBUG leads to a memory leak, never "
+[2012-01-19 09:59:30,255: WARNING/MainProcess] /usr/lib/pymodules/python2.6/pyPdf/pdf.py:52: DeprecationWarning: the sets module is deprecated
+  from sets import ImmutableSet
+[2012-01-19 09:59:30,753: WARNING/MainProcess] __    '-''    ... __   ''-''        _\n''Configuration ->\n    . broker -> amqp://guest@localhost:5672//\n    . loader -> djcelery.loaders.DjangoLoader\n    . scheduler -> djcelery.schedulers.DatabaseScheduler\n\n    . logfile -> //home/users/anjali/workspace4/skgargpms/src/logs/celerybeat.log@INFO\n    . maxinterval -> 1 hour (3600.0s)'
+[2012-01-19 09:59:30,754: INFO/MainProcess] Celerybeat: Starting...
+[2012-01-19 10:25:05,854: INFO/MainProcess] process shutting down
+[2012-01-19 13:03:55,094: WARNING/MainProcess] celerybeat v2.3.3 is starting.
+[2012-01-19 13:03:55,108: WARNING/MainProcess] /usr/local/lib/python2.6/dist-packages/django_celery-2.3.3-py2.6.egg/djcelery/loaders.py:84: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn("Using settings.DEBUG leads to a memory leak, never "
+[2012-01-19 13:03:55,797: WARNING/MainProcess] /usr/lib/pymodules/python2.6/pyPdf/pdf.py:52: DeprecationWarning: the sets module is deprecated
+  from sets import ImmutableSet
+[2012-01-19 13:03:56,381: WARNING/MainProcess] __    '-''    ... __   ''-''        _\n''Configuration ->\n    . broker -> amqp://guest@localhost:5672//\n    . loader -> djcelery.loaders.DjangoLoader\n    . scheduler -> djcelery.schedulers.DatabaseScheduler\n\n    . logfile -> //home/users/anjali/workspace4/skgargpms/src/logs/celerybeat.log@INFO\n    . maxinterval -> 1 hour (3600.0s)'
+[2012-01-19 13:03:56,385: INFO/MainProcess] Celerybeat: Starting...
+[2012-01-19 13:11:46,000: INFO/MainProcess] process shutting down
+[2012-01-19 13:15:51,802: WARNING/MainProcess] celerybeat v2.3.3 is starting.
+[2012-01-19 13:15:51,811: WARNING/MainProcess] /usr/local/lib/python2.6/dist-packages/django_celery-2.3.3-py2.6.egg/djcelery/loaders.py:84: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn("Using settings.DEBUG leads to a memory leak, never "
+[2012-01-19 13:15:52,326: WARNING/MainProcess] /usr/lib/pymodules/python2.6/pyPdf/pdf.py:52: DeprecationWarning: the sets module is deprecated
+  from sets import ImmutableSet
+[2012-01-19 13:15:52,831: WARNING/MainProcess] __    '-''    ... __   ''-''        _\n''Configuration ->\n    . broker -> amqp://guest@localhost:5672//\n    . loader -> djcelery.loaders.DjangoLoader\n    . scheduler -> djcelery.schedulers.DatabaseScheduler\n\n    . logfile -> //home/users/anjali/workspace4/skgargpms/src/logs/celerybeat.log@INFO\n    . maxinterval -> 1 hour (3600.0s)'
+[2012-01-19 13:15:52,832: INFO/MainProcess] Celerybeat: Starting...
+[2012-01-19 14:01:18,618: INFO/MainProcess] process shutting down
+[2012-01-20 03:45:33,142: WARNING/MainProcess] celerybeat v2.3.3 is starting.
+[2012-01-20 03:45:33,142: WARNING/MainProcess] /usr/local/lib/python2.6/dist-packages/django_celery-2.3.3-py2.6.egg/djcelery/loaders.py:84: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn("Using settings.DEBUG leads to a memory leak, never "
+[2012-01-20 03:45:33,455: WARNING/MainProcess] /usr/lib/pymodules/python2.6/pyPdf/pdf.py:52: DeprecationWarning: the sets module is deprecated
+  from sets import ImmutableSet
+[2012-01-20 03:45:33,716: WARNING/MainProcess] __    '-''    ... __   ''-''        _\n''Configuration ->\n    . broker -> amqp://guest@localhost:5672//\n    . loader -> djcelery.loaders.DjangoLoader\n    . scheduler -> djcelery.schedulers.DatabaseScheduler\n\n    . logfile -> //home/users/anjali/workspace4/skgargpms/src/logs/celerybeat.log@INFO\n    . maxinterval -> 1 hour (3600.0s)'
+[2012-01-20 03:45:33,717: INFO/MainProcess] Celerybeat: Starting...
+[2012-01-20 04:14:40,140: INFO/MainProcess] process shutting down
+[2012-01-20 07:05:06,901: WARNING/MainProcess] celerybeat v2.3.3 is starting.
+[2012-01-20 07:05:06,902: WARNING/MainProcess] /usr/local/lib/python2.6/dist-packages/django_celery-2.3.3-py2.6.egg/djcelery/loaders.py:84: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn("Using settings.DEBUG leads to a memory leak, never "
+[2012-01-20 07:05:07,239: WARNING/MainProcess] /usr/lib/pymodules/python2.6/pyPdf/pdf.py:52: DeprecationWarning: the sets module is deprecated
+  from sets import ImmutableSet
+[2012-01-20 07:05:07,544: WARNING/MainProcess] __    '-''    ... __   ''-''        _\n''Configuration ->\n    . broker -> amqp://guest@localhost:5672//\n    . loader -> djcelery.loaders.DjangoLoader\n    . scheduler -> djcelery.schedulers.DatabaseScheduler\n\n    . logfile -> //home/users/anjali/workspace4/skgargpms/src/logs/celerybeat.log@INFO\n    . maxinterval -> 1 hour (3600.0s)'
+[2012-01-20 07:05:07,545: INFO/MainProcess] Celerybeat: Starting...
+[2012-01-20 07:05:49,606: INFO/MainProcess] process shutting down
+[2012-01-20 07:06:02,829: WARNING/MainProcess] celerybeat v2.3.3 is starting.
+[2012-01-20 07:06:02,829: WARNING/MainProcess] /usr/local/lib/python2.6/dist-packages/django_celery-2.3.3-py2.6.egg/djcelery/loaders.py:84: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn("Using settings.DEBUG leads to a memory leak, never "
+[2012-01-20 07:06:03,201: WARNING/MainProcess] /usr/lib/pymodules/python2.6/pyPdf/pdf.py:52: DeprecationWarning: the sets module is deprecated
+  from sets import ImmutableSet
+[2012-01-20 07:06:03,485: WARNING/MainProcess] __    '-''    ... __   ''-''        _\n''Configuration ->\n    . broker -> amqp://guest@localhost:5672//\n    . loader -> djcelery.loaders.DjangoLoader\n    . scheduler -> djcelery.schedulers.DatabaseScheduler\n\n    . logfile -> //home/users/anjali/workspace4/skgargpms/src/logs/celerybeat.log@INFO\n    . maxinterval -> 1 hour (3600.0s)'
+[2012-01-20 07:06:03,486: INFO/MainProcess] Celerybeat: Starting...
+[2012-01-20 07:17:40,803: INFO/MainProcess] process shutting down
+[2012-01-20 07:31:08,691: WARNING/MainProcess] celerybeat v2.3.3 is starting.
+[2012-01-20 07:31:08,691: WARNING/MainProcess] /usr/local/lib/python2.6/dist-packages/django_celery-2.3.3-py2.6.egg/djcelery/loaders.py:84: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn("Using settings.DEBUG leads to a memory leak, never "
+[2012-01-20 07:31:09,053: WARNING/MainProcess] /usr/lib/pymodules/python2.6/pyPdf/pdf.py:52: DeprecationWarning: the sets module is deprecated
+  from sets import ImmutableSet
+[2012-01-20 07:31:09,351: WARNING/MainProcess] __    '-''    ... __   ''-''        _\n''Configuration ->\n    . broker -> amqp://guest@localhost:5672//\n    . loader -> djcelery.loaders.DjangoLoader\n    . scheduler -> djcelery.schedulers.DatabaseScheduler\n\n    . logfile -> //home/users/anjali/workspace4/skgargpms/src/logs/celerybeat.log@INFO\n    . maxinterval -> 1 hour (3600.0s)'
+[2012-01-20 07:31:09,352: INFO/MainProcess] Celerybeat: Starting...
+[2012-01-20 08:21:08,374: INFO/MainProcess] process shutting down
+[2012-01-21 05:15:58,032: WARNING/MainProcess] celerybeat v2.3.3 is starting.
+[2012-01-21 05:15:58,032: WARNING/MainProcess] /usr/local/lib/python2.6/dist-packages/django_celery-2.3.3-py2.6.egg/djcelery/loaders.py:84: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn("Using settings.DEBUG leads to a memory leak, never "
+[2012-01-21 05:15:58,337: WARNING/MainProcess] /usr/lib/pymodules/python2.6/pyPdf/pdf.py:52: DeprecationWarning: the sets module is deprecated
+  from sets import ImmutableSet
+[2012-01-21 05:15:58,614: WARNING/MainProcess] __    '-''    ... __   ''-''        _\n''Configuration ->\n    . broker -> amqp://guest@localhost:5672//\n    . loader -> djcelery.loaders.DjangoLoader\n    . scheduler -> djcelery.schedulers.DatabaseScheduler\n\n    . logfile -> //home/users/anjali/workspace4/skgargpms/src/logs/celerybeat.log@INFO\n    . maxinterval -> 1 hour (3600.0s)'
+[2012-01-21 05:15:58,617: INFO/MainProcess] Celerybeat: Starting...
+[2012-01-21 05:18:06,059: INFO/MainProcess] process shutting down
+[2012-01-21 05:28:50,324: WARNING/MainProcess] celerybeat v2.3.3 is starting.
+[2012-01-21 05:28:50,325: WARNING/MainProcess] /usr/local/lib/python2.6/dist-packages/django_celery-2.3.3-py2.6.egg/djcelery/loaders.py:84: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn("Using settings.DEBUG leads to a memory leak, never "
+[2012-01-21 05:28:50,644: WARNING/MainProcess] /usr/lib/pymodules/python2.6/pyPdf/pdf.py:52: DeprecationWarning: the sets module is deprecated
+  from sets import ImmutableSet
+[2012-01-21 05:28:50,919: WARNING/MainProcess] __    '-''    ... __   ''-''        _\n''Configuration ->\n    . broker -> amqp://guest@localhost:5672//\n    . loader -> djcelery.loaders.DjangoLoader\n    . scheduler -> djcelery.schedulers.DatabaseScheduler\n\n    . logfile -> //home/users/anjali/workspace4/skgargpms/src/logs/celerybeat.log@INFO\n    . maxinterval -> 1 hour (3600.0s)'
+[2012-01-21 05:28:50,920: INFO/MainProcess] Celerybeat: Starting...
+[2012-01-21 05:33:34,093: INFO/MainProcess] process shutting down
+[2012-01-21 05:50:54,336: WARNING/MainProcess] celerybeat v2.3.3 is starting.
+[2012-01-21 05:50:54,336: WARNING/MainProcess] /usr/local/lib/python2.6/dist-packages/django_celery-2.3.3-py2.6.egg/djcelery/loaders.py:84: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn("Using settings.DEBUG leads to a memory leak, never "
+[2012-01-21 05:50:54,765: WARNING/MainProcess] /usr/lib/pymodules/python2.6/pyPdf/pdf.py:52: DeprecationWarning: the sets module is deprecated
+  from sets import ImmutableSet
+[2012-01-21 05:50:55,075: WARNING/MainProcess] __    '-''    ... __   ''-''        _\n''Configuration ->\n    . broker -> amqp://guest@localhost:5672//\n    . loader -> djcelery.loaders.DjangoLoader\n    . scheduler -> djcelery.schedulers.DatabaseScheduler\n\n    . logfile -> //home/users/anjali/workspace4/skgargpms/src/logs/celerybeat.log@INFO\n    . maxinterval -> 1 hour (3600.0s)'
+[2012-01-21 05:50:55,075: INFO/MainProcess] Celerybeat: Starting...
+[2012-01-21 05:54:11,274: INFO/MainProcess] process shutting down
+[2012-01-23 08:47:51,418: WARNING/MainProcess] celerybeat v2.3.3 is starting.
+[2012-01-23 08:47:51,419: WARNING/MainProcess] /usr/local/lib/python2.6/dist-packages/django_celery-2.3.3-py2.6.egg/djcelery/loaders.py:84: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn("Using settings.DEBUG leads to a memory leak, never "
+[2012-01-23 08:47:51,821: WARNING/MainProcess] /usr/lib/pymodules/python2.6/pyPdf/pdf.py:52: DeprecationWarning: the sets module is deprecated
+  from sets import ImmutableSet
+[2012-01-23 08:47:52,224: WARNING/MainProcess] __    '-''    ... __   ''-''        _\n''Configuration ->\n    . broker -> amqp://guest@localhost:5672//\n    . loader -> djcelery.loaders.DjangoLoader\n    . scheduler -> djcelery.schedulers.DatabaseScheduler\n\n    . logfile -> //home/users/anjali/workspace4/skgargpms/src/logs/celerybeat.log@INFO\n    . maxinterval -> 1 hour (3600.0s)'
+[2012-01-23 08:47:52,225: INFO/MainProcess] Celerybeat: Starting...
+[2012-01-23 09:31:52,665: INFO/MainProcess] process shutting down
+[2012-01-23 11:41:38,372: WARNING/MainProcess] celerybeat v2.3.3 is starting.
+[2012-01-23 11:41:38,372: WARNING/MainProcess] /usr/local/lib/python2.6/dist-packages/django_celery-2.3.3-py2.6.egg/djcelery/loaders.py:84: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn("Using settings.DEBUG leads to a memory leak, never "
+[2012-01-23 11:41:38,778: WARNING/MainProcess] /usr/lib/pymodules/python2.6/pyPdf/pdf.py:52: DeprecationWarning: the sets module is deprecated
+  from sets import ImmutableSet
+[2012-01-23 11:41:39,066: WARNING/MainProcess] __    '-''    ... __   ''-''        _\n''Configuration ->\n    . broker -> amqp://guest@localhost:5672//\n    . loader -> djcelery.loaders.DjangoLoader\n    . scheduler -> djcelery.schedulers.DatabaseScheduler\n\n    . logfile -> //home/users/anjali/workspace4/skgargpms/src/logs/celerybeat.log@INFO\n    . maxinterval -> 1 hour (3600.0s)'
+[2012-01-23 11:41:39,066: INFO/MainProcess] Celerybeat: Starting...
+[2012-01-23 12:02:04,788: INFO/MainProcess] process shutting down

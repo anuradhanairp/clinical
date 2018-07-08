@@ -1,0 +1,143 @@
+###########################################################
+#             General notification module(Final Beta)     #
+#             Author : Robert -Spark                      # 
+# conventions used '###' for testing intermediate values  #
+# '#----#' for comments etc..                             #
+###########################################################
+import os
+import sys
+sys.path=[os.path.dirname(os.path.dirname(os.path.abspath(os.path.dirname(__file__)))),os.path.dirname(os.path.abspath(os.path.dirname(__file__))),os.path.abspath(os.path.dirname(__file__))]+sys.path
+os.environ['DJANGO_SETTINGS_MODULE']='settings'
+from django.conf import settings
+import datetime
+from signin.models import *
+from signin.smtp import *
+import time
+#---creating two blank lists ,which will be used later in the module..---#
+checkd_out_ids=[] 
+active_patient_ids=[]
+last_event=None
+count=None
+
+def messager(dict_passed,from_address=settings.FROM_ADDR,rcpt_to=settings.RCPT_TO,subject=settings.EMAIL_SUBJ):
+        mailer=Smtp();
+        mailer.rcpt_to(rcpt_to)
+        mailer.from_addr(from_address)
+        mailer.message(msg_replace(dict_passed))
+        subject=subject.replace('{fname}',dict_passed['{fname}'])
+        mailer.subject(subject)
+        ###print vars()
+        try:
+            mailer.send()
+        except:
+             return None
+          
+        ###time.sleep(3)
+    
+def msg_replace(valuedic):
+    x=open(os.path.join(os.path.dirname(os.path.abspath(os.path.dirname(__file__))),'templates/email-message.txt'),'r')
+    msg_txt=x.read()
+    for i,j in valuedic.iteritems():
+        msg_txt=msg_txt.replace(str(i),str(j))
+    return msg_txt
+
+                
+def get_time_difer(qry_grp=None,activeid=None):
+    """function for getting the time difference between the last event time and current time
+       for each active id's in the list
+       arguments are the query group consisting of all the active events and there id's"""
+    n_mins=settings.TIMELIMIT
+    global time_lastevent
+    ###print n_mins
+    try:
+       #--getting the length of the active_patient_ids list---#  
+       count=len(active_patient_ids)
+       ###print count
+       
+       ###print "current time%s" % datetime.datetime.now()
+       #---looping through each active patient id's to find the last event,time difference etc...---#
+       for i in range(count):
+           ###print activeid[i]
+           ###print i
+           
+           qry_grp1=qry_grp.filter(header__patient__id__exact=activeid[i])
+           ###print qry_grp1
+           for j in qry_grp1:
+               last_event=j.event.name
+           ###print last_event
+           #---finding difference in time b/w last event and current time---#
+           qry_grp2=qry_grp1.filter(event__name=last_event)
+           for j in qry_grp2: 
+              time_last_event=j.dateTime
+                     
+           ###print "stage 1 %s : %s : %s "% (activeid[i],last_event,time_last_event)
+           ###time_dif=time_last_event-datetime.datetime.now()
+           
+           #--if the time difference is > 10 mins call the mailer fn---# 
+           qry_grp3=qry_grp2.filter(header__dateTime__lt=(datetime.datetime.now()-datetime.timedelta(minutes=n_mins)))
+           if qry_grp3:
+             for k in qry_grp3:
+               valuedict=dict()
+               valuedict['{patient-id}']=k.header.patient.id
+               valuedict['{fname}']=k.header.patient.fName
+               valuedict['{lname}']=k.header.patient.lName
+               valuedict['{time}']=time_last_event
+               valuedict['{event}']=last_event
+               valuedict['{location}']=k.header.clinic.location.name
+               valuedict['{clinic-id}']=k.header.clinic.name
+             
+             
+             print valuedict
+             ###return valuedict
+             ###print "Passing the details to message function ...."
+             
+             #--- calling the messager function with the dictionary passed as argument ---#
+             #messager(valuedict)
+             
+             
+           else:
+               ###print "no - %s " %  time_last_event
+               ###return qry_grp2
+               return None                    
+                  
+               
+              
+       #---return last_event---#
+                      
+           
+    except TypeError:
+        return None
+        
+def start_messager():
+    """Main function of this module , calling this function will activate the checking of 
+       ids'trigerirng mailer functions etc.."""    
+    global checkd_out_ids,active_patient_ids,query_grp1,query_grp2
+    n=settings.TIMEFRAME
+    ###print n
+    #---query set grouping all events from the last 2 hours from the PatientEventLog---#
+    query_grp1=PatientEventLog.objects.filter(header__dateTime__gt=(datetime.datetime.now()-datetime.timedelta(hours=n)))
+    #---getting the id of all checked out patients to a list called checkd_out_ids---#
+    
+    for i in query_grp1:
+        if i.event.name=="checkout":
+               checkd_out_ids.append(i.header.patient.id)
+               #---removing duplicate entries from the list---#
+               checkd_out_ids=list(set(checkd_out_ids))
+    #---query set for grouping all other active patient ids to a list called active_patient_ids---#
+        query_grp2=query_grp1.exclude(header__patient__id__in=checkd_out_ids)
+    for i in query_grp2: 
+        active_patient_ids.append(i.header.patient.id)
+        #---removing all duplicate entries from the list---#
+        active_patient_ids=list(set(active_patient_ids))
+    ###print active_patient_ids
+    
+    #--- Calling the get time_differ script
+    get_time_difer(query_grp2,active_patient_ids)
+
+
+#--- If the file itsef is called , the start_messager will get called ---#
+if __name__ == '__main__':
+    
+    start_messager()
+    
+

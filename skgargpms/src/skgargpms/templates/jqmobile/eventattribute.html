@@ -1,0 +1,121 @@
+{% extends "jqmobile/base_jqmobile.html" %}
+
+
+<!-- Main Page -->
+{% block main_page %}
+
+<div data-role="page" data-theme="c" id="id_event_attr_page">
+	
+	<div data-role="header" data-theme="a" data-position="fixed">
+		<h1><a href="/jqmobile/" data-role="button" data-icon="home" data-theme="c">Home</a></h1>
+		<a href="" data-role="button" data-icon="back" data-rel="back">Back</a>
+		<a href="{{station_url}}" data-role="button" data-icon="arrow-r" data-theme="b">Stations</a>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+	
+	<h2>{{ patient_name }}</h2>
+	
+	<input type="hidden" id="header_id" name="header_id" value="{{ header.id }}" />
+	<input type="hidden" id="event_id" name="event_id" value="{{ event.id }}" />
+
+	<ul data-role="listview" data-inset="true" data-theme="d" data-divider-theme="d">
+				<li data-role="list-divider"><h1>{{ event.name }} </h1></li>
+				
+				{% if prev_event_order %}
+					<li data-icon="arrow-l">
+						<a href="../{{prev_event_order}}/">	Previous Station</a>
+					</li>
+				{% endif %}
+				
+				{% if next_event_order %}
+					<li data-icon="arrow-r">
+						<a href="../{{next_event_order}}/">	Next Station</a>
+					</li>
+				{% endif %}
+		
+			
+				<!-- We display this list only if there is a attribute for this event. -->
+				<li data-insert="true">
+				
+					<div data-role="collapsible-set">
+								
+						<div data-role="collapsible" data-collapsed="true">
+							<h3>Procedures</h3>
+							
+							<ul data-role="listview">
+							
+							  {% for interrupt in result %}
+							  <li>
+							  <div data-role="fieldcontain" id="interrupt_handler_{{interrupt.2}}">
+							  	
+							    	<label for="interrupt_name" id="interrupt_slider"> 
+							    	{{ interrupt.0 }}
+							    	
+							       {% if interrupt.1 == "complete" %}
+							              complete
+							        {% endif %} 
+									</label>   
+							         {% if interrupt.1 == "stop" %}
+							            <select name="interrupt_slider" id="interrupt_{{interrupt.2}}" data-role="slider">
+          										<option value="off">stop</option>
+          										<option value="on">start</option>
+         									    
+        								</select> 
+							         {% endif %}   
+							     
+							     </div>
+							     </li> 
+							  {% endfor %} 
+							  </ul>            
+
+							<br>
+								<a href="/jqmobile/procedures/{{ patient_header }}/" data-role="button"> Add new Procuedures</a>
+							 
+						</div>
+						
+						{% if event_attributes %}
+								<div data-role="collapsible" data-collapsed="true" id="id_attribute_div">
+									<h3> Attributes </h3>
+									
+									<form action="#" method="get" id="id_attr_form"> 
+										{% for event_attr in event_attributes %}
+											<div data-role="fieldcontain">
+												
+												<label for="attr_{{event_attr.attrmap_id}}" id="attr_name{{event_attr.attrmap_id}}_label">
+													{{ event_attr.attr_name }}{% if event_attr.attr_required %}*{% endif %}
+												</label>
+												<input type="text" id="id_attr{{event_attr.attrmap_id}}" name="attr_name{{event_attr.attrmap_id}}" value="{% if event_attr.attr_value %}{{ event_attr.attr_value }}{% endif %}"/>
+											
+											</div>
+										{% endfor %}
+									</form>
+									 <div id="id_submit_status">  </div>
+									 <a href="index.html" data-role="button" data-icon="check" data-iconpos="left" id="id_attr_submit">Submit</a> 
+					 			</div>
+						{% endif %}
+						
+					</div>
+				</li>
+	</ul>
+			
+	{% if read_only %}
+		<p> <strong> Event Completed </stong></p>
+	{% else %}
+		<div id="id_event_finish_div"></div>
+		
+		<div id="id_event_start_button">
+			<a href="" data-role="button" data-icon="check" data-iconpos="left" id="id_event_finish">Start</a>
+		</div>
+		
+	{% endif %}
+				
+	</div><!-- /content -->
+	
+	<div data-role="footer" data-theme="a" data-position="fixed">
+		<h4>Footer content</h4>
+	</div><!-- /footer -->
+	
+</div><!-- /page -->
+
+{% endblock %}

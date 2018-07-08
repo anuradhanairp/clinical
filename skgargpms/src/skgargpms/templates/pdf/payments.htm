@@ -1,0 +1,158 @@
+<html>
+{% include "pdf/style.css" %}
+<body>
+<div id="headerDiv" >
+{% if clinic %}{{clinic}} ({{clinic.work_time}}){% endif %} [{{date|date:"M/d, Y"}}] &mdash; Page #<pdf:pagenumber>
+</div>
+<b>Payment Summary</b>
+<table width="100%" cellspacing="0" cellpadding="0" border="1" class="report" repeat="2">
+    <tr>
+       <th>No of patients</th>
+       <th>Total payment</th>
+       <th>Negative payment</th>
+       <th>Net payment</th>
+     </tr>
+     <tr>
+       <td>{{counts}}</td>
+       <td>${{total.positivetotal|stringformat:"0.2f"}}</td>
+       <td>${{negativetotal.negativetotal|stringformat:"0.2f"}} </td>
+       <td>${{ nettotal|stringformat:"0.2f" }}</td>
+     </tr>
+</table>
+<br><br><br>
+<b>Full Payment History</b>
+<table width="100%" cellspacing="0" cellpadding="0" border="1" class="report" repeat="2">
+  <thead>
+    <tr>
+      <th width="10%">#</th>
+      <th width="45%">Last Name, First Name</th>
+      <th width="20%">DOB</th>
+      <th width="30%">interruprs</th>
+      <th width="20%">Cash</th>
+      <th width="20%">Card</th>
+      <th width="15%">Total</th>
+  </thead>
+ <!--   <tr>
+    <th align="right" colspan="3">Total:</th>
+    <td align="right">${{total.cash|stringformat:"0.2f"}}</td>
+    <td align="right">${{total.cc|stringformat:"0.2f"}}</td>
+    <td align="right">${{total.total|stringformat:"0.2f"}}</td>
+  </tr>-->
+  <tbody>
+    {% for event in events %}
+    <tr>
+      <td><h3>{{forloop.counter}}</h3></td>
+      <td>{{event.patient.lName}}, {{event.patient.fName}}</td>
+      <td>{{event.patient.dob}}</td> 
+   
+      <td colspan=3 >
+	    <table  width="100%" border="0" >
+		{% for eve in event.patientinterruptlist %}
+		    <tr>
+			 <td>{% if eve.1 == None %}
+			       others
+			     {% else %}
+			       {{ eve.1 }}
+			     {% endif %}  
+			        
+			 </td>
+			 <td>{% if eve.3 == "cash" %} 
+			       ${{ eve.2 }}
+			     {% else %}
+			        $0
+			     {% endif %}    
+			 </td>
+			 <td>{% if eve.3 == "cc" %} 
+			       ${{ eve.2 }}
+			     {% else %}
+			        $0
+			     {% endif %}    
+			 </td>
+			</tr>
+		{% endfor %}
+		</table>
+	  </td>
+	 <!--  <td align="right">${{event.get_cash|stringformat:"0.2f"}}</td>
+      <td align="right">${{event.get_cc|stringformat:"0.2f"}}</td>-->
+      <td align="right"><b></b>${{event.get_total|stringformat:"0.2f"}}</b></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+  
+  {% if total.total %}
+  <tr>
+    <th align="right" colspan="4">Total:&nbsp;&nbsp;&nbsp;</th>
+    <td align="right"><b></b>${{total.cash|stringformat:"0.2f"}}</b></td>
+    <td align="right"><b></b>${{total.cc|stringformat:"0.2f"}}</b></td>
+    <td align="right"><b></b>${{total.total|stringformat:"0.2f"}}</b></td>
+  </tr>
+  {% endif %}
+</table>
+<br><br><br>
+{% if negativeevents %}
+<b>Discount History</b>
+<table width="100%" cellspacing="0" cellpadding="0" border="1" class="report" repeat="2">
+  <thead>
+    <tr>
+      <th width="10%">#</th>
+      <th width="45%">Last Name, First Name</th>
+      <th width="20%">DOB</th>
+      <th width="20%">user</th>
+      <th width="30%">interruprs</th>
+      <th width="20%">Cash</th>
+      <th width="20%">Card</th>
+      <th width="15%">Total</th>
+  </thead>
+  <tbody>
+    {% for event in negativeevents %}
+    <tr>
+      <td><h3>{{forloop.counter}}</h3></td>
+      <td>{{event.patient.lName}}, {{event.patient.fName}}</td>
+      <td>{{event.patient.dob}}</td> 
+      <td>{{event.get_user}}</td>
+      <td colspan=3>
+	    <table  width="100%">
+		{% for eve in event.patientinterruptlist %}
+		    {% if eve.2 < 0 %}
+		    <tr>
+			 <td>{% if eve.1 == None %}
+			       others
+			     {% else %}
+			       {{ eve.1 }}
+			     {% endif %}  
+			        
+			 </td>
+			 <td>{% if eve.3 == "cash" %} 
+			       ${{ eve.2 }}
+			     {% else %}
+			        $0
+			     {% endif %}    
+			 </td>
+			 <td>{% if eve.3 == "cc" %} 
+			       ${{ eve.2 }}
+			     {% else %}
+			        $0
+			     {% endif %}    
+			 </td>
+			</tr>
+			{% endif %}
+		{% endfor %}
+		</table>
+	  </td>
+ <td align="right"><b></b>${{event.get_negativetotal|stringformat:"0.2f"}}</b></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+  
+  {% if negativetotal.negativetotal %}
+  <tr>
+    <th align="right" colspan="5">Total:&nbsp;&nbsp;&nbsp;</th>
+    <td align="right"><b></b>${{negativetotal.cash|stringformat:"0.2f"}}</b></td>
+    <td align="right"><b></b>${{negativetotal.cc|stringformat:"0.2f"}}</b></td>
+    <td align="right"><b></b>${{negativetotal.negativetotal|stringformat:"0.2f"}}</b></td>
+  </tr>
+  {% endif %}
+</table>
+{% endif %}
+</body>  
+</html>

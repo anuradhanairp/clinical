@@ -1,0 +1,90 @@
+<!DOCTYPE html> 
+<html> 
+ 	<head>
+ 	</head>
+ 	<body>
+  		<div  data-role="page" id="id_payment_page" data-theme="d">
+  			<input type="hidden" id="clinic_id" value="{{clinic.id}}"/>
+  			<!--   <input type="hidden" id="current_date" value="{{date}}"/>-->
+  			
+  			<div data-role="header" data-position="fixed">
+         		<h3>&laquo;{{clinic.name}}&raquo; at {{clinic.location.name}}</h3>
+         		<a href="/jqmtab/clinic/?clinicID={{clinic.id}}"  id="payment_back" data-icon="back"> Back </a>
+         		<a  href="javascript:void(0);" id="id_header_tools_pdf">PDF</a>
+     		</div>
+     		
+     		<div data-role="content" data-theme="e" >
+				<div class="xr_s10">
+  					<table id="fdtable"  width="100%" border=1>
+   					 <thead>
+     					<tr>
+							<th>####</th>
+							<th>Last Name, First Name</th>
+							<th>DOB</th>
+							<th>interrupts</th>
+							<th>cash</th>
+							<th>card</th>
+							<!--  <th>Cash</th>
+							<th>Card</th>-->
+							<th>Total</th>
+    					</thead>
+   
+    					<tbody>
+    						{% for event in events %}
+    						<tr>
+								<td>{{forloop.counter}}</td>
+								<td><a href="javascript:void(0)" onclick="displayDialog({{event.id}})">{{event.patient.lName}}, {{event.patient.fName}}</a></td>
+								<td>{{event.patient.dob}}</td>
+								<td colspan=3>
+	    							<table border="0" width="100%" data-theme="c">
+										{% for eve in event.patientinterruptlist %}
+		    								<tr>
+			 									<td>{% if eve.1 == None %}
+			       										others
+			     									{% else %}
+			       										{{ eve.1 }}
+			     									{% endif %}  
+			        
+			 									</td>
+			 									<td>
+			 										{% if eve.3 == "cash" %} 
+			       										${{ eve.2 }}
+			     									{% else %}
+			        									$0
+			     									{% endif %}    
+			 									</td>
+			 									<td>
+			 										{% if eve.3 == "cc" %}
+			      										 ${{ eve.2 }}
+			     									{% else %}
+			        									$0
+			     									{% endif %} 
+			 									</td>
+											</tr>
+										{% endfor %}
+									</table>
+							   </td>
+						
+							   <td align="right"><a href="javascript:void(0)" onclick="display_paymenthistory({{event.id}})">${{event.get_total|stringformat:"0.2f"}}</a></td>
+      						</tr>
+      						{% endfor %}
+    					</tbody>
+    					{% if total.total %}
+    					<tr>
+     		 				<th align="right" colspan="4">Total:</th>
+     		 				<td align="right">${{total.cash|stringformat:"0.2f"}}</td>
+      						<td align="right">${{total.cc|stringformat:"0.2f"}}</td>
+      						<td align="right">${{total.total|stringformat:"0.2f"}}</td>
+    					</tr>
+    					{% endif %}
+ 					</table>
+	  			</div>
+	  	
+			</div>
+			<!-- content.. -->
+			<div data-role="footer" data-position="fixed">
+				<p> &copy PracticeServe LLC </p>
+			</div>
+		</div>
+	</body>
+	</html>

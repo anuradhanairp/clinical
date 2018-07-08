@@ -1,0 +1,30 @@
+{% extends "admin/base_site.html" %}
+
+{% load i18n %}
+
+
+{% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{% load adminmedia %}{% admin_media_prefix %}css/dashboard.css" />{% endblock %}
+
+{% block coltype %}colMS{% endblock %}
+
+{% block bodyclass %} dashboard {% endblock %}
+
+{% block breadcrumbs %}{% endblock %}
+
+
+{% block content %}
+
+<p>{{  post }} </p>
+
+
+{% endblock %}
+
+{% block sidebar %}
+
+	<div id="content-related">
+		<div class="module" id="recent-actions-modules">
+			<p> testing the sidebar </p>
+		</div>
+	</div>
+
+{% endblock %}

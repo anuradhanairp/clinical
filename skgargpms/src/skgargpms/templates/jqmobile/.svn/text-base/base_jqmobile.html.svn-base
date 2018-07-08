@@ -1,0 +1,320 @@
+<!DOCTYPE html> 
+<html> 
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<title>Page Title</title> 
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0rc1/jquery.mobile-1.0rc1.min.css" />
+	<script src="http://code.jquery.com/jquery-1.6.2.min.js"></script>
+	
+	{% block extra_headers %}
+	
+		<style type="text/css">
+			label.missing  {
+  				color:#FF0000;
+  				font-weight:bold;
+			}
+		</style>
+		
+		<script type="text/javascript">
+			
+			$('#id_event_attr_page').live('pageshow', function(event){
+				//Events for the eventattribute.html page. 
+				/*	
+					We using 'pageshow' event instead of 'pagecreate', becase the later one may cause 
+					overlaping of previous event.
+				*/
+				
+				//Global variables.
+				var header_id = $('#header_id')[0].value ;
+				var event_id = $('#event_id')[0].value ;
+				
+				//Field required class.
+				var REQUIRED = 'missing';
+				
+				var submit_message = function(message,div_id){
+					$('#'+div_id).html(message).fadeIn("slow");
+					$('#'+div_id).fadeOut(4000);
+				}
+				
+				if( $('#id_attribute_div').html() != null ){
+					//Only work with atrribute related tasks when there is any attribute for this event.
+					
+					
+					var attribute_form_submit = function(){
+						
+						var form_data = $('#id_attr_form').serialize();
+												
+						//Append header_id and event_id
+						form_data = 'header_id=' + header_id +"&event_id=" + event_id + "&" + form_data;
+						console.log(form_data);
+						
+						$.post("/jqmobile/submit_attribute/", form_data, function(data){
+							
+							if( data.status == 'OK' ){
+								
+								//Remove the alert class from label.
+								$('#id_attr_form label').removeClass('missing')
+								submit_message("Success...",'id_submit_status');
+								
+								
+							}else{
+								
+								//console.log('Faild:' + data.attributes);
+								
+								for( index in data.attributes ){
+									//Changing text colour.
+									$('#'+data.attributes[index]+'_label').addClass('missing');
+								}
+								
+															
+							}
+								
+							
+						})
+						
+						return false;
+						
+					}
+					
+															
+					//Bind the attribute submit button to processing function.
+					$('#id_attr_submit').bind("click", attribute_form_submit);
+					
+					//console.log('Attribute div active..');
+					
+				}
+				
+				//Event updation Related operation bellow.
+				$('#id_event_finish').bind('click',function(){
+					
+					//console.log(header_id + " " + event_id);
+					
+					//var data = 'header_id='+header_id+"&event_id="+ event_id ;
+					
+					var data = {'header_id': header_id , 'event_id': event_id, 'username':''}
+					
+					//console.log(data);
+					
+					$.mobile.showPageLoadingMsg();
+					$.post('/jqmobile/event_finished/',data, function(data){
+						
+						$.mobile.hidePageLoadingMsg();
+						
+						if(data.status == 'OK'){
+							
+							submit_message('Success..','id_event_finish_div');
+							
+							//Remove the submit button from the form.
+							$('#id_event_start_button').html("<b> Event Finished .. </b>");
+							
+							
+							
+						}else{
+							
+							//Show custom error message.
+							
+							var msg = "Failed ... <br />";
+							
+							if(data.interrupts.length > 0  ){
+								
+								msg += "Pending Interrupts are: ";
+								
+								for(var i in data.interrupts){
+									
+									msg += data.interrupts[i][1] + ", ";
+									
+								}
+								
+							}
+							
+							if(data.attributes.length > 0 ){
+								
+								msg += "<br/> Pending Attributes are: ";
+								for(var i in data.attributes){
+									
+									msg += data.attributes[i][1] + ", ";
+									
+								}
+								
+							}
+							
+							submit_message(msg,'id_event_finish_div');
+						}
+						
+						
+					})
+					
+					
+				});
+				
+				var handle_procedure = function(interrupt_id,header_id,value){
+					
+					//console.log("test..");
+					var status;
+					//console.log("interid"+" "+interrupt_id);
+					
+					if (value == "on")
+					{
+						status = "stopped";
+					}
+					var data = 'header_id='+header_id+"&interrupt_id="+ interrupt_id+"&status="+status ;
+					//console.log(data);
+					//ajax call to save the status of interrupts corresponding to particular patient
+					$.post('/jqmobile/jqmobile_handle_procedure/',data, function(data){
+					    
+						//console.log(data);
+						if(data){
+							$("#interrupt_handler_"+interrupt_id).html(data.interrupt_name+" "+'complete');
+							//$("#ul_"+interrupt_id).html('<li>'+data.interrupt_name+'complete</li>');
+						}
+						
+					});
+						
+				}
+				
+				//this function is used to handle the slider(used to start or stop the interrupt) in procedure tab 
+				//The attribue 'aria-valuenow' of 'a' tag hold the current value of slider 
+				$(".ui-slider").bind("mouseup, vmouseup", function() {
+			        // launch action here
+			         header_id = $("#header_id").val();
+			         value = $(this).find('a').attr('aria-valuenow');
+			         var id = $(this).find('a').attr('aria-labelledby'); //eg: sprinkles_1-label,here 1 is the id of interrupt
+			         var selid = id.split("-");//sprinkles_1-label is split into sprinkles_1 and label
+				     var intrid = selid[0].split("_");//sprinkles_1 is split into sprinkles and 1
+			         var interruptid = intrid[1];
+			        
+				     //console.log($("#header_id").val());
+			       
+			        //console.log($(this).find('a').attr('aria-valuenow')); // value
+			        //console.log($(this).find('a').attr('aria-labelledby'));
+			       
+			        handle_procedure(interruptid,header_id,value);
+			        
+			        
+			        
+			        });
+				
+				
+				
+							
+				
+						
+			});
+			
+
+			$('#id_pick_procedure_page').live('pageshow', function(event){
+				
+				
+				var handle_procedure = function(interrupt_id,header_id,value){
+				
+					//console.log("test..");
+					var status;
+					//console.log("interid"+" "+interrupt_id);
+					if (value == "off")
+					{
+						 status = "started";
+						
+					}	
+					if (value == "on")
+					{
+						status = "stopped";
+					}
+					var data = 'header_id='+header_id+"&interrupt_id="+ interrupt_id+"&status="+status ;
+					//console.log(data);
+					//ajax call to save the status of interrupts corresponding to particular patient
+					$.post('/jqmobile/jqmobile_handle_procedure/',data, function(data){
+					    
+						//console.log(data);
+						$("#interrupt_"+interrupt_id).html("");
+						
+					});
+						
+				}
+				//console.log($(".ui-slider").find('a').attr('aria-valuenow'));
+				
+				
+				//this function is used to handle the slider(used to start or stop the interrupt) in procedure tab 
+				//The attribue 'aria-valuenow' of 'a' tag hold the current value of slider 
+				$(".ui-slider").bind("mouseup, vmouseup", function() {
+			        // lunch action here
+			         header_id = $("#header_id").val();
+			         value = $(this).find('a').attr('aria-valuenow');
+			         var id = $(this).find('a').attr('aria-labelledby'); //eg: sprinkles_1-label,here 1 is the id of interrupt
+			         var selid = id.split("-");//sprinkles_1-label is split into sprinkles_1 and label
+				     var intrid = selid[0].split("_");//sprinkles_1 is split into sprinkles and 1
+			         var interruptid = intrid[1];
+			        
+				     //console.log($("#header_id").val());
+			       
+			        //console.log($(this).find('a').attr('aria-valuenow')); // value
+			        //console.log($(this).find('a').attr('aria-labelledby'));
+			       
+			        handle_procedure(interruptid,header_id,value);
+			        
+			        
+			        
+			        });
+			        
+			        
+			        
+			    
+				/* $(function() {
+
+				
+				 $(".sprinkles1").each(function(i) {
+					 
+					 var id = $(this).attr("id");
+					 //console.log(id);
+					 $("#"+id).bind("change",function(){ 
+						 console.log(id);
+						 console.log($(".ui-slider").find('a').attr('aria-valuenow')); 
+						 console.log($(".ui-slider").find('a').attr('aria-labelledby')); 
+						 
+						 //console.log($("#"+id).val());
+						 //var ob = $("#"+id);
+						// console.log($("#"+id).attr("selectedIndex"));
+						// var index = ob.selectedIndex;
+						// var ddVal = ob.options[index].value;
+						// console.log(ddval);
+						 
+
+						 
+					 });
+					 
+				 });
+				});*/
+
+				/*$(" .sprinkles1").bind("change",function(){
+					
+					console.log("testing...");
+					console.log($(".sprinkles1").attr("id"));
+					var id = $(".sprinkles1").attr("id");
+					console.log($("#"+id).val());
+					//handle_procedure(1,91);
+					
+				});*/
+				
+			});	
+			
+			
+		
+		</script>
+	{% endblock %}
+	
+	<script src="http://code.jquery.com/mobile/1.0rc1/jquery.mobile-1.0rc1.min.js"></script>
+</head> 
+
+<body> 
+
+{% block main_page %}
+	<!-- JQM main page -->
+{% endblock %}
+
+{% block extra_pages %}
+<!-- Place for extra JQM pages. -->
+{% endblock %}
+
+</body>
+</html>

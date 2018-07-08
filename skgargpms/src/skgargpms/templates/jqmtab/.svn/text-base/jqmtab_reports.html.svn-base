@@ -1,0 +1,95 @@
+<!DOCTYPE html> 
+<html> 
+ 	<head>
+ 	</head>
+ 	<body>
+ 	
+ 	 <!-- Pages.. -->
+ 	 <div  data-role="page" id="id_report_page" data-theme="b">
+        
+        <input type="hidden" id="clinic_id" value="{{clinic.id}}"/>
+        
+         <!--  <input type="hidden" id="current_date" value="{{date}}"/>-->
+        
+        <!-- Header section.. -->
+        <div data-role="header" data-position="fixed">
+            <p align="center"> {{clinic.name}} at {{clinic.location.name}} </p>
+            <a href="/jqmtab/clinic/?clinicID={{clinic.id}}" data-icon="back" id ="url_back">Back</a>
+         	<a  href="javascript:void(0);" id="id_header_tools_report_pdf" >PDF</a>
+         	
+        </div>
+        
+        <!-- Content section.. -->
+	        <div data-role="content" data-theme="e">
+			 	<div class="xr_s10">
+		   			<div align="center" class="user_list">
+			   		    <label for="id_user_list"><b>USER </b></label>
+				   		<select name="user_list" id="id_user_list" >
+				   			<option onChange="user_list_process(); " value="default" selected="selected" >Default</option>
+				   			{% for user in users %}
+				   				<option onChange="user_list_process(); " value="{{user.username}}" >{{ user.username}}</option>
+				   			{% endfor %}
+				   		</select>
+			   			<hr />
+		   			</div>
+		   		
+			   		<div id="id_report_default">
+			   		   <table width="100%"  id="fdtable_dflt" border=1>
+					     <thead>
+					       <tr>
+					       		<td width="20px" align=center>####</td>
+					       		<td width="200px" align=center><b>Last Name, First Name DOB</b></td>
+					       		
+					       		{% for map in default_clinic_event_map %}
+					       			<td  align=center><b>{{ map }}</b></td>
+					       		{% endfor %}
+					       		
+					       	</tr>
+					     </thead>
+					     
+					     <tbody>
+					       {% for patient in patients %}
+					       		<tr id="count_rep{{patient.header}}">
+					       			<td align="center" > {{ forloop.revcounter }}  </td>
+					       			<td align="center"> {{ patient.patient_name }} </td>
+					       			
+					       			{% for event_time in patient.events %}
+					       				<td align="center"> {% if event_time %} {{ event_time }} {% else %} X {% endif %} </td>
+					       			{% endfor %}
+					       			
+					       			
+					       		</tr>
+					       {% endfor %}
+					     </tbody>
+					   </table>
+					</div>
+				
+				
+				<div id="id_report_user" style="display:none">
+					<table id="fdtable_user"  width="100%" border=1>
+						<thead>
+		    			<tr>
+		    				
+							<td width="20px" align=center>#</td>
+							<td width="200px" align=center><b>Last Name, First Name DOB</b></td>
+							
+							{% for map in user_clinic_event_map %}
+				       			<td width="75px" align=center><b>{{ map.1 }}</b></td>
+				       		{% endfor %}
+		    			</tr>
+		    			</thead>
+		    			<tbody>
+		    				
+		    			</tbody>
+					</table>
+				</div>
+			</div>
+	   </div>
+	   <!-- end of page content. -->
+	   <div data-role="footer" data-position="fixed">
+	   		<p> &copy PracticeServe LLC </p>
+	   </div>
+	   
+   </div>
+   </body>
+   </html>

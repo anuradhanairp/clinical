@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+ 
+ <title>${self.getTitle()}</title>
+ <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252"/>
+ 
+ <link rel="stylesheet" type="text/css" href="${STATIC_URL}index_htm_files/xr_main.css"/>
+ <link rel="stylesheet" type="text/css" href="${STATIC_URL}index_htm_files/xr_text.css"/>
+
+  ${self.headerContent()}
+</head>
+<body style="background-color: #FFFFFF">
+<div class="xr_ap" id="xr_xr" style="width: 950px; height: 600px; top:15px; left:50%; margin-left: -475px;">
+ <script type="text/javascript">var xr_xr=document.getElementById("xr_xr")</script>
+ <img class="xr_ap" src="${STATIC_URL}index_htm_files/0.png" alt="" title="" style="left: -2px; top: -2px; width: 964px; height: 614px;"/>
+${self.getGraphicalHeader()}
+
+
+
+ <img class="xr_ap" src="${STATIC_URL}index_htm_files/2.png" alt="" id="Repeating:58InnovateFooter" title="" style="left: 0px; top: 566px; width: 951px; height: 34px;"/>
+ <span class="xr_s0" style="position: absolute; left:39px; top:584px;">
+  <span class="xr_tc" style="left: 331px; top: -10px; width: 215px;">Quality Care, Affordable Price</span>
+ </span>
+ <span class="xr_s1" style="position: absolute; left:12px; top:20px;">
+ <!--- <span class="xr_tr" style="left: 691px; top: -10px; width: 241px;">Date: November 26, 1983&nbsp; Time: 12:00 PM&nbsp;&nbsp; </span> -->
+  <span class="xr_tl" style="top: 2px;">&nbsp;</span>
+ </span>
+${self.headerTitleImage()}
+
+
+ ${self.mainContent()}
+
+
+
+ 
+ <span class="xr_s4" style="position: absolute; left:761px; top:562px;"> 
+
+ <img class="xr_ap" src="${STATIC_URL}index_htm_files/12.png" alt="" title="" style="left: 371px; top: 309px; width: 2px; height: 2px;"/>
+
+
+</div>
+</div>
+<!--[if lt IE 7]><script type="text/javascript" src="index_htm_files/png.js"></script><![endif]-->
+
+</body>
+</html>

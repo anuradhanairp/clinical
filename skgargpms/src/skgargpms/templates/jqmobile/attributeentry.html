@@ -1,0 +1,34 @@
+{% extends "jqmobile/base_jqmobile.html" %}
+
+
+<!-- Main Page -->
+{% block main_page %}
+<div data-role="page" data-theme="c">
+
+	<div data-role="header" data-theme="a" data-position="fixed">
+		<h1>		<a href="index.html" data-role="button" data-icon="home" data-theme="c">Home</a></h1>
+		<a href="index.html" data-role="button" data-icon="back">Back</a>
+	
+			<a href="index.html" data-role="button" data-icon="arrow-r" data-theme="b">Stations</a>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+	
+	<h2>Doe3, John DOB 1/17/1925</h2>
+	<p>Enter Attribute for EKG Below</p>
+	 <input type="text" name="name" id="name" value=""  />
+	
+<a href="index.html" data-role="button">Sumbit</a> 
+
+	</div><!-- /content -->
+	
+	<div data-role="footer" data-theme="a" data-position="fixed">
+		<h4>Footer content</h4>
+	</div><!-- /footer -->
+	
+	
+	
+	
+	
+</div><!-- /page -->
+{% endblock %}

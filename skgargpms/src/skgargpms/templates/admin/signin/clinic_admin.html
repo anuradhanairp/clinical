@@ -1,0 +1,108 @@
+{% extends "admin/base_site.html" %}
+{% load i18n %}
+
+{% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{% load adminmedia %}{% admin_media_prefix %}css/dashboard.css" />{% endblock %}
+
+{% block coltype %}colMS{% endblock %}
+
+{% block bodyclass %} dashboard {% endblock %}
+
+{% block breadcrumbs %}{% endblock %}
+
+
+{% block content %}
+
+<div id="content-main">
+
+	<!--  Group the clinics based on its location. -->
+	{% regroup clinics|dictsort:"location.name" by location as clinic_list %}
+	
+	{% for clinic in clinic_list %}
+		<div class="module">
+			<table summary="Avalilable Clinics">
+				<caption>{{ clinic.grouper.name|capfirst }} </caption>
+				
+				{% regroup clinic.list|dictsort:"start_time" by start_time as time_ordered_clinic %}
+				
+				{% for ordered_clinic in time_ordered_clinic %}
+					{% for cli in ordered_clinic.list %}
+						<tr>
+							<!--  <th><a href="/admin/design_clinics/{{ cli.id }}/"> {{ cli.work_time|capfirst }}   : {{ cli.name|capfirst }}</a></th>-->
+							
+							<th>({{cli.start_time}} to {{cli.end_time}}) : {{cli.name}}</th>
+							<td><a href="/admin/design_clinics/{{ cli.id }}/"> Events </a></td>
+							<td><a href="/admin/assign_attributes/{{ cli.id }}/"> Attributes </a></td>
+							
+						</tr>
+					{% endfor %}
+				{% endfor %}
+		
+	     	</table>
+	     </div>
+	     
+	{% endfor %}
+	
+	
+	<!-- 
+	{% for clinic in clinics %}
+	
+		<div class="module">
+			<table summary="Avalilable Clinics">
+				<caption>Clinics</caption>
+					<tr>
+						<th><a href="/admin/design_clinics/{{ clinic.id }}">{{ clinic.location }} : {{ clinic.name }}</a></th>
+						<td></td>
+						<td></td>
+					</tr>
+			</table>
+		</div>
+	{% endfor %}
+	-->
+
+</div>
+
+
+
+
+{% endblock %}
+
+{% block sidebar %}
+<div id="content-related">
+    <div class="module" id="recent-actions-module">
+    
+    
+    	<a href="/admin/"><b>Go back</b></a>
+    	<br /><br /> <hr>
+    	<a href="/admin/signin/alertconfiguration/"><b> Alert System</></a>
+    	<!--
+        <h2>{% trans 'Recent Actions' %}</h2>
+        <h3>{% trans 'My Actions' %}</h3>
+            {% load log %}
+            {% get_admin_log 10 as admin_log for_user user %}
+            {% if not admin_log %}
+            <p>{% trans 'None available' %}</p>
+            {% else %}
+            <ul class="actionlist">
+            {% for entry in admin_log %}
+            <li class="{% if entry.is_addition %}addlink{% endif %}{% if entry.is_change %}changelink{% endif %}{% if entry.is_deletion %}deletelink{% endif %}">
+                {% if entry.is_deletion or not entry.get_admin_url %}
+                    {{ entry.object_repr }}
+                {% else %}
+                    <a href="{{ entry.get_admin_url }}">{{ entry.object_repr }}</a>
+                {% endif %}
+                <br/>
+                {% if entry.content_type %}
+                    <span class="mini quiet">{% filter capfirst %}{% trans entry.content_type.name %}{% endfilter %}</span>
+                {% else %}
+                    <span class="mini quiet">{% trans 'Unknown content' %}</span>
+                {% endif %}
+            </li>
+            {% endfor %}
+            </ul>
+            {% endif %}
+         -->
+          
+    </div>
+</div>
+
+{% endblock %}

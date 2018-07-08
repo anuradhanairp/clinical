@@ -1,0 +1,70 @@
+<!DOCTYPE html> 
+<html> 
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<title>Page Title</title> 
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0b2/jquery.mobile-1.0b2.min.css" />
+	<script src="http://code.jquery.com/jquery-1.6.2.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.0b2/jquery.mobile-1.0b2.min.js"></script>
+	<script type="text/javascript">
+         
+   	
+     
+     
+     </script>
+</head> 
+
+     
+     
+     
+
+<body>
+
+<!-- Main Page -->
+
+    <div  data-role="dialog" id="id_provider_page" data-theme="a">
+
+     <input type="hidden" id="header_id" name="header_id" value="{{ headerid}}" />
+     <input type="hidden" id="url_id" name="url_id" value="{{ home_url}}" />
+     
+     <div data-role="header">
+         <h3>Provider</h3>
+     </div>
+
+  
+   
+
+   		
+			<div data-role="content" data-theme="b" >
+		            <div id="tabs-2">	
+				 		
+					 	<form id="provider_form" method="post" action="/">
+								<ul class="provider-form" data-role="listview">
+									<li>
+										<label for="id_provider">Provider Name</label>
+										<select name="provider" id="id_provider">
+											{% for provider in provider_list %}
+										    	<option value="{{provider.id}}">{{provider.lName}} {{provider.fName}}</option>
+										    {% endfor %}
+									  	</select>
+									</li>
+									<li>
+										<input type="button" value="Add Provider" name="" id="id_add_provider_button">
+							        </li>
+								</ul>
+						</form>
+					
+				</div>
+					
+             
+                   
+			</div>
+     
+</body>
+</html>  
+
+  
+
+ 

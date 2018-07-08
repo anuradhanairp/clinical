@@ -1,0 +1,49 @@
+  <a href="#" onclick="" class="payment_form_close"><span>X</span> close</a>
+<table width="100%" cellspacing="" cellpadding="" border="1">
+  <tr>
+    <th colspan="3">{{header.patient}}</th>
+  </tr>
+  <tr>
+    <th>Date</th>
+    <th>Info</th>
+    <th>Amount</th>
+  </tr>
+  {% if payments.cc.list %}
+  <tr>
+    <th colspan="3">Credit card</th>
+  </tr>
+  {% for payment in payments.cc.list %}
+  <tr>
+    <td>{{payment.dateTime}}</td>
+    <td>{% if payment.type == "cc" %}xxxx-xxxx-xxxx-{{payment.info}}{% else %}&nbsp;{% endif %}</td>
+    <td align="right"><tt>${{payment.amount|stringformat:"0.2f"}}</tt></td>
+  </tr>
+  {% endfor %}
+  <tr>
+    <td colspan="2" align="right">Subtotal:</td>
+    <td align="right"><tt>${{payments.cc.total|stringformat:"0.2f"}}</tt></td>
+  </tr>
+  {% endif %}
+
+
+  {% if payments.cash.list %}
+  <tr>
+    <th colspan="3">Cash</th>
+  </tr>
+  {% for payment in payments.cash.list %}
+  <tr>
+    <td>{{payment.dateTime}}</td>
+    <td>&nbsp;</td>
+    <td align="right"><tt>${{payment.amount|stringformat:"0.2f"}}</tt></td>
+  </tr>
+  {% endfor %}
+  <tr>
+    <td colspan="2" align="right">Subtotal:</td>
+    <td align="right"><tt>${{payments.cash.total|stringformat:"0.2f"}}</tt></td>
+  </tr>
+  {% endif %}
+  <tr>
+    <th colspan="2" align="right">TOTAL:</th>
+    <th align="right"><tt>${{total|stringformat:"0.2f"}}</tt></th>
+  </tr>
+</table>

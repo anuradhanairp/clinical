@@ -1,0 +1,46 @@
+{% extends "jqmobile/base_jqmobile.html" %}
+
+
+<!-- Main Page -->
+{% block main_page %}
+	
+	<div data-role="page" id="id_index_page" data-theme="c">
+	
+			<div data-role="header" data-theme="a" data-position="fixed">
+				<h1>Date: 12/24/1982</h1>
+			    <a href="" data-role="button" data-theme="b">Change Date</a>
+			</div>
+			
+				
+			<div data-role="content" data-theme="d">
+				<ul data-role="listview" data-inset="true" data-theme="d" data-divider-theme="d">
+				
+					{% regroup clinics|dictsort:"location.name" by location as location_group %}
+								{% for x in location_group %}
+									
+									<li data-role="list-divider">{{x.grouper.name}}</li>
+									{% regroup x.list|dictsort:"start_time" by start_time as time_ordered_clinic %}
+										{% for c in time_ordered_clinic  %}
+											{% for cli in c.list %}
+												<li>
+													<a href="clinic/{{cli.id}}/">
+														{{cli.name}} ({{cli.start_time}}-to-{{cli.end_time}})
+													</a> 
+												</li>
+											{% endfor %}
+										{% endfor %}
+									<br/>
+								{% endfor %}
+				</ul>
+			</div><!-- End of Content -->
+			
+	
+			<div data-role="footer" data-position="fixed">
+				<h4>Footer content</h4>
+			</div>
+
+	</div>
+
+{% endblock %}
+
+

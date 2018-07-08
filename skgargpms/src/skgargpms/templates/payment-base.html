@@ -1,0 +1,28 @@
+{% extends "base-new.htm" %}
+{% block head %}
+    {{ block.super }}
+{% endblock %}
+{% block init_datepicker %}
+{% endblock %}
+{% block tools_block %}
+{% endblock %}
+
+
+{% block content_title %}Payment history &ndash; clinic selection{% endblock %}
+
+{% block content %}
+{% regroup clinics|dictsort:"location.name" by location as location_list %}
+<ul>
+  
+{% for location in location_list %}
+<li>
+  {{location.grouper.name}}
+  <ul>
+    {% for clinic in location.list %}
+    <li><a href="?clinicID={{clinic.id}}">{{clinic.name}} - ({{clinic.start_time}} to {{clinic.end_time}})</a></li>
+    {% endfor %}
+  </ul>
+</li>
+{% endfor %}
+</ul>
+{% endblock %}

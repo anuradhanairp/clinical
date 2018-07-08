@@ -1,0 +1,13 @@
+Hello Admin
+  
+  The user {fname} {lname} is still waiting in the "{event}" state for more than {n} mins 
+   
+  The user is signed in to the clinic "{clinic-id}" at location "{location}"
+  
+  Please verify the state of the patient in the Front desk application and do the needful....
+  
+   .
+PS: This is an auto generated message , please don't reply to this ....  
+   
+
+Thanks and Regards

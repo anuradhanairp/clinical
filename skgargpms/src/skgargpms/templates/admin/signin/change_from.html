@@ -1,0 +1,141 @@
+{% extends "admin/base_site.html" %}
+{% load adminmedia admin_list i18n %}
+{% load url from future %}
+{% block extrastyle %}
+  {{ block.super }}
+  <link rel="stylesheet" type="text/css" href="{% admin_media_prefix %}css/changelists.css" />
+  {% if cl.formset %}
+    <link rel="stylesheet" type="text/css" href="{% admin_media_prefix %}css/forms.css" />
+  {% endif %}
+  {% if cl.formset or action_form %}
+    {% url 'admin:jsi18n' as jsi18nurl %}
+    <script type="text/javascript" src="{{ jsi18nurl|default:'../../jsi18n/' }}"></script>
+  {% endif %}
+  {{ media.css }}
+  {% if not actions_on_top and not actions_on_bottom %}
+    <style>
+      #changelist table thead th:first-child {width: inherit}
+    </style>
+  {% endif %}
+{% endblock %}
+
+{% block extrahead %}
+	{{ block.super }}
+	{{ media.js }}
+	{% if action_form %}{% if actions_on_top or actions_on_bottom %}
+	<script type="text/javascript">
+	(function($) {
+	    $(document).ready(function($) {
+	        $("tr input.action-select").actions();
+	    });
+	})(django.jQuery);
+	</script>
+	{% endif %}{% endif %}
+	
+	<script src="{{STATIC_URL}}JSON.js" type="text/javascript"></script>
+	<script src="{{STATIC_URL}}jquery/js/jquery-1.4.4.min.js" type="text/javascript"></script>
+	<script src="{{STATIC_URL}}clinic_admin.js" type="text/javascript"></script>
+	
+	
+{% endblock %}
+
+{% block bodyclass %}change-list{% endblock %}
+
+{% if not is_popup %}
+  {% block breadcrumbs %}
+    <div class="breadcrumbs">
+      <a href="../">
+        {% trans "Home" %}
+      </a>
+       &rsaquo;
+       <a href="../">
+         {{ app_label|capfirst }}
+      </a>
+      &rsaquo;
+      {{ cl.opts.verbose_name_plural|capfirst }}
+    </div>
+  {% endblock %}
+{% endif %}
+
+{% block coltype %}flex{% endblock %}
+
+
+{% block content %}
+    
+    <h2>{{clinic.location}} > {{ clinic.name }} > {{clinic.start_time}} to {{clinic.end_time}} </h2>
+
+	<div id="content-main">
+		<h3>Design Mode: {% if default %} Default {% else %} Customized {% endif %}</h3>
+		<div class="module">
+			
+			{# {% if default %} #}
+			
+				<div id="id_event_div">
+				
+				
+					<form method="post" id="id_event_form"> 
+					
+					<input type="hidden" id="clinicID" value="{{clinic.id}}" name="clinicID" >
+						<table id="id_event_table">
+							<thead>
+								<th> </th>
+								<th align="left" >#</th>
+								<th>Event Name</th>
+							</thead>
+							<tbody>
+							
+							{% for clinic_event in clinic_events %}
+								<tr id="event{{clinic_event.0}}" >
+									
+									<td align="left" >
+										<input  type="checkbox" value="event{{clinic_event.0}}" />
+									</td>
+									
+									<td>
+										<b>{{ clinic_event.0 }}</b>
+									</td>
+									<td>
+									<select id = "id_event{{clinic_event.0}}_name" name="id_event{{clinic_event.0}}_name" >
+										{% for event in events %}
+											{% if event.name == clinic_event.1 %}
+												<option value="{{ event.name }}" selected="selected"> {{ event.name }} </option>
+											{% else %}
+												<option value="{{ event.name }}" > {{ event.name }} </option>
+											{% endif %}
+										{% endfor %}
+									</select>
+									</td>
+								</tr>
+							{% endfor %}
+							
+							<!-- 
+							<tr>
+								<td colspan="3">
+								<input type="submit" id="id_submit_button" value = "Submit" />
+								<input type="button" id="id_add_button" value = "Add New" />
+								<input type="button" id="id_delete_button" value = "Delete" />
+								</td>
+							</tr>
+							-->
+							
+							</tbody>
+						</table>
+						<input type="submit" id="id_submit_button" value = "Submit" />
+						<input type="button" id="id_add_button" value = "Add New" />
+						<input type="button" id="id_delete_button" value = "Delete" />
+						
+					 </form>
+					 
+					
+					 
+				</div>
+			
+			
+			
+		</div>
+
+	</div>
+     <div id="id_status"> </div>
+     
+    
+{% endblock %}

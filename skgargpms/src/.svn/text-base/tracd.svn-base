@@ -1,0 +1,51 @@
+#!/bin/bash
+
+#Trac Standalone server, Currently I'm using this for simplesity, we can move to stable one later.
+
+
+
+#Starting the Trac server with all projects, and basic authentication info.
+
+
+#HOME_DIR='/var/sites/twisted/src/skgargpms/trac'
+dir=`dirname $0`
+. $dir/GLOBALS.sh
+
+HOME_DIR="$DJANGO_PROJ_DIR/trac"
+
+
+
+start() {
+	
+	echo "Starting tracd server on port 9000..."
+	tracd -p 9000 -e $HOME_DIR --basic-auth="*,$HOME_DIR/passwd,trac" clinic_workflow -b 0.0.0.0 -d
+
+}
+
+stop() {
+
+		tracid=`netstat -ntlp | grep 9000 | awk {' print $7  '} | awk -F '/' {' print $1 '}`
+		
+		if [ $tracid > 0 ]
+		then
+			kill -9 $tracid
+			echo "Successfully stoped tracd server..."
+		fi
+		
+}
+
+case "$1" in
+	start)
+		start
+	;;
+	stop) 
+		stop
+	;;
+	restart) 
+		stop
+		start
+	;;
+	*)
+		echo " Supported arguments are 'start', 'stop', 'restart'"
+	;;
+esac

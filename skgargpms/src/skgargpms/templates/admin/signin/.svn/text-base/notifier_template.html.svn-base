@@ -1,0 +1,64 @@
+<body onload=disable_all()>
+<script language="javascript">
+function disable_all()
+{
+	document.form1.id_from_mail.disabled=true
+    document.form1.id_to_mail.disabled=true
+    document.form1.id_time_mins.disabled=true
+    document.form1.id_time_hours.disabled=true
+   
+}
+function enable_all()
+{
+	document.form1.id_from_mail.disabled=false
+    document.form1.id_to_mail.disabled=false
+    document.form1.id_time_mins.disabled=false
+    document.form1.id_time_hours.disabled=false
+    document.form1.id_check_from.disabled=false
+}
+function enable_form_field()
+{
+	if(document.form1.id_enable_disable.value == "No")
+		disable_all()
+	else if (document.form1.id_enable_disable.value == "Yes")
+		enable_all()
+}
+function enable_from_address()
+{ 
+	if(document.form1.id_check_from.checked==false)
+	{
+		disable_all()
+		document.form1.id_check_from.disabled=false
+	}
+else if (document.form1.id_check_from.checked==true)
+	{
+	enable_all()
+	}
+}
+</script>
+{% extends "admin/base_site.html" %}
+{% load i18n %}
+{% block breadcrumbs %}
+
+<div class="breadcrumbs">
+<table><tr><td><a href="/">Home</a></td><td><a href="/admin/">Admin</a></td></tr></table>
+</div>
+
+{% endblock %}
+{% block content %}
+<div id="content-main">
+<div>
+<form action="." method="POST" id="form1" name="form1">{% csrf_token %}
+
+<table border=1"><th>Notification Settings</th><tr><td><table>
+
+   {{form.as_table}}
+   
+</table></td></tr><tr><td>
+<p> <input type="submit" value="Save"> </p></td>
+</tr></table>
+</form>
+</div>
+{% endblock %}
+</div>
+</body> 

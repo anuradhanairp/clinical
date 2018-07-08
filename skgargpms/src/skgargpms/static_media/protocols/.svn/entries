@@ -1,0 +1,40 @@
+10
+
+dir
+263
+svn://192.168.1.123/home/users/haridas/svnrepo/skgargpms/src/skgargpms/static_media/protocols
+svn://192.168.1.123/home/users/haridas/svnrepo/skgargpms
+
+
+
+2011-02-25T17:24:47.052010Z
+1
+haridas
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+49041176-2624-4fd8-bdc5-42746eb59b14
+
+irc
+dir
+
+stomp
+dir
+
+telnet
+dir
+
+xmpp
+dir
+

@@ -1,0 +1,52 @@
+<html>
+{% include "pdf/style.css" %}
+<body>
+<div id="headerDiv" >
+{% if clinic %}{{clinic}} ({{clinic.work_time}}){% endif %} [{{date|date:"M/d, Y"}}] &mdash; Page #<pdf:pagenumber>
+</div>
+
+<table width="100%" cellspacing="0" cellpadding="0" border="1" class="report" repeat="1">
+  <thead>
+    <tr>
+      <th style="width:5%">#</th>
+      <th style="width:40%">Patient</th>
+      <!--   {% for map in clinic_event_map %}
+        <th width="75px" align=center><b>{{ map.1|capfirst }}</b></th>
+	  {% endfor %} -->
+      <th width="75px" align=center><b>{{ clinic_event_map_first|capfirst }}</b></th>
+      <th width="75px" align=center><b>{{ clinic_event_map_last|capfirst }}</b></th>
+      
+    <!--    <th style="width:8%">Sign In</th>
+      <th style="width:10%">Registration</th>
+      <th style="width:5%">Triage</th>
+      <th style="width:10%">Provider</th>
+      <th style="width:10%">Checkout</th>-->
+     <!--   <th style="width:7%">Payment</th>-->
+    <!--  <th style="width:5%">Apt</th>-->
+    </tr>
+  </thead>
+    {% for patient in patients %}
+     <tr>
+      <td align="right">{{forloop.counter}}</td>
+      <td style="text-align:left">{{ patient.patient_name}}</td>
+      {% for event_time in patient.events %}
+         <td>{% if event_time %} 
+	      		    {{ event_time }} 
+	      	 {% else %}
+	      	   X
+	      	 {% endif %}  
+	     </td>
+	  {% endfor %} 
+	 <!--  <td>${{ patient.payment|default:0|stringformat:"0.2f" }}</td> --> 
+      <!--  <td>{{event.events.registration|date:"H:i:s"|default:"x"}}</td>
+      <td>{{event.events.triage|date:"H:i:s"|default:"x"}}</td>
+      <td>{{event.events.provider|date:"H:i:s"|default:"x"}}</td>
+      <td>{{event.events.checkout|date:"H:i:s"|default:"x"}}</td>
+      <td>{% if event.events.appointment %}X{% else %}&nbsp;{% endif %}</td>
+      <td>${{event.payment|default:0|stringformat:"0.2f"}}</td>-->
+     </tr>
+    {% endfor %}
+</table>
+
+</body>  
+</html>

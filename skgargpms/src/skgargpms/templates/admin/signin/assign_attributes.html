@@ -1,0 +1,155 @@
+{% extends "admin/base_site.html" %}
+{% load adminmedia admin_list i18n %}
+{% load url from future %}
+{% block extrastyle %}
+  {{ block.super }}
+  <link rel="stylesheet" type="text/css" href="{% admin_media_prefix %}css/changelists.css" />
+  {% if cl.formset %}
+    <link rel="stylesheet" type="text/css" href="{% admin_media_prefix %}css/forms.css" />
+  {% endif %}
+  {% if cl.formset or action_form %}
+    {% url 'admin:jsi18n' as jsi18nurl %}
+    <script type="text/javascript" src="{{ jsi18nurl|default:'../../jsi18n/' }}"></script>
+  {% endif %}
+  {{ media.css }}
+  {% if not actions_on_top and not actions_on_bottom %}
+    <style>
+      #changelist table thead th:first-child {width: inherit}
+    </style>
+  {% endif %}
+{% endblock %}
+
+{% block extrahead %}
+	{{ block.super }}
+	{{ media.js }}
+	
+	<script src="{{STATIC_URL}}JSON.js" type="text/javascript"></script>
+	<script src="{{STATIC_URL}}jquery/js/jquery-1.4.4.min.js" type="text/javascript"></script>
+	<script src="{{STATIC_URL}}event_attr_mgmt.js" type="text/javascript"></script>
+	
+	
+{% endblock %}
+
+{% block bodyclass %}change-list{% endblock %}
+
+{% if not is_popup %}
+  {% block breadcrumbs %}
+    <div class="breadcrumbs">
+      <a href="/admin/design_clinics/">
+        {% trans "Home" %}
+      </a>
+       &rsaquo;
+       <a href="../">
+         {{ app_label|capfirst }}
+      </a>
+      &rsaquo;
+      {{ cl.opts.verbose_name_plural|capfirst }}
+    </div>
+  {% endblock %}
+{% endif %}
+
+{% block coltype %}flex{% endblock %}
+
+
+{% block content %}
+    
+    <h2>{{clinic.location}} > {{ clinic.name }} > {{clinic.start_time}} to {{clinic.end_time}} </h2>
+
+	<div id="content-main">
+		
+		<h3> Event Attribute Table  </h3>
+		
+		<div class="module" style="width:70%" >
+			
+				<div id="id_event_div">
+				
+					<form method="post" id="id_attr_form"> 
+					
+					<input type="hidden" id="clinicID" value="{{clinic.id}}">
+						
+						<table id="id_attr_table" width='100%'>
+							<thead>
+							
+								<tr>
+									<th align="center" colspan='1'> Select an Event: </th>
+									<th align="right" colspan='3' >
+										<select id="id_event_selected" name="event_selected">
+											{% for event in events %}
+												<option value="{{event.1}}"> {{ event.1 }}</option>
+											{% endfor %}
+										</select>
+									</th>
+								</tr>
+								
+								<tr>
+									<th> Attribute #	</th>
+									<th> Select Attribute </th>
+									<th> Required       </th>
+									<th> Hidden      </th>
+								</tr>
+								
+							</thead>
+							
+							<tbody>
+								{% for event_attr in event_attr_list %} 
+									<tr id="row{{forloop.counter0}}">
+										<td>
+											<input type="checkbox" id="id_row{{forloop.counter0}}" value="row{{forloop.counter0}}"/>
+											{{ forloop.counter }} 
+										</td>
+									
+										<td>	
+											<select id="id_attr{{forloop.counter0}}" name="attr{{forloop.counter0}}">
+												{% for attribute in attributes %}
+													{% if event_attr.attribute == attribute %}
+														<option value="{{attribute.id}}" selected="selected"> {{ attribute.name }} </option>
+													{% else %}
+														<option value="{{attribute.id}}"> {{ attribute.name }} </option>
+													{% endif %}
+													
+												{% endfor %} 
+											</select>
+										</td>
+									
+										<td>
+											{% if event_attr.required %}
+												<input type="checkbox" id="id_attr_required{{forloop.counter0}}" name="attr_required{{forloop.counter0}}" checked="checked"/>
+											{% else %}
+												<input type="checkbox" id="id_attr_required{{forloop.counter0}}" name="attr_required{{forloop.counter0}}"/>
+											{% endif %}
+										</td>
+										
+										<td>
+											{% if event_attr.hidden %}
+											  <input type="checkbox" id="id_attr_hidden{{forloop.counter0}}" name="attr_hidden{{forloop.counter0}}" checked="checked"/>
+											{% else %}
+											  <input type="checkbox" id="id_attr_hidden{{forloop.counter0}}" name="attr_hidden{{forloop.counter0}}"/>
+											{% endif %}
+										</td>
+									</tr>
+								
+								{% endfor %}	
+							
+							</tbody>
+							
+							<tfoot>
+								<tr>
+									<td colspan='4' align="right">
+								  		<input type="button" id="id_add_attr" value = "Add New" />
+										<input type="button" id="id_delete_attr" value = "Delete" />
+										<input type="submit" class="default" id="id_save_attr" value = "Save" onClick="return false" />
+									</td>
+								</tr>
+							</tfoot>
+							
+						</table>
+					 </form>
+				</div>
+	
+		</div>
+
+	</div>
+     <div id="id_status"> </div>
+     
+    
+{% endblock %}

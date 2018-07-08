@@ -1,0 +1,334 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>{% block  title %}{% endblock %}</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252"/>
+  <!-- <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}index_htm_files/xr_main.css"/> -->
+  <!-- <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}index_htm_files/xr_text.css"/> -->
+  <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}layout.css"/>
+  <script type="text/javascript">
+                  
+          //function for displaying image for frontdesk
+          function initial()
+          { 
+             
+             $('#loading').hide('fast',function(){
+            	 $('#contentwrap').show();
+             });
+                     	   
+          }
+        </script>
+  
+  {# Add extra headers. #}
+  {% block head %}
+  
+  
+  <script src="{{STATIC_URL}}jquery-1.6.min.js" type="text/javascript"></script>
+  <script src="{{STATIC_URL}}jquery/js/jquery-ui-1.8.7.custom.min.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="{{STATIC_URL}}jquery/css/ui-lightness/jquery-ui-1.8.7.custom.css" type="text/css" media="screen" />
+  <script src="{{STATIC_URL}}jquery.cookie.js" type="text/javascript"></script>
+   
+  {% endblock %}
+  
+</head>
+
+<body onLoad="initial();">
+    
+    
+    <!-- div tag for showing image for frontdesk -->
+    <div id="loading" style="position:absolute; width:719px;align:center; top:300px;margin:20px;left:500px;">
+       <img src="{{STATIC_URL}}index_htm_files/loading-large.gif" alt="loading.." style="width: 150px; height: 150px;background-color:red; "/>
+      </div> 
+    
+  	<div class="content-wrap" id="contentwrap" style="display:none" >
+  	
+	    <div class="header">
+		    <div class="logo">
+				{% block title_image %}{% endblock %}
+		    </div>
+		    
+		    <ul class="menu">
+			    {% block menu %}
+					<li {% if menu == 'main' %}class="selected"{% endif %}><a href="/">Main menu</a></li>
+					<li {% if menu == 'frontdesk' %}class="selected"{% endif %}><a href="/frontdesk/{% if clinic %}?clinicID={{clinic.id}}{% endif %}">Front Desk</a></li>
+					<li {% if menu == 'reports' %}class="selected"{% endif %}><a href="/reports/{% if clinic %}?clinicID={{clinic.id}}{% endif %}">Reports</a></li>
+					<li {% if menu == 'paymenthistory' %}class="selected"{% endif %}><a href="/payment/{% if clinic %}?clinicID={{clinic.id}}{% endif %}">Payment history</a></li>
+					<li {% if menu == 'signin' %}class="selected"{% endif %}><a href="{% url signin.views.signin %}">Sign In</a></li>
+					<li {% if menu == 'admin' %}class="selected"{% endif %}><a href="{% url admin:index %}">Administration</a></li>
+					<li {% if menu == 'main$(function(){' %}class="selected"{% endif %}><a href="{% url admin:logout %}">Log Out</a></li>
+				{% endblock %}
+		    </ul>
+	    
+		    {% block tools_block_external %}
+		    	<ul class="tools">
+					<input type="hidden" id="id_header_tools_cal_value" value="{% now "Y-m-d" %}" />
+					<input type="hidden" id="id_header_tools_cal_alt" value="{% now "M/d, Y" %}" />
+					<li><a href="javascript:void(0);" id="id_header_tools_cal">{% now "M/d, Y" %}</a></li>
+					
+					{% block init_datepicker %}
+					   
+						<script type="text/javascript">
+						
+					  		$(function(){
+					  			
+					  			//$('#loading').hide();
+					  			
+					    		$('#id_header_tools_cal_value').datepicker({
+					    			
+					      			onSelect:function(dateText,inst){
+					        					
+					      						$('#id_header_tools_cal').html($('#id_header_tools_cal_alt').val());
+					        					
+					        					get_calender_date(dateText,$('#id_header_tools_cal_alt').val());	
+					        					
+					        					//Reload the current page with updated url.
+					        					
+					        					var current_url = window.location.href;
+					        					current_url = current_url.split('&date=')[0];
+					        					new_url = current_url + '&date=' + dateText ;
+					        					window.location.href = new_url;
+					        					
+					      			},
+					      			
+					      			//onClose: function(dateText,inst){
+					      				
+					      				//alert(dateText + " : " + inst);
+					      				//call <a> tag updator
+					      				
+					      				//get_calender_date(dateText);
+					      			//},
+					      			
+					      			dateFormat:"yy-mm-dd",
+					      			altField:"#id_header_tools_cal_alt",
+				              		altFormat:"M/dd, yy",
+					      			showButtonPanel: true
+					    		});
+
+					    		$('#id_header_tools_cal').click(function(){
+					    			
+		      			
+					    			$('#id_header_tools_cal_value').datepicker("show");
+					    			
+					    			//alert($('#id_header_tools_cal_value').val());
+					    			
+					    		});
+					    		
+					    		
+					    		
+					    		function get_calender_date(dateText,dateText_GUI){
+					    			//Get the calender date and pass it with URL's via GET.
+					    			//Checking href tags in frontdesk
+					    			
+					    			//alert("updating date !...");
+					    			
+					    			//Set cookie for this current_date
+					    			$.cookie('current_date',dateText,{ path: '/' });
+					    			$.cookie('current_date_gui',dateText_GUI, { path: '/' });
+					    			
+					    			//alert(dateText_GUI);
+					    			$('#id_header_tools_cal').html(dateText_GUI);
+					    			
+					    			
+					    			//Search all a tags and set its href with new get parameter.
+					    			$('a').each(function(){
+					    				
+					    				
+					    				var current_href = $(this).attr('href')
+					    				
+					    				if(current_href != undefined ){
+					    					
+					    					current_href = current_href.split('&date=')[0];
+					    			
+					    					//var current_date = escape($('#id_header_tools_cal_value').val());
+					    					
+					    					var new_href = current_href + '&date=' + dateText;
+					    					
+					    								if(current_href.indexOf('clinicID') > -1){
+					    						//change only when clinicID is there and &date= is not in the date string.
+					    					    //alert($(this).attr('href') + " : " + $(this).html());
+					    						
+					    						$(this).attr('href', new_href);
+					    						
+					    					}
+					    					
+					    				}//end-if
+					    				
+					    				//alert(current_href);
+					    			
+					    			});
+					    			
+					    			return false;
+					    			
+					    		}
+					    		
+					    		
+					    		
+					    		var cookie_date = $.cookie('current_date');
+					    		var cookie_date_gui = $.cookie('current_date_gui');
+					    		//alert($.cookie('current_date_gui'));
+	        					
+	        					if(cookie_date != undefined && cookie_date_gui != undefined){
+	        						
+	        						get_calender_date(cookie_date,cookie_date_gui);
+	        						
+	        						
+	        						$('#id_header_tools_cal_value').attr('value',cookie_date);
+	        						$('#id_header_tools_cal_alt').attr('value',cookie_date_gui);
+	        							        							        						
+	        					}
+					    		
+				          	});
+				
+						</script>
+					{% endblock %}
+				
+				
+					{% block tools_block %}
+			
+					{% endblock %}
+					
+		      	</ul>
+		     {% endblock %}
+	    </div>
+    
+	    <div class="body">
+	    
+	      <div class="sidebar">
+			{% block sidebar_content %}
+					<!-- {{left_menu}} -->
+					{% regroup left_menu|dictsort:"location.name" by location as left_menu_location_list %}
+					
+						{% for x in left_menu_location_list %}
+						
+							<b>{{x.grouper.name}}</b><br/>
+							
+								{% regroup x.list|dictsort:"start_time" by start_time as time_ordered_clinic %}
+							
+								{% for c in time_ordered_clinic  %}
+								
+									
+									{% for cli in c.list %}
+									    
+											<a href="{% url signin.views.frontdesk %}?clinicID={{cli.id}}">{{cli.name}}<i>({{cli.start_time}} to {{ cli.end_time }})</i></a>
+											<br />
+									
+									{% endfor %}
+									
+									
+								{% endfor %}
+							
+							<br/>
+					
+						{% endfor %}<br/>
+						
+					{% if location %} <a href="/signin?locationID={{location.id}}" target="_blank">Launch Sign-In</a> {% endif %}
+					
+			{% endblock %}
+	      </div>
+	      
+	      <div class="content-right">
+			<h1>{% block content_title %}&nbsp;{% endblock %}</h1>
+			
+			<div class="" id="content_head"> {% block content_head %} {% endblock %} </div>
+			
+			<div class="content-body" id="contentbody">
+			    
+				{% block content %}
+				{% endblock %}
+		  	</div>
+	      </div>
+	    </div>
+	    
+	    <div class="footer">
+	      <span>Quality Care, Affordable Price</span>
+	    </div>
+  	</div>
+
+
+
+	<style type="text/css" media="screen">
+	
+	
+	  .shadow-wrap {
+	  display:none;
+	  position:absolute;
+	  height:100%;
+	  width:100%;
+	  background-color:#000000;
+	  opacity:0.8;
+	  z-index:100;
+	  top:0;
+	  left:0;
+	  }
+	
+	  .shadow-content{
+	  display:none;
+	  opacity:1;
+	  z-index:102;
+	  position:absolute;
+	  width:100%;
+	  top:0;
+	  }
+	  .shadow-content-inner{
+	  width:900px;
+	  margin:200px auto;
+	  padding:40px;
+	  background-color:white;
+	  position:relative;
+	  }
+	
+	
+	  .shadow-body{
+	  display:none;
+	  opacity:1;
+	  z-index:102;
+	  position:absolute;
+	  width:100%;
+	  top:0;
+	  }
+	  .shadow-body-inner{
+	  width:400px;
+	  margin:200px auto;
+	  padding:40px;
+	  background-color:white;
+	  position:relative;
+	  }
+	  .payment_form_close, .payment_form_close:visited{ 
+	    position:absolute;
+	    right:10px;
+	    top:10px;
+	    color:#999;
+	  text-decoration:none;
+	  }
+	  .payment_form_close:hover {
+	    color:red;
+	  }
+	  .payment_form_close span {
+	     color:red;
+	     font-weight:bold;
+	  }
+	
+	</style>
+	
+	<div class="shadow-wrap"></div>
+	<div class="shadow-body">
+	  <div class="shadow-body-inner"></div>
+	</div>
+	<div class="shadow-content">
+	  <div class="shadow-content-inner">
+		  {% block shadow_content %}
+		  {% endblock %}
+	  </div>
+	</div>
+	
+	<!-- Event Based form.. -->
+	{% block extra_additions %}
+		
+	{% endblock %}
+	
+	
+<iframe width="1" height="1" id="print_receipt_iframe" name='print_receipt_iframe'></iframe>
+	
+<!--[if lt IE 7]><script type="text/javascript" src="index_htm_files/png.js"></script><![endif]-->
+</body>
+</html>

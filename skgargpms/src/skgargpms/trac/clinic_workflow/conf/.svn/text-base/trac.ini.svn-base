@@ -1,0 +1,57 @@
+# -*- coding: utf-8 -*-
+
+[account-manager]
+authentication_url = 
+force_passwd_change = true
+hash_method = HtDigestHashMethod
+htdigest_realm = 
+htpasswd_hash_type = 
+password_file = /home/users/haridas/Desktop/projects/trac_projects/passwd
+password_format = htpasswd
+password_store = HtPasswdStore
+persistent_sessions = False
+refresh_passwd = true
+user_lock_max_time = 0
+verify_email = true
+
+[components]
+acct_mgr.admin.accountmanageradminpages = enabled
+acct_mgr.api.accountmanager = enabled
+acct_mgr.db.sessionstore = enabled
+acct_mgr.guard.accountguard = enabled
+acct_mgr.htfile.htdigeststore = enabled
+acct_mgr.htfile.htpasswdstore = enabled
+acct_mgr.http.httpauthstore = enabled
+acct_mgr.notification.accountchangelistener = enabled
+acct_mgr.notification.accountchangenotificationadminpanel = enabled
+acct_mgr.pwhash.htdigesthashmethod = enabled
+acct_mgr.pwhash.htpasswdhashmethod = enabled
+acct_mgr.svnserve.svnservepasswordstore = enabled
+acct_mgr.web_ui.accountmodule = enabled
+acct_mgr.web_ui.emailverificationmodule = enabled
+acct_mgr.web_ui.loginmodule = enabled
+acct_mgr.web_ui.registrationmodule = enabled
+acct_mgr.web_ui.resetpwstore = enabled
+
+[project]
+descr = My example project
+name = Clinic_Workflow
+url = 
+
+[ticket-workflow]
+accept = new -> assigned
+accept.operations = set_owner_to_self
+accept.permissions = TICKET_MODIFY
+leave = * -> *
+leave.default = 1
+leave.operations = leave_status
+reassign = new,assigned,reopened -> new
+reassign.operations = set_owner
+reassign.permissions = TICKET_MODIFY
+reopen = closed -> reopened
+reopen.operations = del_resolution
+reopen.permissions = TICKET_CREATE
+resolve = new,assigned,reopened -> closed
+resolve.operations = set_resolution
+resolve.permissions = TICKET_MODIFY
+

@@ -1,0 +1,136 @@
+<!DOCTYPE html> 
+<html> 
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<title>Page Title</title> 
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0b2/jquery.mobile-1.0b2.min.css" />
+	<script src="http://code.jquery.com/jquery-1.6.2.min.js"></script>
+	
+	{% block extra_headers %}
+	
+		<style type="text/css">
+			label.missing  {
+  				color:#FF0000;
+  				font-weight:bold;
+			}
+		</style>
+		
+		<script type="text/javascript">
+			
+			$('#id_event_attr_page').live('pageshow', function(event){
+				//Events for the eventattribute.html page. 
+				/*	
+					We using 'pageshow' event instead of 'pagecreate', becase the later one may cause 
+					overlaping of previous event.
+				*/
+				
+				//Global variables.
+				var header_id = $('#header_id')[0].value ;
+				var event_id = $('#event_id')[0].value ;
+				
+				//Field required class.
+				var REQUIRED = 'missing';
+				
+				
+				
+				if( $('#id_attribute_div').html() != null ){
+					//Only work with atrribute related tasks when there is any attribute for this event.
+					
+					var submit_message = function(message){
+						$('#id_submit_status').html(message).fadeIn("slow");
+						$('#id_submit_status').fadeOut(2000);
+					}
+					
+					var attribute_form_submit = function(){
+						
+						var form_data = $('#id_attr_form').serialize();
+												
+						//Append header_id and event_id
+						form_data = 'header_id=' + header_id +"&event_id=" + event_id + "&" + form_data;
+						console.log(form_data);
+						
+						$.post("/jqmobile/submit_attribute/", form_data, function(data){
+							
+							if( data.status == 'OK' ){
+								
+								//Remove the alert class from label.
+								$('#id_attr_form label').removeClass('missing')
+								submit_message("Success...");
+								
+								
+							}else{
+								
+								//console.log('Faild:' + data.attributes);
+								
+								for( index in data.attributes ){
+									//Changing text colour.
+									$('#'+data.attributes[index]+'_label').addClass('missing');
+								}
+								
+															
+							}
+								
+							
+						})
+						
+						return false;
+						
+					}
+					
+															
+					//Bind the attribute submit button to processing function.
+					$('#id_attr_submit').bind("click", attribute_form_submit);
+					
+					//console.log('Attribute div active..');
+					
+				}
+				
+				//Initialize the header and event id.
+				console.log(header_id + " " + event_id);
+						
+			});
+			
+
+			$('#id_pick_procedure_page').live('pageshow', function(event){
+				
+				console.log("proc");
+				var handle_procedure = function(interrupt_id,header_id){
+				
+					console.log("test..");	
+					console.log(interrupt_id);
+					
+				}
+				
+				$(".sprinkles1").bind("change",function(){
+					
+					console.log("testing...");
+					console.log($(".sprinkles1").attr("id"));
+					//handle_procedure(1,91);
+					
+				});
+				
+				
+			});	
+			
+			
+		
+		</script>
+	{% endblock %}
+	
+	<script src="http://code.jquery.com/mobile/1.0b2/jquery.mobile-1.0b2.min.js"></script>
+</head> 
+
+<body> 
+
+{% block main_page %}
+	<!-- JQM main page -->
+{% endblock %}
+
+{% block extra_pages %}
+<!-- Place for extra JQM pages. -->
+{% endblock %}
+
+</body>
+</html>

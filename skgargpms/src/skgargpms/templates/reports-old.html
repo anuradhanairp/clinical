@@ -1,0 +1,279 @@
+{% extends "base.htm" %}
+
+{% block title %}Reports{% endblock %}
+
+{% block title_image %}<img class="xr_ap" src="{{STATIC_URL}}index_htm_files/131.png" alt="" id="Repeating:58InnovateLogo" title="" style="left: 36px; top: 52px; width: 100px; height: 31px;"/>{% endblock %}
+
+{% block head %}
+<script src="{{STATIC_URL}}javascripts/jquery.min.js" type="text/javascript"></script>
+<script src="{{STATIC_URL}}javascripts/jquery-ui.min.js" type="text/javascript"></script>
+<script src="{{STATIC_URL}}javascripts/custom.js" type="text/javascript"></script>
+   
+<script type="text/javascript">
+
+var clinicID = {{clinicID}};
+var itemList;
+var itemData;
+var eventCount = 0;
+
+function loadReportsListItem(item){
+	var fi;
+	fi = new Array(); 
+	
+	fi["header"] = item; 
+	
+	$.ajax({
+
+   url: "/loadReportsListItem/",
+   datatype: "xml",
+      data: returnStringArray(fi),
+      type: "GET",
+   success: function(xml){
+		$(xml).find("count").text();
+		var outputStr = ""; 
+
+
+		//alert(fname);
+		//alert(lname);
+		itemData[item]["name"] = $(xml).find("lname").text()+", "+$(xml).find("fname").text()+" "+$(xml).find("dob").text();  
+
+		$(xml).find("report").each(function(){
+			var marker = $(this)
+			var eventName = marker.find("name").text(); 
+			var time = marker.find("time").text();
+			itemData[item][eventName] = time; 
+
+			//alert(eventName); 
+	   });
+
+				updateTable(item); 
+	
+	
+	}
+	}); 
+}
+
+function getFrontDeskClinicListCount(){
+	var fi;
+	fi = new Array(); 
+	fi["clinicID"] = clinicID;
+
+	
+	$.ajax({
+
+   url: "/getFrontDeskClinicListCount/",
+   datatype: "xml",
+      data: returnStringArray(fi),
+      type: "GET",
+   success: function(xml){
+		eventCount = $(xml).find("count").text();
+				
+			
+		
+	}
+		//alert(count);
+	}); 	
+}
+
+function updateTable(header){
+	var tableString = "";
+
+	tableString += "<tr id='count"+itemData[header]["count"]+"'>";
+	tableString += "<td align=center><b>"+itemData[header]["count"]+"</b></td><td align=center>"+itemData[header]["name"]+"</td>";
+	
+	tableString += "<td align=center>";
+	for(item in itemData[header]){
+		item
+		itemData[header][item];
+		//alert(item + " = " +itemData[header][item]);
+	}
+	
+	
+	if(itemData[header]["signinTregistration"] != undefined){
+		tableString += itemData[header]["signinTregistration"]; 
+	}
+	tableString += "</td>";
+
+	tableString += "<td align=center>";
+	if(itemData[header]["registrationTtriage"] != undefined){
+		tableString += itemData[header]["registrationTtriage"]; 
+	}
+	tableString += "</td>";
+	
+	tableString += "<td align=center>";
+	if(itemData[header]["triageTprovider"] != undefined){
+		tableString += itemData[header]["triageTprovider"]; 
+	}
+	tableString += "</td>";	
+
+	tableString += "<td align=center>";
+	if(itemData[header]["providerTcheckout"] != undefined){
+		tableString += itemData[header]["providerTcheckout"];
+	}
+	tableString += "</td>";	
+	
+	tableString += "<td align=center>"
+	
+	if(itemData[header]["appointment"] != undefined){
+		tableString += "<b>X</b>"; 
+	}
+	tableString += "</td>";
+tableString += "</tr>";	
+	if(itemData[header]["updateNewNeeded"] == true){
+	
+	$('#fdtable > tbody > tr:first').before(tableString);
+	}
+	else{
+		$('#count'+itemData[header]["count"]).replaceWith(tableString); 
+	}
+	
+} 
+
+
+
+//$('#p' + prod_id).replaceWith(msg);
+
+function getFrontDeskClinicList(){
+	
+	var fi;
+	fi = new Array(); 
+	fi["clinicID"] = clinicID;	
+	var counts = 0; 
+	$.ajax({
+
+   url: "/getFrontDeskClinicList/",
+   datatype: "xml",
+      data: returnStringArray(fi),
+      type: "GET",
+   success: function(xml){
+	$(xml).find("li").each(function(){
+		 counts += 1; 
+		 var marker = $(this); 
+		 var header = marker.find("header").text(); 
+		 var count = marker.find("count").text();
+		 if (itemList[header] != undefined){
+				if (itemList[header] != count){
+					itemData[header]["updateNewNeeded"] = false; 
+					loadReportsListItem(header);
+			
+					itemList[header] = count; 
+				} 
+		 }
+		 else{
+			itemData[header] = new Array(); 
+			itemData[header]["count"] = counts; 
+			itemData[header]["updateNewNeeded"] = true; 
+			loadReportsListItem(header);
+		//	
+			itemList[header] = count; 
+
+			//alert(counts);
+		 }
+		
+		});
+
+	//alert(xml);
+	
+	   }
+	}); 
+}
+
+var oldEventCount = 0; 
+
+function updateRoutine(){
+		
+	getFrontDeskClinicListCount(); 
+	if(eventCount != oldEventCount){
+		getFrontDeskClinicList();
+	}
+	oldEventCount =  eventCount; 
+}
+var outputTable; 
+
+//	getFrontDeskClinicList();		
+//	getFrontDeskClinicListCount
+//	loadReportsListItem(item);
+
+
+
+
+	$(document).ready(function(){
+			itemList = new Array();
+			itemData = new Array();  
+		
+			getFrontDeskClinicListCount(); 
+			getFrontDeskClinicList();
+			
+			setInterval( "updateRoutine();", 1000 );
+	});
+
+</script>
+{% endblock %}
+
+
+{% block graphical_header %}
+<!--[if IE]><div class="xr_ap" id="xr_xri" style="width: 950px; height: 600px; clip: rect(0px 950px 600px 0px);"><![endif]-->
+<!--[if !IE]>--><div class="xr_ap" id="xr_xri" style="width: 950px; height: 600px; clip: rect(0px, 950px, 600px, 0px);"><!--<![endif]-->
+ <img class="xr_ap" src="{{STATIC_URL}}index_htm_files/38.png" alt="" title="" style="left: 0px; top: 0px; width: 950px; height: 119px;"/>
+{% endblock %}
+
+
+{% block content %}
+
+<a href="index.htm" target="_self">
+  <img class="xr_ap" src="{{STATIC_URL}}index_htm_files/18.png" alt="" title=""  style="left: 4px; top: 88px; width: 75px; height: 20px;"/>
+ </a>
+<a href="/frontdesk?clinicID={{clinicID}}" target="_self">
+ <img class="xr_ap" src="{{STATIC_URL}}index_htm_files/19.png" alt="" title="" style="left: 77px; top: 88px; width: 75px; height: 20px;"/>
+ </a>
+ 
+  <img class="xr_ap" src="{{STATIC_URL}}index_htm_files/20.png" alt="" title=""  style="left: 150px; top: 88px; width: 60px; height: 20px;"/>
+ 
+ <a href="{% url admin:index %}" target="_self">
+  <img class="xr_ap" src="{{STATIC_URL}}index_htm_files/21.png" alt="" title=""  style="left: 208px; top: 88px; width: 95px; height: 20px;"/>
+ </a>
+ <a href="{% url admin:logout %}" target="_self">
+  <img class="xr_ap" src="{{STATIC_URL}}index_htm_files/22.png" alt="" title=""  style="left: 301px; top: 88px; width: 61px; height: 20px;"/>
+ </a>
+
+ <a href="{% url signin.views.signin %}" target="_self">
+   <span class="xr_ap" style="right: 0px; top: 92px; width: 60px; height: 20px; color:white; text-decoration:none;vertical-align:baseline;font-size:12px;">Sign in </span>
+ </a>
+
+
+  <img class="xr_ap" src="{{STATIC_URL}}index_htm_files/32.png" alt="" title=""  style="left: 150px; top: 88px; width: 60px; height: 20px;"/>
+
+ <img class="xr_ap" src="{{STATIC_URL}}index_htm_files/50.png" alt="" title="" style="left: 1px; top: 118px; width: 202px; height: 447px;"/>
+
+
+ <span class="xr_s10" style="position: absolute; left:22px; top:166px;">
+   {% for location in left_menu %}
+   <b>{{location.name}}</b><br/>
+   {% for c in location.clinic_set.all %}
+   <a href="{% url signin.views.frontdesk %}?clinicID={{c.id}}">{{c.name}}</a><br/>
+   {% endfor %}
+   {% endfor %}
+   <br/>
+ </span>
+ 
+
+ <img class="xr_ap" src="{{STATIC_URL}}index_htm_files/52.png" alt="" title="" style="left: 194px; top: 117px; width: 755px; height: 450px;"/>
+ 
+  <div class="xr_s10" 
+  style="position:absolute;left:210px;top:168px;width:719px; max-height:380px;  overflow-y: scroll;"> 
+
+
+  <table width="100%"  id="fdtable" border=1><thead>
+	<tr><td width="20px" align=center>####</td><td width="200px" align=center><b>Last Name, First Name DOB</b></td><td width="75px" align=center><b>Sign-In to Registration</b></td><td width="75px" align=center><b>Registration to Triage</b></td><td width="75px" align=center><b>Triage to Provider</b></td><td width="75" align=center><b>Provider to Checkout</b></td><td align=center width="20px"><b>Apt</b></td></tr>
+</thead><tbody><tr></tr>
+
+ </tbody></table>
+  
+  
+  </div>
+     <span class="xr_s11" style="position: absolute; left:567px; top:142px;">
+  <span class="xr_tc" style="left: -410px; top: -12px; width: 819px;">{{headerString}}</span>
+ </span>
+{% endblock %}
+  
+

@@ -1,0 +1,569 @@
+{% extends "base-new.htm" %}
+{% block title %}Sign-In{% endblock %}
+
+{% block menu %}
+<li class="selected"><a href="{% url signin.views.signin %}">Sign In</a></li>
+{% endblock %}
+
+
+{% block title_image %}
+ <img src="{{STATIC_URL}}index_htm_files/4.png" alt="" style="width: 96px; height: 31px;"/>
+{% endblock %}
+
+{% block head %}
+ 		<script src="{{STATIC_URL}}jquery/js/jquery-1.4.4.min.js" type="text/javascript"></script>
+ 		<script src="{{STATIC_URL}}jquery/js/jquery-ui-1.8.7.custom.min.js" type="text/javascript"></script>
+ 		<!-- 
+		<script src="{{STATIC_URL}}Orbited.js" type="text/javascript"></script>
+		<script src="{{STATIC_URL}}JSON.js" type="text/javascript"></script>
+	  	<script src="{{STATIC_URL}}protocols/stomp/stomp.js" type="text/javascript"></script>
+	  	-->
+	  	<script src="{{STATIC_URL}}jquery.cookie.js"></script>
+	  
+	   <script type="text/javascript">
+	 
+	     // Variables for required for comet Communication.
+
+	     //TCPSocket = Orbited.TCPSocket;
+	     //var HOST                 = "{{ HOST }}";
+	     //var SESSION_COOKIE_NAME  = "{{SESSION_COOKIE_NAME }}";
+		 //var CHANNEL_NAME         = ""; //Will be get asigned dynamically, based on the clinic selection.
+		 //var STOMP_PORT           =  {{STOMP_PORT}};
+		 
+		 var USERNAME             =  "{{USER}}";
+		
+		 var MUTEX  = true;  // A variable which will block the concurrent submission of signin requests.
+		 
+		 //Creating this stomp client globally so that other functions also get access to it.
+		 //var client = new STOMPClient();
+	   
+	   </script>
+	   
+ 
+ <script type="text/javascript">
+ //Reload the page for every 10 minute.
+  var timeout = setTimeout("location.reload(true);",600000);
+  function resetTimeout() {
+    clearTimeout(timeout);
+    timeout = setTimeout("location.reload(true);",600000);
+  }
+</script>
+ 
+ 
+ 
+ 
+<script type="text/javascript">
+
+
+	//var old_channel_name = false; 
+		
+		
+	function clearForm(){
+	  $('input[type="text"]').each(function(){
+	      $(this).val("");  
+	  });
+	  $('input[type="radio"]').each(function(){
+	     $(this).attr('checked', false);
+	
+	  });
+	 }
+	
+	function sendData(){
+		
+		
+		
+		//alert("senddata");
+		
+		var fi;
+		fi = {};
+		
+			
+		
+		fi["fname"] = $('#fname').val();
+		fi["lname"] = $('#lname').val();
+		
+		{% if location.dob_required %}
+			fi["day"] = $('#day').val();
+			fi["month"] = $('#month').val();
+			fi["year"] = $('#year').val();
+		{% endif %}
+		
+		fi['user'] = USERNAME;
+		
+		//fi['provider'] = $('#id_select_provider').val(); /*select the value of the provider*/
+		//alert($('#id_select_provider').val())
+		//radio button value input!
+		
+		fi["clinic"] = $("input[name='clinic']:checked").val();
+		{% if location.appointment %}
+		  fi["appointment"] = $("input[name='appointment']:checked").val();
+		{% else %}  
+		  fi["appointment"] ="no";
+		{% endif %}  
+		
+		
+	//	fi["affordableID"] = $('#affordableID').val();
+	//	fi["insuranceID"] = $('#insuranceID').val();
+		fi["locationID"] = $('#locationID').val();
+		
+		//alert(fi['clinic'] + fi['appointment']);
+		
+		/*
+		msg = {"type":"signin","patient":fi};
+		
+		
+		msg = JSON.stringify(msg);
+
+		//Decide the CHANNEL_NAME here from the radio button selection, which uniqualy gives the clinicID.
+		CHANNEL_NAME = '/topic/' + 'frontdesk' + fi['clinic'];
+		
+		//alert("before sending data");
+		
+		try {
+			if(MUTEX == true)
+			{	
+				
+				//Resetting the onclose event, to avoid the re-connection after successfull data submission.
+				//client.onclose = function(c){
+					//dummy function.
+					
+					//alert("testing the final closeing");
+				//};
+				
+				//alert("sending data..");
+				//Send to stomp server.from django.conf import settings 
+				client.send(msg,CHANNEL_NAME);
+				//alert("after sending");
+				MUTEX = false; // This will block the further sending of requests to server, untill it's become true.
+				
+				
+				
+			}
+		}
+	
+		catch(e){
+			
+			alert("Error while connecting to server, plesae refresh your page.");
+		}
+		*/
+		
+		//Clitical Section.
+		MUTEX = false;
+		
+		
+		try{
+			$.ajax({
+		
+		   			url: "/dataSignUp/",
+		   			datatype: 'json',
+		      		data: fi,
+		      		type: "POST",
+		   			success: function(msg){
+		   				clearForm();
+		   				alert("You have successfully signed in, please wait for the front desk to call you up.");
+		   				//alert(msg);
+		   				
+		   				//Reset the mutex variable, this prevent multiple signin before completing first one.
+		   				MUTEX = true;
+			
+					}
+		
+			});
+	
+		}
+		catch(e){
+			console.log(e);
+			alert(e);
+		}
+	}
+
+
+   function isValidDate2(value){
+                    var sdt = value.split(" ");
+                    var userDate = sdt[0];
+                    // Checks for the following valid date formats:
+                    
+                    // Also separates date into month, day, and year variables
+                    // MM/DD/YY   MM/DD/YYYY   MM-DD-YY   MM-DD-YYYY
+                    //var datePat = /^(\d{1,2})(\/|-)(\d{1,2})\2(\d{2}|\d{4})$/;
+                    
+                    // YYYY-MM-DD, YYYY/MM/DD, YYYY.MM.DD
+                    // To require a 4 digit year entry, use this line instead:
+                    var datePat = /^(\d{4})(\/|-|.|\s|\\)(\d{1,2})\2(\d{1,2})$/;
+                    var result = true;
+                    
+                    var matchArray = userDate.match(datePat); // is the format ok?
+                    if (matchArray === null) {
+					//         	lert("Date is not in a valid format.");
+                        return false;
+                        result = false;
+                    }
+                    var month, day, year;
+                    try {
+                        month = matchArray[3]; // parse date into variables
+                    } 
+                    catch (err) {
+                        month = 0;
+                    }
+                    try {
+                        day = matchArray[4];
+                    } 
+                    catch (err) {
+                        day = 0;
+                    }
+                    try {
+                        year = matchArray[1];
+                    } 
+                    catch (err) {
+                        year = 0;
+                    }
+                    
+                    if (month < 1 || month > 12) { // check month range
+                        result = false;
+                    }
+                    if (day < 1 || day > 31) {
+                        result = false;
+                    }
+                    if ((month == 4 || month == 6 || month == 9 || month == 11) && day == 31) {
+                        result = false;
+                    }
+                    if (month == 2) { // check for february 29th
+                        var isleap = (year % 4 === 0 && (year % 100 !== 0 || year % 400 === 0));
+                        if (day > 29 || (day == 29 && !isleap)) {
+                            result = false;
+                        }
+                    }
+                    if (result === true && userDate.length > 0) {
+                        result = true;
+                    }
+                    return result;
+                }
+
+
+
+
+	function submitButton(){
+		
+		//Call this function to establish connection with server.
+		//$("input[name=clinic]:checked").initiate_stomp_conn();
+		//alert("test");
+		var success = true; 
+		
+		{% if location.dob_required %}
+			var month = $('#month').val();
+			var year = $('#year').val();
+			var day = $('#day').val();
+			var together;
+			together = year + '.' + month + '.' + day;
+			//alert(together);
+			var result = isValidDate2(together);
+		{% endif %}
+		
+		//var a = $('#id_select_provider').val()
+		//alert(a);
+		//b=$("input[name='clinic']:checked").val();
+	    //alert(b); 
+		if($('#fname').val() == ""){
+			 success = false; 
+			 alert("Please enter your first name.")
+			 return "";
+		}
+	
+		
+		if($('#lname').val() == ""){
+			 success = false; 
+			 alert("Please enter your last name.")
+			 return "";
+		}
+		
+		{% if location.dob_required %}
+			if(result == false){
+				alert("Please make sure that your month and date are inputted in as numbers and that your year is in a four digit format.")
+				success = result 
+				return ""; 
+			}
+		{% endif  %}
+		
+		if ($("input[name=clinic]:checked").val() == undefined ) {
+		       alert('Please select the affordable or insurance clinic.');
+		       success = false; 
+		       return "";
+		    }
+		
+		
+		{% if location.appointment %}
+	
+		if ($("input[name=appointment]:checked").val() == undefined ) {
+		       alert('Please select the Appointment option...');
+		       success = false; 
+		       return "";
+		       
+		}
+		{% endif %}
+		
+		
+		//alert($("input[name=appointment]:checked").val());
+		//alert($("input[name=clinic]:checked").val());
+		//alert(success);
+		//success = confirm("Verify Patient informations..!");
+		if(success == true && MUTEX == true){
+			//alert(success);
+			sendData();
+		}
+		
+	}
+
+	/*
+	function quit_handlers(client){
+		window.onbeforeunload = function() {
+			//alert("test...from quite handlers");
+			client.disconnect();
+		}
+		$(window).unload(function() {
+			//nothing to do while unloading.
+		});
+
+	}
+	*/
+	
+	//function  initiate_stomp_conn(){
+		
+		//This function will be called when clicking on the clinic radio button.
+		
+		//alert("from initate stomp conn : " +$("input[name=clinic]:checked").val());
+		
+		//*** Special logic to avoid unexpected connection collition and mixing that may cause when we change the 
+		// clinic selection before submitting.
+		
+		 /*
+			
+		 	For every form submission we establish a connection with server and send data, finaly we clsoe that transport.
+		 
+			Implementation logic:-
+			
+			1. When loading no connection with stomp server will be initiated.
+			2. When user click on the clinic radio button, it will trigger this function.
+			3. Here we establish connection with stomp server and we subscribe to that clinic channel.
+			4. When user want to change the clinic selection, then we have to close the existing connection,
+			   and establish new connection with backend server.
+			5. We use the stomp clinet events "onclose" here to trigger a callback function with
+			   server connection statement. This will ensure to prevent the ansyncronous nature of backend connection,
+			   ie; serializing the operations to avoid connection locking.
+			6. Here we using two mutex type variable to successfully close the transports after sending the data.
+			
+			7. "MUTEX" this variable helps to prevent sending multiple form submission before handling first
+			    submitted data.
+			    
+			8. "old_channel_name" this variable hold the previousely selected channel name. And also helps to avoid,
+			    reconnection of backend connection when the form submission is successfull.
+		
+		*/ 
+		/*
+		var new_channel_name = '/topic/' + 'frontdesk' + $("input[name=clinic]:checked").val()
+		
+		//This event helps to subscribe the channel after successfull connection establishment with server.
+		client.onconnectedframe = function(){
+			client.subscribe(new_channel_name);
+		};
+		
+		client.onclose = function(c){
+			//Very Important if block, this will be only true, when we close the transports before submitting the form.
+			if(old_channel_name != false){
+				//Use this callback function here, ie; only after successfull closing of connection we initiate new connection.
+				var cookie = $.cookie(SESSION_COOKIE_NAME);
+				client.connect(HOST,STOMP_PORT,USERNAME,cookie);
+				//alert("onclose: initiated new conn.");
+			}
+			
+		};
+		
+		
+		if( new_channel_name == old_channel_name ){
+			//to avoid duplicate clicking to the same radio button.
+			return;
+		}
+		else{
+			if(old_channel_name != false){
+				//All other re-selection of radio button will come here.
+				//Unsubscribe and disconnect frm the previous channel.
+				client.unsubscribe(old_channel_name);
+				client.disconnect();
+		
+			}
+			else{
+				//at the first selection of readio button.
+				//initiate connection with server first time.
+				var cookie = $.cookie(SESSION_COOKIE_NAME);
+				client.connect(HOST,STOMP_PORT,USERNAME,cookie);
+			}
+		
+			//Set old channel name as current one, for further use.
+			old_channel_name = new_channel_name;
+		}
+		
+	}
+	
+     */
+	
+	$(document).ready(function(){
+		
+		clearForm();
+		
+		/*
+		//Create this cookie first.
+		//var cookie = $.cookie(SESSION_COOKIE_NAME);
+		
+		//Connection details with stomp server for comet session.
+
+		client = new STOMPClient();
+
+		client.onopen = function(){
+			quit_handlers(client);
+		};
+		
+		
+		client.onclose = function(c) {
+			//Alert user about the exiting from queue Channel.This will be called also when the dissconnect event has been occured.
+			//alert("Your are been successfully exited from Queue Channel.");
+			//client.connect(HOST,STOMP_PORT,USERNAME,cookie);
+			
+		};
+
+		client.onerror = function(error) {
+			//client.connect(HOST,STOMP_PORT,USERNAME,cookie);
+			alert("An Error ocurred : " + error );
+		};
+
+		client.onerrorframe = function(frame) {
+			alert("Frame Error: " + frame.body );
+		};
+	
+		//client.onconnectedframe = do nothing.
+
+		client.onmessageframe = function(frame) {
+			msg = JSON.parse(frame.body);
+			       // alert("enter");
+		        if (msg.response == 'OK' ){
+                	//Successfully added new patient info.Now we unsubscribe from the channel but without breaking the stomp connections.
+					//alert("Got OK response from the server...");
+                	
+ 	                client.unsubscribe(CHANNEL_NAME);
+         	        clearForm();
+		
+					MUTEX = true; // Only after clearing the Form we enable it back.
+					
+					old_channel_name = false;
+					
+    				alert("You have successfully signed in, please wait for the front desk to call you up.");
+					//alert("fail");
+					//Discconnect connection with message queue siliently.
+					client.disconnect();
+					//$('.content-body input').initiate_stomp_conn();
+					
+            	}
+
+	            else{
+        	        //Alert the operator about the system errors.
+					alert(msg.response);
+	            }
+		  };
+		
+		//Connect to the stomp server using password as session cokiee from jquery.
+		//client.connect(HOST,STOMP_PORT,USERNAME,cookie);
+		//alert(cookie);
+		
+		//Connect with stomp server when start to type at the form.
+		
+		//$('.content-body input').initiate_stomp_conn();
+		
+		
+		//Reload page every 10 min.
+		//setInterval(window.location.reload(true),3000 );
+		
+		*/
+		
+		
+	});
+	
+	</script>
+	
+{% endblock %}
+
+
+{% block tools_block_external %}
+	   <ul class="tools">
+		<input type="hidden" id="id_header_tools_cal_value" value="{% now "d-m-Y" %}" />
+		<li><a href="javascript:void(0);" id="id_header_tools_cal">{% now "M/d Y" %}</a></li>
+	   </ul>
+{% endblock %}
+
+{% block sidebar_content %}
+   {% regroup left_menu by location as left_menu_location_list %}
+   {% for x in left_menu_location_list %}
+   		{% if location.id == x.grouper.id %}
+   			<b>{{x.grouper.name}}</b>
+   		{% else %}
+   			<a href="?locationID={{x.grouper.id}}">{{x.grouper.name}}</a>
+   		{% endif %}
+   <br /><br />
+   {% endfor %}
+{% endblock %}
+
+{% block content_title %}{{location.name|default:"&nbsp;"}}{% endblock %}
+
+{% block content %}
+   {% block body %}
+   <input type=hidden id="locationID" name="locationID" value="{{location.id}}"><table width="600px">
+     <tr>
+       <td align="right" width="100">First Name:</td><td align="left"><input type=text id="fname" style="font-size:25px"></td>
+     </tr>
+     <tr>
+       <td align="right" width="100">Last Name:</td><td align="left"><input type=text id="lname" style="font-size:25px" ></td>
+     </tr>
+		{% if location.dob_required %}
+		     <tr>
+		       <td align="right" width="100">Month of Birth:</td><td align="left"><input type=text id="month" style="font-size:25px" ></td>
+		     </tr>
+		
+		     <tr>
+		       <td align="right" width="100">Day of Birth:</td><td align="left"><input type=text id="day" style="font-size:25px" ></td>
+		     </tr>
+		     
+		
+		     <tr>
+		       <td align="right">Year of Birth:</td><td align="left"><input type=text id="year" style="font-size:25px" ></td>
+		     </tr>
+		{% endif %}
+     
+     <tr><!-- add a dropdownlist for displaying providers based on a location 
+      <td align="left"><br><br>select a provider:</td>
+      <td> <br><br><select name="provider" id="id_select_provider">
+            {% for provider in providers %}
+                <option value="{{provider.id}}">{{provider.lName}} {{provider.fName}}</option>
+            {% endfor %}
+         </select>
+       </td> --> 
+     </tr>
+     
+	<tr>
+       <td align="left" colspan="2" ><br>Please pick a clinic:
+	 	{% for clinic in clinics %}
+	 		<input type="radio" id="id_clinic_{{clinic.id}}" name="clinic" value="{{clinic.id}}"/> <label for="id_clinic_{{clinic.id}}">{{clinic.name}}</label>
+	 	{% endfor %}
+       </td>
+     </tr>
+     {% if location.appointment %}
+       <tr>
+        <td align="left" colspan="2" >
+	       <br>Do you have an appointment?<br>
+	       <input type="radio" id="appointment_yes" name="appointment" value='yes'  /> Yes <br>
+	       <input type="radio" name="appointment" id="appointment_no" value='no'  /> No</td>
+       </tr>
+     {% endif %}
+
+     <tr>
+       <td align="left" colspan="2" ><br><button onClick="submitButton();">Submit</button><button onClick="clearForm();">Cancel</button></td>
+     </tr>
+  </table>  
+  {% endblock %}
+{% endblock %}

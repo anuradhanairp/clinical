@@ -1,0 +1,1394 @@
+2011-11-12 02:53:51+0000 [-] Log opened.
+2011-11-12 02:53:51+0000 [-] twistd 11.0.0 (/usr/bin/python 2.6.5) starting up.
+2011-11-12 02:53:51+0000 [-] reactor class: twisted.internet.selectreactor.SelectReactor.
+2011-11-12 02:53:51+0000 [-] twisted.web.server.Site starting on 8000
+2011-11-12 02:53:51+0000 [-] Starting factory <twisted.web.server.Site instance at 0x2f34830>
+2011-11-12 02:53:51+0000 [-] /usr/local/lib/python2.6/dist-packages/Twisted-11.0.0-py2.6-linux-x86_64.egg/twisted/application/internet.py:131: exceptions.DeprecationWarning: listenWith is deprecated since Twisted 10.1.  See IReactorFDSet.
+2011-11-12 02:53:51+0000 [-] realtime.stompfactory.StompFactoryCustom starting on 9999
+2011-11-12 02:53:51+0000 [-] Starting factory <realtime.stompfactory.StompFactoryCustom instance at 0x2f34c20>
+2011-11-12 02:53:51+0000 [-] twisted.web.server.Site starting on 5000
+2011-11-12 02:53:51+0000 [-] Starting factory <twisted.web.server.Site instance at 0x2f3f248>
+2011-11-12 02:54:27+0000 [StompProtocol,0,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '09e8deab7b585cebd043d35cd5d91e71'} || 
+2011-11-12 02:54:27+0000 [StompProtocol,0,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 02:54:27+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 02:54:27+0000 [StompProtocol,0,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk9'} || 
+2011-11-12 02:54:27+0000 [StompProtocol,0,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 02:54:27+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 03:54:04+0000 [StompProtocol,0,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  disconnect || {} || 
+2011-11-12 03:54:04+0000 [StompProtocol,0,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 03:54:05+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 03:54:26+0000 [StompProtocol,1,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '09e8deab7b585cebd043d35cd5d91e71'} || 
+2011-11-12 03:54:26+0000 [StompProtocol,1,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 03:54:26+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 03:54:27+0000 [StompProtocol,1,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  send || {'content-length': '156', 'destination': '/topic/frontdesk9'} || {"headerID": 183, "from": "suresh", "patient": {"signin": "21:54", "appointment": "0:00", "name": "d, dwq, 1234-03-03"}, "type": "signin", "response": "OK"}
+2011-11-12 03:54:27+0000 [StompProtocol,1,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/send>
+2011-11-12 03:54:27+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/send>
+2011-11-12 03:54:29+0000 [StompProtocol,2,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '09e8deab7b585cebd043d35cd5d91e71'} || 
+2011-11-12 03:54:29+0000 [StompProtocol,2,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 03:54:29+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 03:54:29+0000 [StompProtocol,2,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk9'} || 
+2011-11-12 03:54:29+0000 [StompProtocol,2,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 03:54:29+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 03:54:32+0000 [StompProtocol,1,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  disconnect || {'content-length': '0'} || 
+2011-11-12 03:54:32+0000 [StompProtocol,1,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 03:54:32+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 03:54:33+0000 [StompProtocol,2,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  disconnect || {} || 
+2011-11-12 03:54:33+0000 [StompProtocol,2,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 03:54:33+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 03:54:34+0000 [StompProtocol,3,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '09e8deab7b585cebd043d35cd5d91e71'} || 
+2011-11-12 03:54:34+0000 [StompProtocol,3,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 03:54:34+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 03:54:34+0000 [StompProtocol,3,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk9'} || 
+2011-11-12 03:54:34+0000 [StompProtocol,3,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 03:54:34+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 03:54:58+0000 [StompProtocol,3,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  disconnect || {} || 
+2011-11-12 03:54:58+0000 [StompProtocol,3,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 03:54:58+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 03:54:59+0000 [StompProtocol,4,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '09e8deab7b585cebd043d35cd5d91e71'} || 
+2011-11-12 03:54:59+0000 [StompProtocol,4,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 03:54:59+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 03:54:59+0000 [StompProtocol,4,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk2'} || 
+2011-11-12 03:54:59+0000 [StompProtocol,4,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 03:54:59+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 03:55:02+0000 [StompProtocol,4,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  disconnect || {} || 
+2011-11-12 03:55:02+0000 [StompProtocol,4,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 03:55:02+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 03:55:02+0000 [StompProtocol,5,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '09e8deab7b585cebd043d35cd5d91e71'} || 
+2011-11-12 03:55:02+0000 [StompProtocol,5,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 03:55:02+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 03:55:02+0000 [StompProtocol,5,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk6'} || 
+2011-11-12 03:55:02+0000 [StompProtocol,5,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 03:55:02+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 03:55:04+0000 [StompProtocol,5,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  disconnect || {} || 
+2011-11-12 03:55:04+0000 [StompProtocol,5,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 03:55:04+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 03:55:04+0000 [StompProtocol,6,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '09e8deab7b585cebd043d35cd5d91e71'} || 
+2011-11-12 03:55:04+0000 [StompProtocol,6,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 03:55:04+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 03:55:04+0000 [StompProtocol,6,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk5'} || 
+2011-11-12 03:55:04+0000 [StompProtocol,6,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 03:55:04+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 03:55:06+0000 [StompProtocol,6,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  disconnect || {} || 
+2011-11-12 03:55:06+0000 [StompProtocol,6,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 03:55:06+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 03:55:07+0000 [StompProtocol,7,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '09e8deab7b585cebd043d35cd5d91e71'} || 
+2011-11-12 03:55:07+0000 [StompProtocol,7,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 03:55:07+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 03:55:07+0000 [StompProtocol,7,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk4'} || 
+2011-11-12 03:55:07+0000 [StompProtocol,7,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 03:55:07+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 03:55:09+0000 [StompProtocol,7,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  disconnect || {} || 
+2011-11-12 03:55:09+0000 [StompProtocol,7,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 03:55:09+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 03:55:09+0000 [StompProtocol,8,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '09e8deab7b585cebd043d35cd5d91e71'} || 
+2011-11-12 03:55:09+0000 [StompProtocol,8,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 03:55:09+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 03:55:09+0000 [StompProtocol,8,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk8'} || 
+2011-11-12 03:55:09+0000 [StompProtocol,8,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 03:55:09+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 03:55:16+0000 [StompProtocol,8,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  disconnect || {} || 
+2011-11-12 03:55:16+0000 [StompProtocol,8,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 03:55:16+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 03:55:17+0000 [StompProtocol,9,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '09e8deab7b585cebd043d35cd5d91e71'} || 
+2011-11-12 03:55:17+0000 [StompProtocol,9,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 03:55:17+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 03:55:17+0000 [StompProtocol,9,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk3'} || 
+2011-11-12 03:55:17+0000 [StompProtocol,9,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 03:55:17+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 03:55:33+0000 [HTTPChannel,11,192.168.1.91] /usr/local/lib/python2.6/dist-packages/Django-1.3-py2.6.egg/django/contrib/auth/models.py:393: exceptions.DeprecationWarning: The user messaging API is deprecated. Please update your code to use the new messages framework.
+2011-11-12 03:56:41+0000 [StompProtocol,9,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  disconnect || {} || 
+2011-11-12 03:56:41+0000 [StompProtocol,9,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 03:56:41+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 03:56:41+0000 [StompProtocol,10,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '09e8deab7b585cebd043d35cd5d91e71'} || 
+2011-11-12 03:56:41+0000 [StompProtocol,10,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 03:56:41+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 03:56:41+0000 [StompProtocol,10,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk6'} || 
+2011-11-12 03:56:41+0000 [StompProtocol,10,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 03:56:41+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 03:56:54+0000 [StompProtocol,10,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  disconnect || {} || 
+2011-11-12 03:56:54+0000 [StompProtocol,10,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 03:56:54+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 03:56:55+0000 [StompProtocol,11,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '09e8deab7b585cebd043d35cd5d91e71'} || 
+2011-11-12 03:56:55+0000 [StompProtocol,11,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 03:56:55+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 03:56:55+0000 [StompProtocol,11,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk4'} || 
+2011-11-12 03:56:55+0000 [StompProtocol,11,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 03:56:55+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 03:57:20+0000 [StompProtocol,11,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  disconnect || {} || 
+2011-11-12 03:57:20+0000 [StompProtocol,11,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 03:57:20+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 03:57:20+0000 [StompProtocol,12,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '09e8deab7b585cebd043d35cd5d91e71'} || 
+2011-11-12 03:57:20+0000 [StompProtocol,12,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 03:57:21+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 03:57:21+0000 [StompProtocol,12,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk7'} || 
+2011-11-12 03:57:21+0000 [StompProtocol,12,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 03:57:21+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 04:01:10+0000 [StompProtocol,12,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  disconnect || {} || 
+2011-11-12 04:01:10+0000 [StompProtocol,12,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 04:01:10+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 04:01:11+0000 [StompProtocol,13,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '09e8deab7b585cebd043d35cd5d91e71'} || 
+2011-11-12 04:01:11+0000 [StompProtocol,13,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 04:01:11+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 04:01:11+0000 [StompProtocol,13,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk9'} || 
+2011-11-12 04:01:11+0000 [StompProtocol,13,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 04:01:11+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 04:01:14+0000 [StompProtocol,13,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  disconnect || {} || 
+2011-11-12 04:01:14+0000 [StompProtocol,13,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 04:01:14+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 04:07:07+0000 [StompProtocol,14,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '09e8deab7b585cebd043d35cd5d91e71'} || 
+2011-11-12 04:07:07+0000 [StompProtocol,14,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 04:07:07+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 04:07:07+0000 [StompProtocol,14,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk9'} || 
+2011-11-12 04:07:07+0000 [StompProtocol,14,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 04:07:07+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 04:13:41+0000 [StompProtocol,14,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  disconnect || {} || 
+2011-11-12 04:13:41+0000 [StompProtocol,14,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 04:13:41+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 04:13:41+0000 [StompProtocol,15,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '09e8deab7b585cebd043d35cd5d91e71'} || 
+2011-11-12 04:13:41+0000 [StompProtocol,15,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 04:13:41+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 04:13:42+0000 [StompProtocol,15,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk9'} || 
+2011-11-12 04:13:42+0000 [StompProtocol,15,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 04:13:42+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 04:16:10+0000 [StompProtocol,15,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  disconnect || {} || 
+2011-11-12 04:16:10+0000 [StompProtocol,15,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 04:16:10+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 04:16:11+0000 [StompProtocol,16,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '09e8deab7b585cebd043d35cd5d91e71'} || 
+2011-11-12 04:16:11+0000 [StompProtocol,16,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 04:16:11+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 04:16:11+0000 [StompProtocol,16,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk9'} || 
+2011-11-12 04:16:11+0000 [StompProtocol,16,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 04:16:11+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 04:20:23+0000 [StompProtocol,16,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  disconnect || {} || 
+2011-11-12 04:20:23+0000 [StompProtocol,16,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 04:20:23+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 04:20:24+0000 [StompProtocol,17,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '09e8deab7b585cebd043d35cd5d91e71'} || 
+2011-11-12 04:20:24+0000 [StompProtocol,17,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 04:20:24+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 04:20:24+0000 [StompProtocol,17,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk9'} || 
+2011-11-12 04:20:24+0000 [StompProtocol,17,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 04:20:24+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 04:20:27+0000 [StompProtocol,18,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '09e8deab7b585cebd043d35cd5d91e71'} || 
+2011-11-12 04:20:27+0000 [StompProtocol,18,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 04:20:27+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 04:20:27+0000 [StompProtocol,18,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk9'} || 
+2011-11-12 04:20:27+0000 [StompProtocol,18,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 04:20:27+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 04:20:31+0000 [StompProtocol,18,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  disconnect || {} || 
+2011-11-12 04:20:31+0000 [StompProtocol,18,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 04:20:31+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 04:20:31+0000 [StompProtocol,19,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '09e8deab7b585cebd043d35cd5d91e71'} || 
+2011-11-12 04:20:31+0000 [StompProtocol,19,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 04:20:31+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 04:20:31+0000 [StompProtocol,19,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk9'} || 
+2011-11-12 04:20:31+0000 [StompProtocol,19,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 04:20:31+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 04:21:24+0000 [StompProtocol,17,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  disconnect || {} || 
+2011-11-12 04:21:24+0000 [StompProtocol,17,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 04:21:24+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 04:27:07+0000 [-] Log opened.
+2011-11-12 04:27:07+0000 [-] twistd 11.0.0 (/usr/bin/python 2.6.5) starting up.
+2011-11-12 04:27:07+0000 [-] reactor class: twisted.internet.selectreactor.SelectReactor.
+2011-11-12 04:27:07+0000 [-] twisted.web.server.Site starting on 8000
+2011-11-12 04:27:07+0000 [-] Starting factory <twisted.web.server.Site instance at 0x3f1c6c8>
+2011-11-12 04:27:07+0000 [-] /usr/local/lib/python2.6/dist-packages/Twisted-11.0.0-py2.6-linux-x86_64.egg/twisted/application/internet.py:131: exceptions.DeprecationWarning: listenWith is deprecated since Twisted 10.1.  See IReactorFDSet.
+2011-11-12 04:27:07+0000 [-] realtime.stompfactory.StompFactoryCustom starting on 9999
+2011-11-12 04:27:07+0000 [-] Starting factory <realtime.stompfactory.StompFactoryCustom instance at 0x3f1cab8>
+2011-11-12 04:27:07+0000 [-] twisted.web.server.Site starting on 5000
+2011-11-12 04:27:07+0000 [-] Starting factory <twisted.web.server.Site instance at 0x3f250e0>
+2011-11-12 04:27:08+0000 [StompProtocol,0,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '09e8deab7b585cebd043d35cd5d91e71'} || 
+2011-11-12 04:27:08+0000 [StompProtocol,0,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 04:27:08+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 04:27:08+0000 [StompProtocol,0,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk9'} || 
+2011-11-12 04:27:08+0000 [StompProtocol,0,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 04:27:08+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 04:27:14+0000 [StompProtocol,0,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  disconnect || {} || 
+2011-11-12 04:27:14+0000 [StompProtocol,0,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 04:27:14+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 04:27:19+0000 [StompProtocol,1,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '09e8deab7b585cebd043d35cd5d91e71'} || 
+2011-11-12 04:27:19+0000 [StompProtocol,1,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 04:27:19+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 04:27:19+0000 [StompProtocol,1,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk9'} || 
+2011-11-12 04:27:19+0000 [StompProtocol,1,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 04:27:19+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 04:27:20+0000 [StompProtocol,1,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  disconnect || {} || 
+2011-11-12 04:27:20+0000 [StompProtocol,1,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 04:27:20+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 04:27:20+0000 [StompProtocol,2,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '09e8deab7b585cebd043d35cd5d91e71'} || 
+2011-11-12 04:27:20+0000 [StompProtocol,2,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 04:27:20+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 04:27:21+0000 [StompProtocol,2,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk9'} || 
+2011-11-12 04:27:21+0000 [StompProtocol,2,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 04:27:21+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 04:28:09+0000 [StompProtocol,2,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  disconnect || {} || 
+2011-11-12 04:28:09+0000 [StompProtocol,2,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 04:28:09+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 04:28:09+0000 [StompProtocol,3,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '09e8deab7b585cebd043d35cd5d91e71'} || 
+2011-11-12 04:28:09+0000 [StompProtocol,3,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 04:28:09+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 04:28:09+0000 [StompProtocol,3,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk9'} || 
+2011-11-12 04:28:09+0000 [StompProtocol,3,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 04:28:09+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 04:28:25+0000 [-] Log opened.
+2011-11-12 04:28:25+0000 [-] twistd 11.0.0 (/usr/bin/python 2.6.5) starting up.
+2011-11-12 04:28:25+0000 [-] reactor class: twisted.internet.selectreactor.SelectReactor.
+2011-11-12 04:28:25+0000 [-] twisted.web.server.Site starting on 8000
+2011-11-12 04:28:25+0000 [-] Starting factory <twisted.web.server.Site instance at 0x3a246c8>
+2011-11-12 04:28:25+0000 [-] /usr/local/lib/python2.6/dist-packages/Twisted-11.0.0-py2.6-linux-x86_64.egg/twisted/application/internet.py:131: exceptions.DeprecationWarning: listenWith is deprecated since Twisted 10.1.  See IReactorFDSet.
+2011-11-12 04:28:25+0000 [-] realtime.stompfactory.StompFactoryCustom starting on 9999
+2011-11-12 04:28:25+0000 [-] Starting factory <realtime.stompfactory.StompFactoryCustom instance at 0x3a24ab8>
+2011-11-12 04:28:25+0000 [-] twisted.web.server.Site starting on 5000
+2011-11-12 04:28:25+0000 [-] Starting factory <twisted.web.server.Site instance at 0x3a2d0e0>
+2011-11-12 04:28:25+0000 [StompProtocol,0,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '09e8deab7b585cebd043d35cd5d91e71'} || 
+2011-11-12 04:28:25+0000 [StompProtocol,0,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 04:28:25+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 04:28:25+0000 [StompProtocol,0,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk9'} || 
+2011-11-12 04:28:25+0000 [StompProtocol,0,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 04:28:25+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 04:28:34+0000 [StompProtocol,0,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  disconnect || {} || 
+2011-11-12 04:28:34+0000 [StompProtocol,0,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 04:28:34+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 04:28:38+0000 [StompProtocol,1,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '09e8deab7b585cebd043d35cd5d91e71'} || 
+2011-11-12 04:28:38+0000 [StompProtocol,1,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 04:28:38+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 04:28:38+0000 [StompProtocol,1,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk9'} || 
+2011-11-12 04:28:38+0000 [StompProtocol,1,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 04:28:38+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 04:28:39+0000 [StompProtocol,1,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  disconnect || {} || 
+2011-11-12 04:28:39+0000 [StompProtocol,1,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 04:28:39+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 04:28:40+0000 [StompProtocol,2,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '09e8deab7b585cebd043d35cd5d91e71'} || 
+2011-11-12 04:28:40+0000 [StompProtocol,2,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 04:28:40+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 04:28:40+0000 [StompProtocol,2,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk9'} || 
+2011-11-12 04:28:40+0000 [StompProtocol,2,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 04:28:40+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 04:30:29+0000 [StompProtocol,2,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  disconnect || {} || 
+2011-11-12 04:30:29+0000 [StompProtocol,2,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 04:30:30+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 04:30:30+0000 [StompProtocol,3,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '09e8deab7b585cebd043d35cd5d91e71'} || 
+2011-11-12 04:30:30+0000 [StompProtocol,3,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 04:30:30+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 04:30:30+0000 [StompProtocol,3,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk9'} || 
+2011-11-12 04:30:30+0000 [StompProtocol,3,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 04:30:30+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 04:31:11+0000 [HTTPChannel,14,192.168.1.123] /usr/local/lib/python2.6/dist-packages/Django-1.3-py2.6.egg/django/contrib/auth/models.py:393: exceptions.DeprecationWarning: The user messaging API is deprecated. Please update your code to use the new messages framework.
+2011-11-12 04:31:12+0000 [StompProtocol,4,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '09e8deab7b585cebd043d35cd5d91e71'} || 
+2011-11-12 04:31:12+0000 [StompProtocol,4,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 04:31:12+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 04:31:12+0000 [StompProtocol,4,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk9'} || 
+2011-11-12 04:31:12+0000 [StompProtocol,4,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 04:31:12+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 04:31:15+0000 [StompProtocol,4,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  disconnect || {} || 
+2011-11-12 04:31:15+0000 [StompProtocol,4,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 04:31:15+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 04:34:24+0000 [StompProtocol,5,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '8058dff0532756b4879a324280c35290'} || 
+2011-11-12 04:34:24+0000 [StompProtocol,5,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 04:34:24+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 04:34:24+0000 [StompProtocol,5,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk9'} || 
+2011-11-12 04:34:24+0000 [StompProtocol,5,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 04:34:24+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 04:35:52+0000 [StompProtocol,6,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '09e8deab7b585cebd043d35cd5d91e71'} || 
+2011-11-12 04:35:52+0000 [StompProtocol,6,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 04:35:52+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 04:35:52+0000 [StompProtocol,6,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk9'} || 
+2011-11-12 04:35:52+0000 [StompProtocol,6,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 04:35:52+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 04:36:31+0000 [StompProtocol,3,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  disconnect || {} || 
+2011-11-12 04:36:31+0000 [StompProtocol,3,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 04:36:31+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 04:36:34+0000 [StompProtocol,6,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  disconnect || {} || 
+2011-11-12 04:36:34+0000 [StompProtocol,6,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 04:36:34+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 04:36:36+0000 [StompProtocol,7,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '09e8deab7b585cebd043d35cd5d91e71'} || 
+2011-11-12 04:36:36+0000 [StompProtocol,7,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 04:36:36+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 04:36:36+0000 [StompProtocol,7,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk9'} || 
+2011-11-12 04:36:36+0000 [StompProtocol,7,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 04:36:36+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 04:36:37+0000 [StompProtocol,7,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  disconnect || {} || 
+2011-11-12 04:36:37+0000 [StompProtocol,7,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 04:36:37+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 04:36:38+0000 [StompProtocol,8,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '09e8deab7b585cebd043d35cd5d91e71'} || 
+2011-11-12 04:36:38+0000 [StompProtocol,8,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 04:36:38+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 04:36:38+0000 [StompProtocol,8,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk9'} || 
+2011-11-12 04:36:38+0000 [StompProtocol,8,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 04:36:38+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 04:37:06+0000 [StompProtocol,8,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  disconnect || {} || 
+2011-11-12 04:37:06+0000 [StompProtocol,8,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 04:37:06+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 04:37:07+0000 [StompProtocol,9,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '09e8deab7b585cebd043d35cd5d91e71'} || 
+2011-11-12 04:37:07+0000 [StompProtocol,9,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 04:37:07+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 04:37:07+0000 [StompProtocol,9,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk9'} || 
+2011-11-12 04:37:07+0000 [StompProtocol,9,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 04:37:07+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 04:37:14+0000 [StompProtocol,9,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  disconnect || {} || 
+2011-11-12 04:37:14+0000 [StompProtocol,9,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 04:37:14+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 04:37:15+0000 [StompProtocol,10,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '09e8deab7b585cebd043d35cd5d91e71'} || 
+2011-11-12 04:37:15+0000 [StompProtocol,10,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 04:37:15+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 04:37:15+0000 [StompProtocol,10,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk9'} || 
+2011-11-12 04:37:15+0000 [StompProtocol,10,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 04:37:15+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 04:45:11+0000 [StompProtocol,5,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  disconnect || {} || 
+2011-11-12 04:45:11+0000 [StompProtocol,5,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 04:45:11+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 05:00:55+0000 [StompProtocol,10,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  disconnect || {} || 
+2011-11-12 05:00:55+0000 [StompProtocol,10,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 05:00:55+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 05:00:56+0000 [StompProtocol,11,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '09e8deab7b585cebd043d35cd5d91e71'} || 
+2011-11-12 05:00:56+0000 [StompProtocol,11,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 05:00:56+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 05:00:56+0000 [StompProtocol,11,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk9'} || 
+2011-11-12 05:00:56+0000 [StompProtocol,11,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 05:00:56+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 05:01:16+0000 [StompProtocol,12,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '09e8deab7b585cebd043d35cd5d91e71'} || 
+2011-11-12 05:01:16+0000 [StompProtocol,12,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 05:01:16+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 05:01:16+0000 [StompProtocol,12,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk9'} || 
+2011-11-12 05:01:16+0000 [StompProtocol,12,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 05:01:16+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 05:01:36+0000 [StompProtocol,12,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  disconnect || {} || 
+2011-11-12 05:01:36+0000 [StompProtocol,12,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 05:01:36+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 05:01:37+0000 [StompProtocol,13,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '09e8deab7b585cebd043d35cd5d91e71'} || 
+2011-11-12 05:01:37+0000 [StompProtocol,13,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 05:01:37+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 05:01:37+0000 [StompProtocol,13,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk9'} || 
+2011-11-12 05:01:37+0000 [StompProtocol,13,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 05:01:37+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 05:03:54+0000 [StompProtocol,13,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  disconnect || {} || 
+2011-11-12 05:03:54+0000 [StompProtocol,13,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 05:03:54+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 09:21:02+0000 [StompProtocol,11,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  disconnect || {} || 
+2011-11-12 09:21:02+0000 [StompProtocol,11,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 09:21:02+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 09:21:02+0000 [StompProtocol,14,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '09e8deab7b585cebd043d35cd5d91e71'} || 
+2011-11-12 09:21:02+0000 [StompProtocol,14,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 09:21:02+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 09:21:02+0000 [StompProtocol,14,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk6'} || 
+2011-11-12 09:21:02+0000 [StompProtocol,14,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 09:21:02+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 09:21:49+0000 [StompProtocol,14,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  disconnect || {} || 
+2011-11-12 09:21:49+0000 [StompProtocol,14,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 09:21:49+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 09:21:49+0000 [StompProtocol,15,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '09e8deab7b585cebd043d35cd5d91e71'} || 
+2011-11-12 09:21:49+0000 [StompProtocol,15,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 09:21:49+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 09:21:50+0000 [StompProtocol,15,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk9'} || 
+2011-11-12 09:21:50+0000 [StompProtocol,15,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 09:21:50+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 09:22:00+0000 [StompProtocol,15,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  disconnect || {} || 
+2011-11-12 09:22:00+0000 [StompProtocol,15,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 09:22:00+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 09:22:00+0000 [StompProtocol,16,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '09e8deab7b585cebd043d35cd5d91e71'} || 
+2011-11-12 09:22:00+0000 [StompProtocol,16,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 09:22:00+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 09:22:00+0000 [StompProtocol,16,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk9'} || 
+2011-11-12 09:22:00+0000 [StompProtocol,16,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 09:22:00+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 09:22:18+0000 [StompProtocol,17,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '09e8deab7b585cebd043d35cd5d91e71'} || 
+2011-11-12 09:22:18+0000 [StompProtocol,17,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 09:22:18+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 09:22:19+0000 [StompProtocol,17,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  send || {'content-length': '155', 'destination': '/topic/frontdesk9'} || {"headerID": 184, "from": "suresh", "patient": {"signin": "03:22", "appointment": "0:00", "name": "t, hh, 4444-06-06"}, "type": "signin", "response": "OK"}
+2011-11-12 09:22:19+0000 [StompProtocol,17,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/send>
+2011-11-12 09:22:19+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/send>
+2011-11-12 09:22:22+0000 [StompProtocol,16,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  send || {'content-length': '59', 'destination': '/topic/frontdesk9', 'content-type': 'text/plain', 'content-encoding': 'utf-8'} || {"type":"eventlog","headerID":"184","event":"registration"}
+2011-11-12 09:22:22+0000 [StompProtocol,16,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/send>
+2011-11-12 09:22:22+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/send>
+2011-11-12 09:22:24+0000 [StompProtocol,17,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  disconnect || {'content-length': '0'} || 
+2011-11-12 09:22:24+0000 [StompProtocol,17,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 09:22:24+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 09:22:45+0000 [StompProtocol,16,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  send || {'content-length': '55', 'destination': '/topic/frontdesk9', 'content-type': 'text/plain', 'content-encoding': 'utf-8'} || {"type":"eventlog","headerID":"184","event":"provider"}
+2011-11-12 09:22:45+0000 [StompProtocol,16,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/send>
+2011-11-12 09:22:45+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/send>
+2011-11-12 09:22:53+0000 [StompProtocol,16,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  send || {'content-length': '55', 'destination': '/topic/frontdesk9', 'content-type': 'text/plain', 'content-encoding': 'utf-8'} || {"type":"eventlog","headerID":"184","event":"provider"}
+2011-11-12 09:22:53+0000 [StompProtocol,16,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/send>
+2011-11-12 09:22:53+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/send>
+2011-11-12 10:05:39+0000 [StompProtocol,16,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  send || {'content-length': '51', 'destination': '/topic/frontdesk9', 'content-type': 'text/plain', 'content-encoding': 'utf-8'} || {"type":"eventlog","headerID":184,"event":"triage"}
+2011-11-12 10:05:39+0000 [StompProtocol,16,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/send>
+2011-11-12 10:05:39+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/send>
+2011-11-12 10:11:06+0000 [StompProtocol,18,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '09e8deab7b585cebd043d35cd5d91e71'} || 
+2011-11-12 10:11:06+0000 [StompProtocol,18,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 10:11:06+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 10:11:07+0000 [StompProtocol,18,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  send || {'content-length': '135', 'destination': '/topic/frontdesk9'} || {"headerID": 185, "from": "suresh", "patient": {"signin": "04:11", "name": "r, bgggf, 2222-04-02"}, "type": "signin", "response": "OK"}
+2011-11-12 10:11:07+0000 [StompProtocol,18,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/send>
+2011-11-12 10:11:07+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/send>
+2011-11-12 10:11:12+0000 [StompProtocol,18,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  disconnect || {'content-length': '0'} || 
+2011-11-12 10:11:12+0000 [StompProtocol,18,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 10:11:12+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 10:11:27+0000 [StompProtocol,16,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  send || {'content-length': '59', 'destination': '/topic/frontdesk9', 'content-type': 'text/plain', 'content-encoding': 'utf-8'} || {"type":"eventlog","headerID":"185","event":"registration"}
+2011-11-12 10:11:27+0000 [StompProtocol,16,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/send>
+2011-11-12 10:11:27+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/send>
+2011-11-12 10:12:27+0000 [StompProtocol,16,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  send || {'content-length': '55', 'destination': '/topic/frontdesk9', 'content-type': 'text/plain', 'content-encoding': 'utf-8'} || {"type":"eventlog","headerID":"184","event":"checkout"}
+2011-11-12 10:12:27+0000 [StompProtocol,16,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/send>
+2011-11-12 10:12:27+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/send>
+2011-11-12 10:16:42+0000 [StompProtocol,16,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  send || {'content-length': '51', 'destination': '/topic/frontdesk9', 'content-type': 'text/plain', 'content-encoding': 'utf-8'} || {"type":"eventlog","headerID":185,"event":"triage"}
+2011-11-12 10:16:42+0000 [StompProtocol,16,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/send>
+2011-11-12 10:16:42+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/send>
+2011-11-12 10:16:45+0000 [StompProtocol,16,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  send || {'content-length': '55', 'destination': '/topic/frontdesk9', 'content-type': 'text/plain', 'content-encoding': 'utf-8'} || {"type":"eventlog","headerID":"185","event":"provider"}
+2011-11-12 10:16:45+0000 [StompProtocol,16,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/send>
+2011-11-12 10:16:45+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/send>
+2011-11-12 10:16:52+0000 [StompProtocol,16,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  send || {'content-length': '55', 'destination': '/topic/frontdesk9', 'content-type': 'text/plain', 'content-encoding': 'utf-8'} || {"type":"eventlog","headerID":"185","event":"provider"}
+2011-11-12 10:16:52+0000 [StompProtocol,16,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/send>
+2011-11-12 10:16:52+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/send>
+2011-11-12 11:03:14+0000 [StompProtocol,19,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '09e8deab7b585cebd043d35cd5d91e71'} || 
+2011-11-12 11:03:14+0000 [StompProtocol,19,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 11:03:14+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 11:03:14+0000 [StompProtocol,19,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk9'} || 
+2011-11-12 11:03:14+0000 [StompProtocol,19,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 11:03:14+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 11:03:44+0000 [StompProtocol,16,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  disconnect || {'username': 'suresh', 'content-length': 22} || 
+2011-11-12 11:03:44+0000 [StompProtocol,16,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 11:03:44+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 11:46:39+0000 [StompProtocol,19,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  disconnect || {} || 
+2011-11-12 11:46:39+0000 [StompProtocol,19,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 11:46:39+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 11:46:39+0000 [StompProtocol,20,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '09e8deab7b585cebd043d35cd5d91e71'} || 
+2011-11-12 11:46:39+0000 [StompProtocol,20,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 11:46:39+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2011-11-12 11:46:39+0000 [StompProtocol,20,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk9'} || 
+2011-11-12 11:46:39+0000 [StompProtocol,20,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 11:46:39+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2011-11-12 11:47:07+0000 [-] Received SIGTERM, shutting down.
+2011-11-12 11:47:07+0000 [-] (TCP Port 5000 Closed)
+2011-11-12 11:47:07+0000 [-] Stopping factory <twisted.web.server.Site instance at 0x3a2d0e0>
+2011-11-12 11:47:07+0000 [-] (TCP Port 9999 Closed)
+2011-11-12 11:47:07+0000 [-] Stopping factory <realtime.stompfactory.StompFactoryCustom instance at 0x3a24ab8>
+2011-11-12 11:47:07+0000 [-] (TCP Port 8000 Closed)
+2011-11-12 11:47:07+0000 [-] Stopping factory <twisted.web.server.Site instance at 0x3a246c8>
+2011-11-12 11:47:07+0000 [StompProtocol,20,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  disconnect || {'username': 'suresh', 'content-length': 44} || 
+2011-11-12 11:47:07+0000 [StompProtocol,20,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2011-11-12 11:47:07+0000 [-] Main loop terminated.
+2011-11-12 11:47:07+0000 [-] Server Shut Down.
+2012-01-17 05:15:29+0000 [-] Log opened.
+2012-01-17 05:15:29+0000 [-] twistd 11.0.0 (/usr/bin/python 2.6.5) starting up.
+2012-01-17 05:15:29+0000 [-] reactor class: twisted.internet.selectreactor.SelectReactor.
+2012-01-17 05:15:29+0000 [-] twisted.web.server.Site starting on 8000
+2012-01-17 05:15:29+0000 [-] Starting factory <twisted.web.server.Site instance at 0x2a3a6c8>
+2012-01-17 05:15:29+0000 [-] /usr/local/lib/python2.6/dist-packages/Twisted-11.0.0-py2.6-linux-x86_64.egg/twisted/application/internet.py:131: exceptions.DeprecationWarning: listenWith is deprecated since Twisted 10.1.  See IReactorFDSet.
+2012-01-17 05:15:29+0000 [-] realtime.stompfactory.StompFactoryCustom starting on 9999
+2012-01-17 05:15:29+0000 [-] Starting factory <realtime.stompfactory.StompFactoryCustom instance at 0x2a3aab8>
+2012-01-17 05:15:29+0000 [-] twisted.web.server.Site starting on 5000
+2012-01-17 05:15:29+0000 [-] Starting factory <twisted.web.server.Site instance at 0x2a430e0>
+2012-01-17 05:17:45+0000 [-] Received SIGTERM, shutting down.
+2012-01-17 05:17:45+0000 [-] (TCP Port 5000 Closed)
+2012-01-17 05:17:45+0000 [-] Stopping factory <twisted.web.server.Site instance at 0x2a430e0>
+2012-01-17 05:17:45+0000 [-] (TCP Port 9999 Closed)
+2012-01-17 05:17:45+0000 [-] Stopping factory <realtime.stompfactory.StompFactoryCustom instance at 0x2a3aab8>
+2012-01-17 05:17:45+0000 [-] (TCP Port 8000 Closed)
+2012-01-17 05:17:45+0000 [-] Stopping factory <twisted.web.server.Site instance at 0x2a3a6c8>
+2012-01-17 05:17:45+0000 [-] Main loop terminated.
+2012-01-17 05:17:45+0000 [-] Server Shut Down.
+2012-01-17 05:36:44+0000 [-] Log opened.
+2012-01-17 05:36:44+0000 [-] twistd 11.0.0 (/usr/bin/python 2.6.5) starting up.
+2012-01-17 05:36:44+0000 [-] reactor class: twisted.internet.selectreactor.SelectReactor.
+2012-01-17 05:36:44+0000 [-] twisted.web.server.Site starting on 8000
+2012-01-17 05:36:44+0000 [-] Starting factory <twisted.web.server.Site instance at 0x359e6c8>
+2012-01-17 05:36:44+0000 [-] /usr/local/lib/python2.6/dist-packages/Twisted-11.0.0-py2.6-linux-x86_64.egg/twisted/application/internet.py:131: exceptions.DeprecationWarning: listenWith is deprecated since Twisted 10.1.  See IReactorFDSet.
+2012-01-17 05:36:44+0000 [-] realtime.stompfactory.StompFactoryCustom starting on 9999
+2012-01-17 05:36:44+0000 [-] Starting factory <realtime.stompfactory.StompFactoryCustom instance at 0x359eab8>
+2012-01-17 05:36:44+0000 [-] twisted.web.server.Site starting on 5000
+2012-01-17 05:36:44+0000 [-] Starting factory <twisted.web.server.Site instance at 0x35a70e0>
+2012-01-17 05:51:38+0000 [StompProtocol,0,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '8c898e74f5bb5d2377e6490c5019cd31'} || 
+2012-01-17 05:51:38+0000 [StompProtocol,0,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-17 05:51:38+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-17 05:51:39+0000 [StompProtocol,0,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  send || {'content-length': '159', 'destination': '/topic/frontdesk9'} || {"headerID": 198, "from": "suresh", "patient": {"signin": "23:51", "appointment": "0:00", "name": "s, anjali, 5444-07-07"}, "type": "signin", "response": "OK"}
+2012-01-17 05:51:39+0000 [StompProtocol,0,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/send>
+2012-01-17 05:51:39+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/send>
+2012-01-17 05:51:44+0000 [StompProtocol,0,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  disconnect || {'content-length': '0'} || 
+2012-01-17 05:51:44+0000 [StompProtocol,0,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-17 05:51:44+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-17 05:53:02+0000 [StompProtocol,1,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '8c898e74f5bb5d2377e6490c5019cd31'} || 
+2012-01-17 05:53:02+0000 [StompProtocol,1,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-17 05:53:02+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-17 05:53:03+0000 [StompProtocol,1,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  send || {'content-length': '60', 'destination': '/topic/frontdesk9'} || {"headerID": "198", "type": "eventlog", "event": "checkout"}
+2012-01-17 05:53:03+0000 [StompProtocol,1,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/send>
+2012-01-17 05:53:03+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/send>
+2012-01-17 05:53:05+0000 [StompProtocol,1,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  disconnect || {'content-length': '0'} || 
+2012-01-17 05:53:05+0000 [StompProtocol,1,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-17 05:53:05+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-17 05:53:51+0000 [StompProtocol,2,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '8c898e74f5bb5d2377e6490c5019cd31'} || 
+2012-01-17 05:53:51+0000 [StompProtocol,2,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-17 05:53:51+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-17 05:53:51+0000 [StompProtocol,2,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk9'} || 
+2012-01-17 05:53:51+0000 [StompProtocol,2,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-17 05:53:51+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-17 12:00:32+0000 [StompProtocol,2,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  disconnect || {} || 
+2012-01-17 12:03:47+0000 [StompProtocol,2,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-17 12:03:47+0000 [HTTPChannel,24,192.168.1.91] /usr/local/lib/python2.6/dist-packages/orbited-0.7.11beta2-py2.6.egg/orbited/cometsession.py:467: exceptions.DeprecationWarning: twisted.web.error.NoResource is deprecated since Twisted 9.0.  See twisted.web.resource.NoResource.
+2012-01-17 12:03:48+0000 [Uninitialized] !!! RestQ error ====>  [Failure instance: Traceback (failure with no frames): <class 'twisted.internet.error.ConnectionRefusedError'>: Connection was refused by other side: 111: Connection refused.
+2012-01-17 12:03:48+0000 [Uninitialized] ]
+2012-01-17 12:03:48+0000 [Uninitialized] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-17 12:03:51+0000 [-] No handlers could be found for logger "orbited.proxy.ProxyIncomingProtocol"
+2012-01-17 12:19:24+0000 [-] Received SIGTERM, shutting down.
+2012-01-17 12:19:25+0000 [-] (TCP Port 5000 Closed)
+2012-01-17 12:19:25+0000 [-] Stopping factory <twisted.web.server.Site instance at 0x35a70e0>
+2012-01-17 12:19:25+0000 [-] (TCP Port 9999 Closed)
+2012-01-17 12:19:25+0000 [-] Stopping factory <realtime.stompfactory.StompFactoryCustom instance at 0x359eab8>
+2012-01-17 12:19:25+0000 [-] (TCP Port 8000 Closed)
+2012-01-17 12:19:25+0000 [-] Stopping factory <twisted.web.server.Site instance at 0x359e6c8>
+2012-01-17 12:19:25+0000 [-] Main loop terminated.
+2012-01-17 12:19:26+0000 [-] Server Shut Down.
+2012-01-18 05:01:23+0000 [-] Log opened.
+2012-01-18 05:01:23+0000 [-] twistd 11.0.0 (/usr/bin/python 2.6.5) starting up.
+2012-01-18 05:01:23+0000 [-] reactor class: twisted.internet.selectreactor.SelectReactor.
+2012-01-18 05:01:23+0000 [-] twisted.web.server.Site starting on 8000
+2012-01-18 05:01:23+0000 [-] Starting factory <twisted.web.server.Site instance at 0x2ec56c8>
+2012-01-18 05:01:23+0000 [-] /usr/local/lib/python2.6/dist-packages/Twisted-11.0.0-py2.6-linux-x86_64.egg/twisted/application/internet.py:131: exceptions.DeprecationWarning: listenWith is deprecated since Twisted 10.1.  See IReactorFDSet.
+2012-01-18 05:01:23+0000 [-] realtime.stompfactory.StompFactoryCustom starting on 9999
+2012-01-18 05:01:23+0000 [-] Starting factory <realtime.stompfactory.StompFactoryCustom instance at 0x2ec5ab8>
+2012-01-18 05:01:23+0000 [-] twisted.web.server.Site starting on 5000
+2012-01-18 05:01:23+0000 [-] Starting factory <twisted.web.server.Site instance at 0x2ece0e0>
+2012-01-18 05:28:09+0000 [-] Log opened.
+2012-01-18 05:28:09+0000 [-] twistd 11.0.0 (/usr/bin/python 2.6.5) starting up.
+2012-01-18 05:28:09+0000 [-] reactor class: twisted.internet.selectreactor.SelectReactor.
+2012-01-18 05:28:09+0000 [-] twisted.web.server.Site starting on 8000
+2012-01-18 05:28:09+0000 [-] Starting factory <twisted.web.server.Site instance at 0x337f6c8>
+2012-01-18 05:28:09+0000 [-] /usr/local/lib/python2.6/dist-packages/Twisted-11.0.0-py2.6-linux-x86_64.egg/twisted/application/internet.py:131: exceptions.DeprecationWarning: listenWith is deprecated since Twisted 10.1.  See IReactorFDSet.
+2012-01-18 05:28:09+0000 [-] realtime.stompfactory.StompFactoryCustom starting on 9999
+2012-01-18 05:28:09+0000 [-] Starting factory <realtime.stompfactory.StompFactoryCustom instance at 0x337fab8>
+2012-01-18 05:28:09+0000 [-] twisted.web.server.Site starting on 5000
+2012-01-18 05:28:09+0000 [-] Starting factory <twisted.web.server.Site instance at 0x33890e0>
+2012-01-18 05:35:07+0000 [StompProtocol,0,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': 'df6807391b9c42feec2bcd108dbf04bc'} || 
+2012-01-18 05:35:07+0000 [StompProtocol,0,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-18 05:35:07+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-18 05:35:07+0000 [StompProtocol,0,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk9'} || 
+2012-01-18 05:35:07+0000 [StompProtocol,0,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-18 05:35:07+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-18 05:35:11+0000 [StompProtocol,0,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  disconnect || {} || 
+2012-01-18 05:35:11+0000 [StompProtocol,0,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-18 05:35:11+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-18 06:22:02+0000 [StompProtocol,1,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': 'df6807391b9c42feec2bcd108dbf04bc'} || 
+2012-01-18 06:22:02+0000 [StompProtocol,1,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-18 06:22:02+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-18 06:22:02+0000 [StompProtocol,1,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk9'} || 
+2012-01-18 06:22:02+0000 [StompProtocol,1,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-18 06:22:02+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-18 06:22:05+0000 [StompProtocol,1,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  disconnect || {} || 
+2012-01-18 06:22:05+0000 [StompProtocol,1,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-18 06:22:05+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-18 06:25:26+0000 [StompProtocol,2,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': 'df6807391b9c42feec2bcd108dbf04bc'} || 
+2012-01-18 06:25:26+0000 [StompProtocol,2,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-18 06:25:26+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-18 06:25:26+0000 [StompProtocol,2,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk9'} || 
+2012-01-18 06:25:26+0000 [StompProtocol,2,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-18 06:25:27+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-18 06:25:33+0000 [StompProtocol,2,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  disconnect || {} || 
+2012-01-18 06:25:33+0000 [StompProtocol,2,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-18 06:25:33+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-18 06:25:39+0000 [StompProtocol,3,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': 'df6807391b9c42feec2bcd108dbf04bc'} || 
+2012-01-18 06:25:39+0000 [StompProtocol,3,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-18 06:25:39+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-18 06:25:39+0000 [StompProtocol,3,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk9'} || 
+2012-01-18 06:25:39+0000 [StompProtocol,3,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-18 06:25:39+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-18 06:34:21+0000 [StompProtocol,4,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': 'df6807391b9c42feec2bcd108dbf04bc'} || 
+2012-01-18 06:34:21+0000 [StompProtocol,4,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-18 06:34:21+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-18 06:34:21+0000 [StompProtocol,4,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk9'} || 
+2012-01-18 06:34:21+0000 [StompProtocol,4,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-18 06:34:21+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-18 06:34:25+0000 [StompProtocol,4,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  disconnect || {} || 
+2012-01-18 06:34:25+0000 [StompProtocol,4,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-18 06:34:25+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-18 06:35:10+0000 [StompProtocol,3,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  disconnect || {} || 
+2012-01-18 06:35:10+0000 [StompProtocol,3,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-18 06:35:10+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-18 07:03:32+0000 [StompProtocol,5,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': 'df6807391b9c42feec2bcd108dbf04bc'} || 
+2012-01-18 07:03:32+0000 [StompProtocol,5,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-18 07:03:32+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-18 07:03:32+0000 [StompProtocol,5,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk9'} || 
+2012-01-18 07:03:32+0000 [StompProtocol,5,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-18 07:03:32+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-18 07:03:33+0000 [StompProtocol,5,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  disconnect || {} || 
+2012-01-18 07:03:33+0000 [StompProtocol,5,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-18 07:03:33+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-18 07:04:22+0000 [-] Received SIGTERM, shutting down.
+2012-01-18 07:04:22+0000 [-] (TCP Port 5000 Closed)
+2012-01-18 07:04:22+0000 [-] Stopping factory <twisted.web.server.Site instance at 0x33890e0>
+2012-01-18 07:04:22+0000 [-] (TCP Port 9999 Closed)
+2012-01-18 07:04:22+0000 [-] Stopping factory <realtime.stompfactory.StompFactoryCustom instance at 0x337fab8>
+2012-01-18 07:04:22+0000 [-] (TCP Port 8000 Closed)
+2012-01-18 07:04:22+0000 [-] Stopping factory <twisted.web.server.Site instance at 0x337f6c8>
+2012-01-18 07:04:22+0000 [-] Main loop terminated.
+2012-01-18 07:04:22+0000 [-] Server Shut Down.
+2012-01-18 07:38:55+0000 [-] Log opened.
+2012-01-18 07:38:55+0000 [-] twistd 11.0.0 (/usr/bin/python 2.6.5) starting up.
+2012-01-18 07:38:55+0000 [-] reactor class: twisted.internet.selectreactor.SelectReactor.
+2012-01-18 07:38:55+0000 [-] twisted.web.server.Site starting on 8000
+2012-01-18 07:38:55+0000 [-] Starting factory <twisted.web.server.Site instance at 0x2760830>
+2012-01-18 07:38:55+0000 [-] /usr/local/lib/python2.6/dist-packages/Twisted-11.0.0-py2.6-linux-x86_64.egg/twisted/application/internet.py:131: exceptions.DeprecationWarning: listenWith is deprecated since Twisted 10.1.  See IReactorFDSet.
+2012-01-18 07:38:55+0000 [-] realtime.stompfactory.StompFactoryCustom starting on 9999
+2012-01-18 07:38:55+0000 [-] Starting factory <realtime.stompfactory.StompFactoryCustom instance at 0x2760c20>
+2012-01-18 07:38:55+0000 [-] twisted.web.server.Site starting on 5000
+2012-01-18 07:38:55+0000 [-] Starting factory <twisted.web.server.Site instance at 0x276c248>
+2012-01-18 07:40:05+0000 [-] Log opened.
+2012-01-18 07:40:05+0000 [-] twistd 11.0.0 (/usr/bin/python 2.6.5) starting up.
+2012-01-18 07:40:05+0000 [-] reactor class: twisted.internet.selectreactor.SelectReactor.
+2012-01-18 07:40:05+0000 [-] twisted.web.server.Site starting on 8000
+2012-01-18 07:40:05+0000 [-] Starting factory <twisted.web.server.Site instance at 0x29876c8>
+2012-01-18 07:40:05+0000 [-] /usr/local/lib/python2.6/dist-packages/Twisted-11.0.0-py2.6-linux-x86_64.egg/twisted/application/internet.py:131: exceptions.DeprecationWarning: listenWith is deprecated since Twisted 10.1.  See IReactorFDSet.
+2012-01-18 07:40:05+0000 [-] realtime.stompfactory.StompFactoryCustom starting on 9999
+2012-01-18 07:40:05+0000 [-] Starting factory <realtime.stompfactory.StompFactoryCustom instance at 0x2987ab8>
+2012-01-18 07:40:05+0000 [-] twisted.web.server.Site starting on 5000
+2012-01-18 07:40:05+0000 [-] Starting factory <twisted.web.server.Site instance at 0x29900e0>
+2012-01-18 07:44:00+0000 [-] Received SIGTERM, shutting down.
+2012-01-18 07:44:00+0000 [-] (TCP Port 5000 Closed)
+2012-01-18 07:44:00+0000 [-] Stopping factory <twisted.web.server.Site instance at 0x29900e0>
+2012-01-18 07:44:00+0000 [-] (TCP Port 9999 Closed)
+2012-01-18 07:44:00+0000 [-] Stopping factory <realtime.stompfactory.StompFactoryCustom instance at 0x2987ab8>
+2012-01-18 07:44:00+0000 [-] (TCP Port 8000 Closed)
+2012-01-18 07:44:00+0000 [-] Stopping factory <twisted.web.server.Site instance at 0x29876c8>
+2012-01-18 07:44:00+0000 [-] Main loop terminated.
+2012-01-18 07:44:00+0000 [-] Server Shut Down.
+2012-01-18 07:44:12+0000 [-] Log opened.
+2012-01-18 07:44:12+0000 [-] twistd 11.0.0 (/usr/bin/python 2.6.5) starting up.
+2012-01-18 07:44:12+0000 [-] reactor class: twisted.internet.selectreactor.SelectReactor.
+2012-01-18 07:44:12+0000 [-] twisted.web.server.Site starting on 8000
+2012-01-18 07:44:12+0000 [-] Starting factory <twisted.web.server.Site instance at 0x30506c8>
+2012-01-18 07:44:12+0000 [-] /usr/local/lib/python2.6/dist-packages/Twisted-11.0.0-py2.6-linux-x86_64.egg/twisted/application/internet.py:131: exceptions.DeprecationWarning: listenWith is deprecated since Twisted 10.1.  See IReactorFDSet.
+2012-01-18 07:44:12+0000 [-] realtime.stompfactory.StompFactoryCustom starting on 9999
+2012-01-18 07:44:12+0000 [-] Starting factory <realtime.stompfactory.StompFactoryCustom instance at 0x3050ab8>
+2012-01-18 07:44:12+0000 [-] twisted.web.server.Site starting on 5000
+2012-01-18 07:44:12+0000 [-] Starting factory <twisted.web.server.Site instance at 0x30590e0>
+2012-01-18 07:45:57+0000 [StompProtocol,0,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': 'a81cba348b1627891f203b92ae1d2bd0'} || 
+2012-01-18 07:45:57+0000 [StompProtocol,0,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-18 07:45:57+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-18 07:45:57+0000 [StompProtocol,0,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk9'} || 
+2012-01-18 07:45:57+0000 [StompProtocol,0,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-18 07:45:57+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-18 07:45:59+0000 [StompProtocol,0,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  disconnect || {} || 
+2012-01-18 07:45:59+0000 [StompProtocol,0,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-18 07:45:59+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-18 07:46:14+0000 [StompProtocol,1,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '3f3b4fa255f7fc6c5766fe8094ffe521'} || 
+2012-01-18 07:46:14+0000 [StompProtocol,1,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-18 07:46:14+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-18 07:46:14+0000 [StompProtocol,1,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk9'} || 
+2012-01-18 07:46:14+0000 [StompProtocol,1,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-18 07:46:14+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-18 07:46:18+0000 [StompProtocol,1,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  disconnect || {} || 
+2012-01-18 07:46:18+0000 [StompProtocol,1,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-18 07:46:18+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-18 07:46:31+0000 [StompProtocol,2,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '3f3b4fa255f7fc6c5766fe8094ffe521'} || 
+2012-01-18 07:46:31+0000 [StompProtocol,2,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-18 07:46:31+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-18 07:46:31+0000 [StompProtocol,2,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk9'} || 
+2012-01-18 07:46:31+0000 [StompProtocol,2,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-18 07:46:31+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-18 07:46:37+0000 [StompProtocol,2,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  disconnect || {} || 
+2012-01-18 07:46:37+0000 [StompProtocol,2,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-18 07:46:37+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-18 07:47:21+0000 [StompProtocol,3,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '3f3b4fa255f7fc6c5766fe8094ffe521'} || 
+2012-01-18 07:47:21+0000 [StompProtocol,3,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-18 07:47:21+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-18 07:47:21+0000 [StompProtocol,3,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk9'} || 
+2012-01-18 07:47:21+0000 [StompProtocol,3,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-18 07:47:21+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-18 07:47:30+0000 [StompProtocol,3,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  disconnect || {} || 
+2012-01-18 07:47:30+0000 [StompProtocol,3,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-18 07:47:30+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-18 07:48:19+0000 [StompProtocol,4,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '3f3b4fa255f7fc6c5766fe8094ffe521'} || 
+2012-01-18 07:48:19+0000 [StompProtocol,4,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-18 07:48:19+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-18 07:48:20+0000 [StompProtocol,4,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  send || {'content-length': '159', 'destination': '/topic/frontdesk9'} || {"headerID": 199, "from": "suresh", "patient": {"signin": "01:48", "appointment": "0:00", "name": "k, anjali, 7888-08-09"}, "type": "signin", "response": "OK"}
+2012-01-18 07:48:20+0000 [StompProtocol,4,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/send>
+2012-01-18 07:48:20+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/send>
+2012-01-18 07:48:25+0000 [StompProtocol,4,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  disconnect || {'content-length': '0'} || 
+2012-01-18 07:48:25+0000 [StompProtocol,4,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-18 07:48:25+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-18 07:48:26+0000 [StompProtocol,5,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '3f3b4fa255f7fc6c5766fe8094ffe521'} || 
+2012-01-18 07:48:26+0000 [StompProtocol,5,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-18 07:48:26+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-18 07:48:26+0000 [StompProtocol,5,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk9'} || 
+2012-01-18 07:48:26+0000 [StompProtocol,5,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-18 07:48:26+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-18 08:56:55+0000 [-] Log opened.
+2012-01-18 08:56:55+0000 [-] twistd 11.0.0 (/usr/bin/python 2.6.5) starting up.
+2012-01-18 08:56:55+0000 [-] reactor class: twisted.internet.selectreactor.SelectReactor.
+2012-01-18 08:56:55+0000 [-] twisted.web.server.Site starting on 8000
+2012-01-18 08:56:55+0000 [-] Starting factory <twisted.web.server.Site instance at 0x456c6c8>
+2012-01-18 08:56:55+0000 [-] /usr/local/lib/python2.6/dist-packages/Twisted-11.0.0-py2.6-linux-x86_64.egg/twisted/application/internet.py:131: exceptions.DeprecationWarning: listenWith is deprecated since Twisted 10.1.  See IReactorFDSet.
+2012-01-18 08:56:55+0000 [-] realtime.stompfactory.StompFactoryCustom starting on 9999
+2012-01-18 08:56:55+0000 [-] Starting factory <realtime.stompfactory.StompFactoryCustom instance at 0x456cab8>
+2012-01-18 08:56:55+0000 [-] twisted.web.server.Site starting on 5000
+2012-01-18 08:56:55+0000 [-] Starting factory <twisted.web.server.Site instance at 0x45750e0>
+2012-01-18 08:57:15+0000 [HTTPChannel,1,127.0.0.1] /usr/local/lib/python2.6/dist-packages/Django-1.3-py2.6.egg/django/contrib/auth/models.py:393: exceptions.DeprecationWarning: The user messaging API is deprecated. Please update your code to use the new messages framework.
+2012-01-18 09:46:36+0000 [-] Log opened.
+2012-01-18 09:46:36+0000 [-] twistd 11.0.0 (/usr/bin/python 2.6.5) starting up.
+2012-01-18 09:46:36+0000 [-] reactor class: twisted.internet.selectreactor.SelectReactor.
+2012-01-18 09:46:36+0000 [-] twisted.web.server.Site starting on 8000
+2012-01-18 09:46:36+0000 [-] Starting factory <twisted.web.server.Site instance at 0x2cda6c8>
+2012-01-18 09:46:36+0000 [-] /usr/local/lib/python2.6/dist-packages/Twisted-11.0.0-py2.6-linux-x86_64.egg/twisted/application/internet.py:131: exceptions.DeprecationWarning: listenWith is deprecated since Twisted 10.1.  See IReactorFDSet.
+2012-01-18 09:46:36+0000 [-] realtime.stompfactory.StompFactoryCustom starting on 9999
+2012-01-18 09:46:36+0000 [-] Starting factory <realtime.stompfactory.StompFactoryCustom instance at 0x2cdaab8>
+2012-01-18 09:46:36+0000 [-] twisted.web.server.Site starting on 5000
+2012-01-18 09:46:36+0000 [-] Starting factory <twisted.web.server.Site instance at 0x2ce30e0>
+2012-01-18 09:47:30+0000 [StompProtocol,0,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '2d92be097ff4168637bf5ba9db449277'} || 
+2012-01-18 09:47:30+0000 [StompProtocol,0,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-18 09:47:30+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-18 09:47:30+0000 [StompProtocol,0,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk9'} || 
+2012-01-18 09:47:30+0000 [StompProtocol,0,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-18 09:47:30+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-18 09:48:09+0000 [StompProtocol,1,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '2d92be097ff4168637bf5ba9db449277'} || 
+2012-01-18 09:48:09+0000 [StompProtocol,1,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-18 09:48:09+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-18 09:48:09+0000 [StompProtocol,1,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk9'} || 
+2012-01-18 09:48:09+0000 [StompProtocol,1,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-18 09:48:09+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-18 09:50:15+0000 [StompProtocol,1,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  send || {'content-length': '59', 'destination': '/topic/frontdesk9', 'content-type': 'text/plain', 'content-encoding': 'utf-8'} || {"type":"eventlog","headerID":"199","event":"registration"}
+2012-01-18 09:50:15+0000 [StompProtocol,1,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/send>
+2012-01-18 09:50:16+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/send>
+2012-01-18 09:59:03+0000 [StompProtocol,2,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '2d92be097ff4168637bf5ba9db449277'} || 
+2012-01-18 09:59:03+0000 [StompProtocol,2,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-18 09:59:03+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-18 09:59:04+0000 [StompProtocol,2,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  send || {'content-length': '58', 'destination': '/topic/frontdesk9'} || {"headerID": "199", "type": "eventlog", "event": "triage"}
+2012-01-18 09:59:04+0000 [StompProtocol,2,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/send>
+2012-01-18 09:59:04+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/send>
+2012-01-18 09:59:06+0000 [StompProtocol,2,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  disconnect || {'content-length': '0'} || 
+2012-01-18 09:59:06+0000 [StompProtocol,2,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-18 09:59:06+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-18 10:04:33+0000 [StompProtocol,0,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  disconnect || {} || 
+2012-01-18 10:04:33+0000 [StompProtocol,0,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-18 10:04:33+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-18 10:04:37+0000 [StompProtocol,3,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '2d92be097ff4168637bf5ba9db449277'} || 
+2012-01-18 10:04:37+0000 [StompProtocol,3,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-18 10:04:37+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-18 10:04:37+0000 [StompProtocol,3,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk4'} || 
+2012-01-18 10:04:37+0000 [StompProtocol,3,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-18 10:04:37+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-18 10:05:01+0000 [StompProtocol,3,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  disconnect || {} || 
+2012-01-18 10:05:01+0000 [StompProtocol,3,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-18 10:05:01+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-18 10:18:30+0000 [-] Log opened.
+2012-01-18 10:18:30+0000 [-] twistd 11.0.0 (/usr/bin/python 2.6.5) starting up.
+2012-01-18 10:18:30+0000 [-] reactor class: twisted.internet.selectreactor.SelectReactor.
+2012-01-18 10:18:30+0000 [-] twisted.web.server.Site starting on 8000
+2012-01-18 10:18:30+0000 [-] Starting factory <twisted.web.server.Site instance at 0x278a6c8>
+2012-01-18 10:18:30+0000 [-] /usr/local/lib/python2.6/dist-packages/Twisted-11.0.0-py2.6-linux-x86_64.egg/twisted/application/internet.py:131: exceptions.DeprecationWarning: listenWith is deprecated since Twisted 10.1.  See IReactorFDSet.
+2012-01-18 10:18:30+0000 [-] realtime.stompfactory.StompFactoryCustom starting on 9999
+2012-01-18 10:18:30+0000 [-] Starting factory <realtime.stompfactory.StompFactoryCustom instance at 0x278aab8>
+2012-01-18 10:18:30+0000 [-] twisted.web.server.Site starting on 5000
+2012-01-18 10:18:30+0000 [-] Starting factory <twisted.web.server.Site instance at 0x27930e0>
+2012-01-18 10:18:31+0000 [StompProtocol,0,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '2d92be097ff4168637bf5ba9db449277'} || 
+2012-01-18 10:18:31+0000 [StompProtocol,0,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-18 10:18:31+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-18 10:18:31+0000 [StompProtocol,0,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk9'} || 
+2012-01-18 10:18:31+0000 [StompProtocol,0,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-18 10:18:31+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-18 10:40:40+0000 [-] Log opened.
+2012-01-18 10:40:40+0000 [-] twistd 11.0.0 (/usr/bin/python 2.6.5) starting up.
+2012-01-18 10:40:40+0000 [-] reactor class: twisted.internet.selectreactor.SelectReactor.
+2012-01-18 10:40:40+0000 [-] twisted.web.server.Site starting on 8000
+2012-01-18 10:40:40+0000 [-] Starting factory <twisted.web.server.Site instance at 0x2bce6c8>
+2012-01-18 10:40:40+0000 [-] /usr/local/lib/python2.6/dist-packages/Twisted-11.0.0-py2.6-linux-x86_64.egg/twisted/application/internet.py:131: exceptions.DeprecationWarning: listenWith is deprecated since Twisted 10.1.  See IReactorFDSet.
+2012-01-18 10:40:41+0000 [-] Traceback (most recent call last):
+2012-01-18 10:40:41+0000 [-]   File "/usr/local/bin/twistd", line 5, in <module>
+2012-01-18 10:40:41+0000 [-]     pkg_resources.run_script('Twisted==11.0.0', 'twistd')
+2012-01-18 10:40:41+0000 [-]   File "/usr/lib/python2.6/dist-packages/pkg_resources.py", line 461, in run_script
+2012-01-18 10:40:41+0000 [-]     self.require(requires)[0].run_script(script_name, ns)
+2012-01-18 10:40:41+0000 [-]   File "/usr/lib/python2.6/dist-packages/pkg_resources.py", line 1194, in run_script
+2012-01-18 10:40:41+0000 [-]     execfile(script_filename, namespace, namespace)
+2012-01-18 10:40:41+0000 [-]   File "/usr/local/lib/python2.6/dist-packages/Twisted-11.0.0-py2.6-linux-x86_64.egg/EGG-INFO/scripts/twistd", line 19, in <module>
+2012-01-18 10:40:41+0000 [-]     run()
+2012-01-18 10:40:41+0000 [-]   File "/usr/local/lib/python2.6/dist-packages/Twisted-11.0.0-py2.6-linux-x86_64.egg/twisted/scripts/twistd.py", line 27, in run
+2012-01-18 10:40:41+0000 [-]     app.run(runApp, ServerOptions)
+2012-01-18 10:40:41+0000 [-]   File "/usr/local/lib/python2.6/dist-packages/Twisted-11.0.0-py2.6-linux-x86_64.egg/twisted/application/app.py", line 622, in run
+2012-01-18 10:40:41+0000 [-]     runApp(config)
+2012-01-18 10:40:41+0000 [-]   File "/usr/local/lib/python2.6/dist-packages/Twisted-11.0.0-py2.6-linux-x86_64.egg/twisted/scripts/twistd.py", line 23, in runApp
+2012-01-18 10:40:41+0000 [-]     _SomeApplicationRunner(config).run()
+2012-01-18 10:40:41+0000 [-]   File "/usr/local/lib/python2.6/dist-packages/Twisted-11.0.0-py2.6-linux-x86_64.egg/twisted/application/app.py", line 380, in run
+2012-01-18 10:40:41+0000 [-]     self.postApplication()
+2012-01-18 10:40:41+0000 [-]   File "/usr/local/lib/python2.6/dist-packages/Twisted-11.0.0-py2.6-linux-x86_64.egg/twisted/scripts/_twistd_unix.py", line 205, in postApplication
+2012-01-18 10:40:41+0000 [-]     self.startApplication(self.application)
+2012-01-18 10:40:41+0000 [-]   File "/usr/local/lib/python2.6/dist-packages/Twisted-11.0.0-py2.6-linux-x86_64.egg/twisted/scripts/_twistd_unix.py", line 314, in startApplication
+2012-01-18 10:40:41+0000 [-]     service.IService(application).privilegedStartService()
+2012-01-18 10:40:41+0000 [-]   File "/usr/local/lib/python2.6/dist-packages/Twisted-11.0.0-py2.6-linux-x86_64.egg/twisted/application/service.py", line 272, in privilegedStartService
+2012-01-18 10:40:41+0000 [-]     service.privilegedStartService()
+2012-01-18 10:40:41+0000 [-]   File "/usr/local/lib/python2.6/dist-packages/Twisted-11.0.0-py2.6-linux-x86_64.egg/twisted/application/service.py", line 272, in privilegedStartService
+2012-01-18 10:40:41+0000 [-]     service.privilegedStartService()
+2012-01-18 10:40:41+0000 [-]   File "/usr/local/lib/python2.6/dist-packages/Twisted-11.0.0-py2.6-linux-x86_64.egg/twisted/application/internet.py", line 104, in privilegedStartService
+2012-01-18 10:40:41+0000 [-]     self._port = self._getPort()
+2012-01-18 10:40:41+0000 [-]   File "/usr/local/lib/python2.6/dist-packages/Twisted-11.0.0-py2.6-linux-x86_64.egg/twisted/application/internet.py", line 131, in _getPort
+2012-01-18 10:40:41+0000 [-]     'listen%s' % (self.method,))(*self.args, **self.kwargs)
+2012-01-18 10:40:41+0000 [-]   File "/usr/local/lib/python2.6/dist-packages/Twisted-11.0.0-py2.6-linux-x86_64.egg/twisted/internet/posixbase.py", line 419, in listenTCP
+2012-01-18 10:40:41+0000 [-]     p.startListening()
+2012-01-18 10:40:41+0000 [-]   File "/usr/local/lib/python2.6/dist-packages/Twisted-11.0.0-py2.6-linux-x86_64.egg/twisted/internet/tcp.py", line 867, in startListening
+2012-01-18 10:40:41+0000 [-]     raise CannotListenError, (self.interface, self.port, le)
+2012-01-18 10:40:41+0000 [-] twisted.internet.error.CannotListenError: Couldn't listen on ditchyourip.com:9999: [Errno 98] Address already in use.
+2012-01-18 10:44:03+0000 [-] Log opened.
+2012-01-18 10:44:03+0000 [-] twistd 11.0.0 (/usr/bin/python 2.6.5) starting up.
+2012-01-18 10:44:03+0000 [-] reactor class: twisted.internet.selectreactor.SelectReactor.
+2012-01-18 10:44:03+0000 [-] twisted.web.server.Site starting on 8000
+2012-01-18 10:44:03+0000 [-] Starting factory <twisted.web.server.Site instance at 0x3dde6c8>
+2012-01-18 10:44:03+0000 [-] /usr/local/lib/python2.6/dist-packages/Twisted-11.0.0-py2.6-linux-x86_64.egg/twisted/application/internet.py:131: exceptions.DeprecationWarning: listenWith is deprecated since Twisted 10.1.  See IReactorFDSet.
+2012-01-18 10:44:03+0000 [-] realtime.stompfactory.StompFactoryCustom starting on 9999
+2012-01-18 10:44:03+0000 [-] Starting factory <realtime.stompfactory.StompFactoryCustom instance at 0x3ddeab8>
+2012-01-18 10:44:03+0000 [-] twisted.web.server.Site starting on 5000
+2012-01-18 10:44:03+0000 [-] Starting factory <twisted.web.server.Site instance at 0x3de70e0>
+2012-01-18 10:44:50+0000 [-] Received SIGTERM, shutting down.
+2012-01-18 10:44:50+0000 [-] (TCP Port 5000 Closed)
+2012-01-18 10:44:50+0000 [-] Stopping factory <twisted.web.server.Site instance at 0x3de70e0>
+2012-01-18 10:44:50+0000 [-] (TCP Port 9999 Closed)
+2012-01-18 10:44:50+0000 [-] Stopping factory <realtime.stompfactory.StompFactoryCustom instance at 0x3ddeab8>
+2012-01-18 10:44:50+0000 [-] (TCP Port 8000 Closed)
+2012-01-18 10:44:50+0000 [-] Stopping factory <twisted.web.server.Site instance at 0x3dde6c8>
+2012-01-18 10:44:50+0000 [-] Main loop terminated.
+2012-01-18 10:44:50+0000 [-] Server Shut Down.
+2012-01-18 10:45:09+0000 [-] Log opened.
+2012-01-18 10:45:09+0000 [-] twistd 11.0.0 (/usr/bin/python 2.6.5) starting up.
+2012-01-18 10:45:09+0000 [-] reactor class: twisted.internet.selectreactor.SelectReactor.
+2012-01-18 10:45:09+0000 [-] twisted.web.server.Site starting on 8000
+2012-01-18 10:45:09+0000 [-] Starting factory <twisted.web.server.Site instance at 0x30e66c8>
+2012-01-18 10:45:09+0000 [-] /usr/local/lib/python2.6/dist-packages/Twisted-11.0.0-py2.6-linux-x86_64.egg/twisted/application/internet.py:131: exceptions.DeprecationWarning: listenWith is deprecated since Twisted 10.1.  See IReactorFDSet.
+2012-01-18 10:45:09+0000 [-] realtime.stompfactory.StompFactoryCustom starting on 9999
+2012-01-18 10:45:09+0000 [-] Starting factory <realtime.stompfactory.StompFactoryCustom instance at 0x30e6ab8>
+2012-01-18 10:45:09+0000 [-] twisted.web.server.Site starting on 5000
+2012-01-18 10:45:09+0000 [-] Starting factory <twisted.web.server.Site instance at 0x30ef0e0>
+2012-01-18 10:45:41+0000 [-] Received SIGTERM, shutting down.
+2012-01-18 10:45:41+0000 [-] (TCP Port 5000 Closed)
+2012-01-18 10:45:41+0000 [-] Stopping factory <twisted.web.server.Site instance at 0x30ef0e0>
+2012-01-18 10:45:41+0000 [-] (TCP Port 9999 Closed)
+2012-01-18 10:45:41+0000 [-] Stopping factory <realtime.stompfactory.StompFactoryCustom instance at 0x30e6ab8>
+2012-01-18 10:45:41+0000 [-] (TCP Port 8000 Closed)
+2012-01-18 10:45:41+0000 [-] Stopping factory <twisted.web.server.Site instance at 0x30e66c8>
+2012-01-18 10:45:41+0000 [-] Main loop terminated.
+2012-01-18 10:45:41+0000 [-] Server Shut Down.
+2012-01-18 10:45:44+0000 [-] Log opened.
+2012-01-18 10:45:44+0000 [-] twistd 11.0.0 (/usr/bin/python 2.6.5) starting up.
+2012-01-18 10:45:44+0000 [-] reactor class: twisted.internet.selectreactor.SelectReactor.
+2012-01-18 10:45:44+0000 [-] twisted.web.server.Site starting on 8000
+2012-01-18 10:45:44+0000 [-] Starting factory <twisted.web.server.Site instance at 0x3e586c8>
+2012-01-18 10:45:44+0000 [-] /usr/local/lib/python2.6/dist-packages/Twisted-11.0.0-py2.6-linux-x86_64.egg/twisted/application/internet.py:131: exceptions.DeprecationWarning: listenWith is deprecated since Twisted 10.1.  See IReactorFDSet.
+2012-01-18 10:45:44+0000 [-] realtime.stompfactory.StompFactoryCustom starting on 9999
+2012-01-18 10:45:44+0000 [-] Starting factory <realtime.stompfactory.StompFactoryCustom instance at 0x3e58ab8>
+2012-01-18 10:45:44+0000 [-] twisted.web.server.Site starting on 5000
+2012-01-18 10:45:44+0000 [-] Starting factory <twisted.web.server.Site instance at 0x3e610e0>
+2012-01-18 11:31:40+0000 [-] Log opened.
+2012-01-18 11:31:40+0000 [-] twistd 11.0.0 (/usr/bin/python 2.6.5) starting up.
+2012-01-18 11:31:40+0000 [-] reactor class: twisted.internet.selectreactor.SelectReactor.
+2012-01-18 11:31:40+0000 [-] twisted.web.server.Site starting on 8000
+2012-01-18 11:31:40+0000 [-] Starting factory <twisted.web.server.Site instance at 0x314c6c8>
+2012-01-18 11:31:40+0000 [-] /usr/local/lib/python2.6/dist-packages/Twisted-11.0.0-py2.6-linux-x86_64.egg/twisted/application/internet.py:131: exceptions.DeprecationWarning: listenWith is deprecated since Twisted 10.1.  See IReactorFDSet.
+2012-01-18 11:31:40+0000 [-] realtime.stompfactory.StompFactoryCustom starting on 9999
+2012-01-18 11:31:40+0000 [-] Starting factory <realtime.stompfactory.StompFactoryCustom instance at 0x314cab8>
+2012-01-18 11:31:40+0000 [-] twisted.web.server.Site starting on 5000
+2012-01-18 11:31:40+0000 [-] Starting factory <twisted.web.server.Site instance at 0x31550e0>
+2012-01-18 11:31:57+0000 [HTTPChannel,2,127.0.0.1] /usr/local/lib/python2.6/dist-packages/Django-1.3-py2.6.egg/django/contrib/auth/models.py:393: exceptions.DeprecationWarning: The user messaging API is deprecated. Please update your code to use the new messages framework.
+2012-01-18 12:34:16+0000 [-] Log opened.
+2012-01-18 12:34:16+0000 [-] twistd 11.0.0 (/usr/bin/python 2.6.5) starting up.
+2012-01-18 12:34:16+0000 [-] reactor class: twisted.internet.selectreactor.SelectReactor.
+2012-01-18 12:34:16+0000 [-] twisted.web.server.Site starting on 8000
+2012-01-18 12:34:16+0000 [-] Starting factory <twisted.web.server.Site instance at 0x33866c8>
+2012-01-18 12:34:16+0000 [-] /usr/local/lib/python2.6/dist-packages/Twisted-11.0.0-py2.6-linux-x86_64.egg/twisted/application/internet.py:131: exceptions.DeprecationWarning: listenWith is deprecated since Twisted 10.1.  See IReactorFDSet.
+2012-01-18 12:34:16+0000 [-] realtime.stompfactory.StompFactoryCustom starting on 9999
+2012-01-18 12:34:16+0000 [-] Starting factory <realtime.stompfactory.StompFactoryCustom instance at 0x3386ab8>
+2012-01-18 12:34:16+0000 [-] twisted.web.server.Site starting on 5000
+2012-01-18 12:34:16+0000 [-] Starting factory <twisted.web.server.Site instance at 0x338f0e0>
+2012-01-18 12:34:33+0000 [HTTPChannel,1,127.0.0.1] /usr/local/lib/python2.6/dist-packages/Django-1.3-py2.6.egg/django/contrib/auth/models.py:393: exceptions.DeprecationWarning: The user messaging API is deprecated. Please update your code to use the new messages framework.
+2012-01-19 03:23:25+0000 [-] Log opened.
+2012-01-19 03:23:25+0000 [-] twistd 11.0.0 (/usr/bin/python 2.6.5) starting up.
+2012-01-19 03:23:25+0000 [-] reactor class: twisted.internet.selectreactor.SelectReactor.
+2012-01-19 03:23:25+0000 [-] twisted.web.server.Site starting on 8000
+2012-01-19 03:23:25+0000 [-] Starting factory <twisted.web.server.Site instance at 0x2a746c8>
+2012-01-19 03:23:25+0000 [-] /usr/local/lib/python2.6/dist-packages/Twisted-11.0.0-py2.6-linux-x86_64.egg/twisted/application/internet.py:131: exceptions.DeprecationWarning: listenWith is deprecated since Twisted 10.1.  See IReactorFDSet.
+2012-01-19 03:23:25+0000 [-] realtime.stompfactory.StompFactoryCustom starting on 9999
+2012-01-19 03:23:25+0000 [-] Starting factory <realtime.stompfactory.StompFactoryCustom instance at 0x2a74ab8>
+2012-01-19 03:23:25+0000 [-] twisted.web.server.Site starting on 5000
+2012-01-19 03:23:25+0000 [-] Starting factory <twisted.web.server.Site instance at 0x2a7d0e0>
+2012-01-19 03:23:54+0000 [StompProtocol,0,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '2098c9845b817623078183aee6d76323'} || 
+2012-01-19 03:23:54+0000 [StompProtocol,0,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-19 03:23:54+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-19 03:23:54+0000 [StompProtocol,0,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk9'} || 
+2012-01-19 03:23:54+0000 [StompProtocol,0,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-19 03:23:54+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-19 03:24:54+0000 [StompProtocol,0,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  disconnect || {} || 
+2012-01-19 03:24:54+0000 [StompProtocol,0,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-19 03:24:54+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-19 05:25:33+0000 [-] Log opened.
+2012-01-19 05:25:33+0000 [-] twistd 11.0.0 (/usr/bin/python 2.6.5) starting up.
+2012-01-19 05:25:33+0000 [-] reactor class: twisted.internet.selectreactor.SelectReactor.
+2012-01-19 05:25:33+0000 [-] twisted.web.server.Site starting on 8000
+2012-01-19 05:25:33+0000 [-] Starting factory <twisted.web.server.Site instance at 0x2bfc6c8>
+2012-01-19 05:25:33+0000 [-] /usr/local/lib/python2.6/dist-packages/Twisted-11.0.0-py2.6-linux-x86_64.egg/twisted/application/internet.py:131: exceptions.DeprecationWarning: listenWith is deprecated since Twisted 10.1.  See IReactorFDSet.
+2012-01-19 05:25:33+0000 [-] realtime.stompfactory.StompFactoryCustom starting on 9999
+2012-01-19 05:25:33+0000 [-] Starting factory <realtime.stompfactory.StompFactoryCustom instance at 0x2bfcab8>
+2012-01-19 05:25:33+0000 [-] twisted.web.server.Site starting on 5000
+2012-01-19 05:25:33+0000 [-] Starting factory <twisted.web.server.Site instance at 0x2c050e0>
+2012-01-19 05:33:28+0000 [-] Log opened.
+2012-01-19 05:33:28+0000 [-] twistd 11.0.0 (/usr/bin/python 2.6.5) starting up.
+2012-01-19 05:33:28+0000 [-] reactor class: twisted.internet.selectreactor.SelectReactor.
+2012-01-19 05:33:28+0000 [-] twisted.web.server.Site starting on 8000
+2012-01-19 05:33:28+0000 [-] Starting factory <twisted.web.server.Site instance at 0x26996c8>
+2012-01-19 05:33:28+0000 [-] /usr/local/lib/python2.6/dist-packages/Twisted-11.0.0-py2.6-linux-x86_64.egg/twisted/application/internet.py:131: exceptions.DeprecationWarning: listenWith is deprecated since Twisted 10.1.  See IReactorFDSet.
+2012-01-19 05:33:28+0000 [-] realtime.stompfactory.StompFactoryCustom starting on 9999
+2012-01-19 05:33:28+0000 [-] Starting factory <realtime.stompfactory.StompFactoryCustom instance at 0x2699ab8>
+2012-01-19 05:33:28+0000 [-] twisted.web.server.Site starting on 5000
+2012-01-19 05:33:28+0000 [-] Starting factory <twisted.web.server.Site instance at 0x26a20e0>
+2012-01-19 06:56:53+0000 [-] Log opened.
+2012-01-19 06:56:53+0000 [-] twistd 11.0.0 (/usr/bin/python 2.6.5) starting up.
+2012-01-19 06:56:53+0000 [-] reactor class: twisted.internet.selectreactor.SelectReactor.
+2012-01-19 06:56:53+0000 [-] twisted.web.server.Site starting on 8000
+2012-01-19 06:56:53+0000 [-] Starting factory <twisted.web.server.Site instance at 0x2ae56c8>
+2012-01-19 06:56:53+0000 [-] /usr/local/lib/python2.6/dist-packages/Twisted-11.0.0-py2.6-linux-x86_64.egg/twisted/application/internet.py:131: exceptions.DeprecationWarning: listenWith is deprecated since Twisted 10.1.  See IReactorFDSet.
+2012-01-19 06:56:53+0000 [-] realtime.stompfactory.StompFactoryCustom starting on 9999
+2012-01-19 06:56:53+0000 [-] Starting factory <realtime.stompfactory.StompFactoryCustom instance at 0x2ae5ab8>
+2012-01-19 06:56:53+0000 [-] twisted.web.server.Site starting on 5000
+2012-01-19 06:56:53+0000 [-] Starting factory <twisted.web.server.Site instance at 0x2aee0e0>
+2012-01-19 06:57:53+0000 [StompProtocol,0,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '9d30c64127b88200c281ceb8165b45ea'} || 
+2012-01-19 06:57:53+0000 [StompProtocol,0,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-19 06:57:53+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-19 06:57:54+0000 [StompProtocol,0,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  send || {'content-length': '157', 'destination': '/topic/frontdesk9'} || {"headerID": 200, "from": "suresh", "patient": {"signin": "00:57", "appointment": "0:00", "name": "y, jkkl, 1234-07-05"}, "type": "signin", "response": "OK"}
+2012-01-19 06:57:54+0000 [StompProtocol,0,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/send>
+2012-01-19 06:57:54+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/send>
+2012-01-19 06:57:59+0000 [StompProtocol,0,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  disconnect || {'content-length': '0'} || 
+2012-01-19 06:57:59+0000 [StompProtocol,0,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-19 06:57:59+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-19 06:58:46+0000 [StompProtocol,1,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '9d30c64127b88200c281ceb8165b45ea'} || 
+2012-01-19 06:58:46+0000 [StompProtocol,1,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-19 06:58:46+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-19 06:58:47+0000 [StompProtocol,1,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  send || {'content-length': '158', 'destination': '/topic/frontdesk9'} || {"headerID": 201, "from": "suresh", "patient": {"signin": "00:58", "appointment": "0:00", "name": "n, gfhgh, 3434-05-05"}, "type": "signin", "response": "OK"}
+2012-01-19 06:58:47+0000 [StompProtocol,1,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/send>
+2012-01-19 06:58:47+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/send>
+2012-01-19 06:58:52+0000 [StompProtocol,1,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  disconnect || {'content-length': '0'} || 
+2012-01-19 06:58:52+0000 [StompProtocol,1,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-19 06:58:52+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-19 07:00:02+0000 [HTTPChannel,3,127.0.0.1] /usr/local/lib/python2.6/dist-packages/Django-1.3-py2.6.egg/django/contrib/auth/models.py:393: exceptions.DeprecationWarning: The user messaging API is deprecated. Please update your code to use the new messages framework.
+2012-01-19 07:01:06+0000 [StompProtocol,2,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '9d30c64127b88200c281ceb8165b45ea'} || 
+2012-01-19 07:01:06+0000 [StompProtocol,2,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-19 07:01:06+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-19 07:01:08+0000 [StompProtocol,2,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  send || {'content-length': '158', 'destination': '/topic/frontdesk9'} || {"headerID": 202, "from": "suresh", "patient": {"signin": "01:01", "appointment": "0:00", "name": "k, ghggf, 1222-08-09"}, "type": "signin", "response": "OK"}
+2012-01-19 07:01:08+0000 [StompProtocol,2,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/send>
+2012-01-19 07:01:08+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/send>
+2012-01-19 07:01:13+0000 [StompProtocol,2,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  disconnect || {'content-length': '0'} || 
+2012-01-19 07:01:13+0000 [StompProtocol,2,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-19 07:01:13+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-19 09:59:27+0000 [-] Log opened.
+2012-01-19 09:59:27+0000 [-] twistd 11.0.0 (/usr/bin/python 2.6.5) starting up.
+2012-01-19 09:59:27+0000 [-] reactor class: twisted.internet.selectreactor.SelectReactor.
+2012-01-19 09:59:28+0000 [-] twisted.web.server.Site starting on 8000
+2012-01-19 09:59:28+0000 [-] Starting factory <twisted.web.server.Site instance at 0x365f6c8>
+2012-01-19 09:59:28+0000 [-] /usr/local/lib/python2.6/dist-packages/Twisted-11.0.0-py2.6-linux-x86_64.egg/twisted/application/internet.py:131: exceptions.DeprecationWarning: listenWith is deprecated since Twisted 10.1.  See IReactorFDSet.
+2012-01-19 09:59:28+0000 [-] realtime.stompfactory.StompFactoryCustom starting on 9999
+2012-01-19 09:59:28+0000 [-] Starting factory <realtime.stompfactory.StompFactoryCustom instance at 0x365fab8>
+2012-01-19 09:59:28+0000 [-] twisted.web.server.Site starting on 5000
+2012-01-19 09:59:28+0000 [-] Starting factory <twisted.web.server.Site instance at 0x36680e0>
+2012-01-19 09:59:50+0000 [StompProtocol,0,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': 'fbda9e838b428b2e934f43556ddbe007'} || 
+2012-01-19 09:59:50+0000 [StompProtocol,0,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-19 09:59:50+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-19 09:59:50+0000 [StompProtocol,0,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk9'} || 
+2012-01-19 09:59:50+0000 [StompProtocol,0,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-19 09:59:50+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-19 10:11:13+0000 [StompProtocol,0,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  send || {'content-length': '59', 'destination': '/topic/frontdesk9', 'content-type': 'text/plain', 'content-encoding': 'utf-8'} || {"type":"eventlog","headerID":"202","event":"registration"}
+2012-01-19 10:11:13+0000 [StompProtocol,0,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/send>
+2012-01-19 10:11:14+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/send>
+2012-01-19 13:03:52+0000 [-] Log opened.
+2012-01-19 13:03:52+0000 [-] twistd 11.0.0 (/usr/bin/python 2.6.5) starting up.
+2012-01-19 13:03:52+0000 [-] reactor class: twisted.internet.selectreactor.SelectReactor.
+2012-01-19 13:03:52+0000 [-] twisted.web.server.Site starting on 8000
+2012-01-19 13:03:52+0000 [-] Starting factory <twisted.web.server.Site instance at 0x31db6c8>
+2012-01-19 13:03:52+0000 [-] /usr/local/lib/python2.6/dist-packages/Twisted-11.0.0-py2.6-linux-x86_64.egg/twisted/application/internet.py:131: exceptions.DeprecationWarning: listenWith is deprecated since Twisted 10.1.  See IReactorFDSet.
+2012-01-19 13:03:52+0000 [-] realtime.stompfactory.StompFactoryCustom starting on 9999
+2012-01-19 13:03:52+0000 [-] Starting factory <realtime.stompfactory.StompFactoryCustom instance at 0x31dbab8>
+2012-01-19 13:03:52+0000 [-] twisted.web.server.Site starting on 5000
+2012-01-19 13:03:52+0000 [-] Starting factory <twisted.web.server.Site instance at 0x31e40e0>
+2012-01-19 13:05:27+0000 [StompProtocol,0,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': 'f72c8466066b0e9427b04da1e219767f'} || 
+2012-01-19 13:05:27+0000 [StompProtocol,0,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-19 13:05:27+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-19 13:05:27+0000 [StompProtocol,0,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk9'} || 
+2012-01-19 13:05:27+0000 [StompProtocol,0,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-19 13:05:27+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-19 13:15:49+0000 [-] Log opened.
+2012-01-19 13:15:49+0000 [-] twistd 11.0.0 (/usr/bin/python 2.6.5) starting up.
+2012-01-19 13:15:49+0000 [-] reactor class: twisted.internet.selectreactor.SelectReactor.
+2012-01-19 13:15:49+0000 [-] twisted.web.server.Site starting on 8000
+2012-01-19 13:15:49+0000 [-] Starting factory <twisted.web.server.Site instance at 0x27746c8>
+2012-01-19 13:15:49+0000 [-] /usr/local/lib/python2.6/dist-packages/Twisted-11.0.0-py2.6-linux-x86_64.egg/twisted/application/internet.py:131: exceptions.DeprecationWarning: listenWith is deprecated since Twisted 10.1.  See IReactorFDSet.
+2012-01-19 13:15:49+0000 [-] realtime.stompfactory.StompFactoryCustom starting on 9999
+2012-01-19 13:15:49+0000 [-] Starting factory <realtime.stompfactory.StompFactoryCustom instance at 0x2774ab8>
+2012-01-19 13:15:49+0000 [-] twisted.web.server.Site starting on 5000
+2012-01-19 13:15:49+0000 [-] Starting factory <twisted.web.server.Site instance at 0x277d0e0>
+2012-01-19 13:16:49+0000 [StompProtocol,0,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '7b6231b54486df5fbabe991c1bbe404c'} || 
+2012-01-19 13:16:49+0000 [StompProtocol,0,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-19 13:16:49+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-19 13:16:49+0000 [StompProtocol,0,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk9'} || 
+2012-01-19 13:16:49+0000 [StompProtocol,0,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-19 13:16:49+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-19 13:46:53+0000 [StompProtocol,1,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '7b6231b54486df5fbabe991c1bbe404c'} || 
+2012-01-19 13:46:53+0000 [StompProtocol,1,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-19 13:46:53+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-19 13:46:53+0000 [StompProtocol,1,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk9'} || 
+2012-01-19 13:46:53+0000 [StompProtocol,1,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-19 13:46:53+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-19 13:47:14+0000 [StompProtocol,0,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  disconnect || {} || 
+2012-01-19 13:47:14+0000 [StompProtocol,0,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-19 13:47:14+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-19 13:47:26+0000 [StompProtocol,2,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '7b6231b54486df5fbabe991c1bbe404c'} || 
+2012-01-19 13:47:26+0000 [StompProtocol,2,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-19 13:47:26+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-19 13:47:28+0000 [StompProtocol,2,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  send || {'content-length': '58', 'destination': '/topic/frontdesk9'} || {"headerID": "202", "type": "eventlog", "event": "delete"}
+2012-01-19 13:47:28+0000 [StompProtocol,2,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/send>
+2012-01-19 13:47:28+0000 [StompProtocol,2,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  send || {'content-length': '54', 'destination': '/topic/frontdesk9'} || {"headerID": "202", "type": "move", "new_clinic": "9"}
+2012-01-19 13:47:28+0000 [StompProtocol,2,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/send>
+2012-01-19 13:47:30+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/send>
+2012-01-19 13:47:30+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/send>
+2012-01-19 13:47:30+0000 [StompProtocol,2,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  disconnect || {'content-length': '0'} || 
+2012-01-19 13:47:30+0000 [StompProtocol,2,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-19 13:47:30+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-19 13:49:07+0000 [StompProtocol,1,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  disconnect || {'username': 'suresh', 'content-length': 22} || 
+2012-01-19 13:49:07+0000 [StompProtocol,1,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-19 13:49:07+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-19 13:49:21+0000 [StompProtocol,3,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '7b6231b54486df5fbabe991c1bbe404c'} || 
+2012-01-19 13:49:21+0000 [StompProtocol,3,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-19 13:49:21+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-19 13:49:21+0000 [StompProtocol,3,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk9'} || 
+2012-01-19 13:49:21+0000 [StompProtocol,3,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-19 13:49:21+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-19 13:55:49+0000 [StompProtocol,4,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '7b6231b54486df5fbabe991c1bbe404c'} || 
+2012-01-19 13:55:49+0000 [StompProtocol,4,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-19 13:55:49+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-19 13:55:50+0000 [StompProtocol,4,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  send || {'content-length': '58', 'destination': '/topic/frontdesk9'} || {"headerID": "203", "type": "eventlog", "event": "delete"}
+2012-01-19 13:55:50+0000 [StompProtocol,4,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/send>
+2012-01-19 13:55:52+0000 [StompProtocol,4,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  send || {'content-length': '54', 'destination': '/topic/frontdesk5'} || {"headerID": "203", "type": "move", "new_clinic": "5"}
+2012-01-19 13:55:52+0000 [StompProtocol,4,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/send>
+2012-01-19 13:55:52+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/send>
+2012-01-19 13:55:52+0000 [StompProtocol,4,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  disconnect || {'content-length': '0'} || 
+2012-01-19 13:55:52+0000 [StompProtocol,4,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-19 13:55:52+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/send>
+2012-01-19 13:55:52+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-20 03:45:31+0000 [-] Log opened.
+2012-01-20 03:45:31+0000 [-] twistd 11.0.0 (/usr/bin/python 2.6.5) starting up.
+2012-01-20 03:45:31+0000 [-] reactor class: twisted.internet.selectreactor.SelectReactor.
+2012-01-20 03:45:31+0000 [-] twisted.web.server.Site starting on 8000
+2012-01-20 03:45:31+0000 [-] Starting factory <twisted.web.server.Site instance at 0x2a0f6c8>
+2012-01-20 03:45:31+0000 [-] /usr/local/lib/python2.6/dist-packages/Twisted-11.0.0-py2.6-linux-x86_64.egg/twisted/application/internet.py:131: exceptions.DeprecationWarning: listenWith is deprecated since Twisted 10.1.  See IReactorFDSet.
+2012-01-20 03:45:31+0000 [-] realtime.stompfactory.StompFactoryCustom starting on 9999
+2012-01-20 03:45:31+0000 [-] Starting factory <realtime.stompfactory.StompFactoryCustom instance at 0x2a0fab8>
+2012-01-20 03:45:31+0000 [-] twisted.web.server.Site starting on 5000
+2012-01-20 03:45:31+0000 [-] Starting factory <twisted.web.server.Site instance at 0x2a180e0>
+2012-01-20 03:45:56+0000 [StompProtocol,0,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '046a48d12d6e78ee9ab4854b592d32d5'} || 
+2012-01-20 03:45:56+0000 [StompProtocol,0,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-20 03:45:56+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-20 03:45:56+0000 [StompProtocol,0,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk9'} || 
+2012-01-20 03:45:56+0000 [StompProtocol,0,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-20 03:45:56+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-20 03:57:08+0000 [StompProtocol,1,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '6071cee4915c6a9e3fe5fd95ea9f3c47'} || 
+2012-01-20 03:57:08+0000 [StompProtocol,1,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-20 03:57:08+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-20 03:57:08+0000 [StompProtocol,1,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk9'} || 
+2012-01-20 03:57:08+0000 [StompProtocol,1,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-20 03:57:08+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-20 03:58:07+0000 [StompProtocol,2,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '6071cee4915c6a9e3fe5fd95ea9f3c47'} || 
+2012-01-20 03:58:07+0000 [StompProtocol,2,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-20 03:58:07+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-20 03:58:07+0000 [StompProtocol,2,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk9'} || 
+2012-01-20 03:58:07+0000 [StompProtocol,2,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-20 03:58:07+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-20 03:58:34+0000 [StompProtocol,2,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk6'} || 
+2012-01-20 03:58:34+0000 [StompProtocol,2,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-20 03:58:34+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-20 03:58:34+0000 [StompProtocol,2,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  send || {'content-length': '53', 'destination': '/topic/frontdesk9', 'content-type': 'text/plain', 'content-encoding': 'utf-8'} || {"type":"eventlog","headerID":"201","event":"delete"}
+2012-01-20 03:58:34+0000 [StompProtocol,2,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/send>
+2012-01-20 03:58:34+0000 [StompProtocol,2,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  send || {'content-length': '49', 'destination': '/topic/frontdesk6', 'content-type': 'text/plain', 'content-encoding': 'utf-8'} || {"type":"move","headerID":"201","new_clinic":"6"}
+2012-01-20 03:58:34+0000 [StompProtocol,2,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/send>
+2012-01-20 03:58:34+0000 [StompProtocol,2,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  unsubscribe || {'destination': '/topic/frontdesk6'} || 
+2012-01-20 03:58:34+0000 [StompProtocol,2,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/unsubscribe>
+2012-01-20 03:58:34+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/send>
+2012-01-20 03:58:34+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/unsubscribe>
+2012-01-20 03:58:34+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/send>
+2012-01-20 03:58:38+0000 [StompProtocol,1,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  disconnect || {} || 
+2012-01-20 03:58:38+0000 [StompProtocol,1,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-20 03:58:38+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-20 04:01:56+0000 [StompProtocol,3,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '046a48d12d6e78ee9ab4854b592d32d5'} || 
+2012-01-20 04:01:56+0000 [StompProtocol,3,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-20 04:01:56+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-20 04:01:56+0000 [StompProtocol,3,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk9'} || 
+2012-01-20 04:01:56+0000 [StompProtocol,3,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-20 04:01:56+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-20 04:02:14+0000 [StompProtocol,3,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk2'} || 
+2012-01-20 04:02:14+0000 [StompProtocol,3,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-20 04:02:14+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-20 04:02:14+0000 [StompProtocol,3,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  send || {'content-length': '53', 'destination': '/topic/frontdesk9', 'content-type': 'text/plain', 'content-encoding': 'utf-8'} || {"type":"eventlog","headerID":"200","event":"delete"}
+2012-01-20 04:02:14+0000 [StompProtocol,3,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/send>
+2012-01-20 04:02:14+0000 [StompProtocol,3,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  send || {'content-length': '49', 'destination': '/topic/frontdesk2', 'content-type': 'text/plain', 'content-encoding': 'utf-8'} || {"type":"move","headerID":"200","new_clinic":"2"}
+2012-01-20 04:02:14+0000 [StompProtocol,3,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/send>
+2012-01-20 04:02:14+0000 [StompProtocol,3,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  unsubscribe || {'destination': '/topic/frontdesk2'} || 
+2012-01-20 04:02:14+0000 [StompProtocol,3,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/unsubscribe>
+2012-01-20 04:02:14+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/send>
+2012-01-20 04:02:14+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/unsubscribe>
+2012-01-20 04:02:14+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/send>
+2012-01-20 04:02:52+0000 [StompProtocol,0,127.0.0.1] ** RestQ.submit (cmd || headers || body) =>  disconnect || {'username': 'suresh', 'content-length': 22} || 
+2012-01-20 04:02:52+0000 [StompProtocol,0,127.0.0.1] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-20 04:02:52+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-20 07:05:05+0000 [-] Log opened.
+2012-01-20 07:05:05+0000 [-] twistd 11.0.0 (/usr/bin/python 2.6.5) starting up.
+2012-01-20 07:05:05+0000 [-] reactor class: twisted.internet.selectreactor.SelectReactor.
+2012-01-20 07:05:05+0000 [-] twisted.web.server.Site starting on 8000
+2012-01-20 07:05:05+0000 [-] Starting factory <twisted.web.server.Site instance at 0x36c86c8>
+2012-01-20 07:05:05+0000 [-] /usr/local/lib/python2.6/dist-packages/Twisted-11.0.0-py2.6-linux-x86_64.egg/twisted/application/internet.py:131: exceptions.DeprecationWarning: listenWith is deprecated since Twisted 10.1.  See IReactorFDSet.
+2012-01-20 07:05:05+0000 [-] realtime.stompfactory.StompFactoryCustom starting on 9999
+2012-01-20 07:05:05+0000 [-] Starting factory <realtime.stompfactory.StompFactoryCustom instance at 0x36c8ab8>
+2012-01-20 07:05:05+0000 [-] twisted.web.server.Site starting on 5000
+2012-01-20 07:05:05+0000 [-] Starting factory <twisted.web.server.Site instance at 0x36d10e0>
+2012-01-20 07:06:00+0000 [-] Log opened.
+2012-01-20 07:06:00+0000 [-] twistd 11.0.0 (/usr/bin/python 2.6.5) starting up.
+2012-01-20 07:06:00+0000 [-] reactor class: twisted.internet.selectreactor.SelectReactor.
+2012-01-20 07:06:00+0000 [-] twisted.web.server.Site starting on 8000
+2012-01-20 07:06:00+0000 [-] Starting factory <twisted.web.server.Site instance at 0x42ba6c8>
+2012-01-20 07:06:00+0000 [-] /usr/local/lib/python2.6/dist-packages/Twisted-11.0.0-py2.6-linux-x86_64.egg/twisted/application/internet.py:131: exceptions.DeprecationWarning: listenWith is deprecated since Twisted 10.1.  See IReactorFDSet.
+2012-01-20 07:06:00+0000 [-] realtime.stompfactory.StompFactoryCustom starting on 9999
+2012-01-20 07:06:00+0000 [-] Starting factory <realtime.stompfactory.StompFactoryCustom instance at 0x42baab8>
+2012-01-20 07:06:00+0000 [-] twisted.web.server.Site starting on 5000
+2012-01-20 07:06:00+0000 [-] Starting factory <twisted.web.server.Site instance at 0x42c30e0>
+2012-01-20 07:06:45+0000 [StompProtocol,0,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '5bcd2736548ae659dce7f1c84dea5a7f'} || 
+2012-01-20 07:06:45+0000 [StompProtocol,0,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-20 07:06:45+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-20 07:06:45+0000 [StompProtocol,0,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk9'} || 
+2012-01-20 07:06:45+0000 [StompProtocol,0,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-20 07:06:45+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-20 07:06:49+0000 [StompProtocol,0,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  disconnect || {} || 
+2012-01-20 07:06:49+0000 [StompProtocol,0,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-20 07:06:49+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-20 07:06:49+0000 [HTTPChannel,4,192.168.1.91] /usr/local/lib/python2.6/dist-packages/orbited-0.7.11beta2-py2.6.egg/orbited/cometsession.py:467: exceptions.DeprecationWarning: twisted.web.error.NoResource is deprecated since Twisted 9.0.  See twisted.web.resource.NoResource.
+2012-01-20 07:06:49+0000 [StompProtocol,1,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '5bcd2736548ae659dce7f1c84dea5a7f'} || 
+2012-01-20 07:06:49+0000 [StompProtocol,1,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-20 07:06:49+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-20 07:06:49+0000 [StompProtocol,1,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk9'} || 
+2012-01-20 07:06:49+0000 [StompProtocol,1,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-20 07:06:49+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-20 07:06:49+0000 [StompProtocol,2,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '5bcd2736548ae659dce7f1c84dea5a7f'} || 
+2012-01-20 07:06:49+0000 [StompProtocol,2,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-20 07:06:49+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-20 07:06:49+0000 [StompProtocol,2,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk2'} || 
+2012-01-20 07:06:49+0000 [StompProtocol,2,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-20 07:06:49+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-20 07:06:54+0000 [StompProtocol,2,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  disconnect || {} || 
+2012-01-20 07:06:54+0000 [StompProtocol,2,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-20 07:06:54+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-20 07:06:54+0000 [StompProtocol,3,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '5bcd2736548ae659dce7f1c84dea5a7f'} || 
+2012-01-20 07:06:54+0000 [StompProtocol,3,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-20 07:06:54+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-20 07:07:09+0000 [StompProtocol,4,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '5bcd2736548ae659dce7f1c84dea5a7f'} || 
+2012-01-20 07:07:09+0000 [StompProtocol,4,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-20 07:07:09+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-20 07:07:11+0000 [StompProtocol,4,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  send || {'content-length': '134', 'destination': '/topic/frontdesk9'} || {"headerID": 207, "from": "suresh", "patient": {"signin": "01:07", "name": "n, gdgg, 3435-07-07"}, "type": "signin", "response": "OK"}
+2012-01-20 07:07:11+0000 [StompProtocol,4,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/send>
+2012-01-20 07:07:11+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/send>
+2012-01-20 07:07:16+0000 [StompProtocol,4,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  disconnect || {'content-length': '0'} || 
+2012-01-20 07:07:16+0000 [StompProtocol,4,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-20 07:07:16+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-20 07:07:20+0000 [StompProtocol,5,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '5bcd2736548ae659dce7f1c84dea5a7f'} || 
+2012-01-20 07:07:20+0000 [StompProtocol,5,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-20 07:07:20+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-20 07:07:20+0000 [StompProtocol,5,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk9'} || 
+2012-01-20 07:07:20+0000 [StompProtocol,5,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-20 07:07:20+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-20 07:07:49+0000 [StompProtocol,1,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  disconnect || {} || 
+2012-01-20 07:07:49+0000 [StompProtocol,1,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-20 07:07:49+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-20 07:07:54+0000 [StompProtocol,3,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  disconnect || {'username': 'suresh', 'content-length': 22} || 
+2012-01-20 07:07:54+0000 [StompProtocol,3,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-20 07:07:54+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-20 07:31:06+0000 [-] Log opened.
+2012-01-20 07:31:06+0000 [-] twistd 11.0.0 (/usr/bin/python 2.6.5) starting up.
+2012-01-20 07:31:06+0000 [-] reactor class: twisted.internet.selectreactor.SelectReactor.
+2012-01-20 07:31:07+0000 [-] twisted.web.server.Site starting on 8000
+2012-01-20 07:31:07+0000 [-] Starting factory <twisted.web.server.Site instance at 0x3a466c8>
+2012-01-20 07:31:07+0000 [-] /usr/local/lib/python2.6/dist-packages/Twisted-11.0.0-py2.6-linux-x86_64.egg/twisted/application/internet.py:131: exceptions.DeprecationWarning: listenWith is deprecated since Twisted 10.1.  See IReactorFDSet.
+2012-01-20 07:31:07+0000 [-] realtime.stompfactory.StompFactoryCustom starting on 9999
+2012-01-20 07:31:07+0000 [-] Starting factory <realtime.stompfactory.StompFactoryCustom instance at 0x3a46ab8>
+2012-01-20 07:31:07+0000 [-] twisted.web.server.Site starting on 5000
+2012-01-20 07:31:07+0000 [-] Starting factory <twisted.web.server.Site instance at 0x3a4f0e0>
+2012-01-20 07:31:07+0000 [StompProtocol,0,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '5bcd2736548ae659dce7f1c84dea5a7f'} || 
+2012-01-20 07:31:07+0000 [StompProtocol,0,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-20 07:31:07+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-20 07:31:07+0000 [StompProtocol,0,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk9'} || 
+2012-01-20 07:31:07+0000 [StompProtocol,0,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-20 07:31:07+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-20 07:31:17+0000 [StompProtocol,0,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  disconnect || {} || 
+2012-01-20 07:31:17+0000 [StompProtocol,0,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-20 07:31:17+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-20 07:31:17+0000 [HTTPChannel,1,192.168.1.91] /usr/local/lib/python2.6/dist-packages/orbited-0.7.11beta2-py2.6.egg/orbited/cometsession.py:467: exceptions.DeprecationWarning: twisted.web.error.NoResource is deprecated since Twisted 9.0.  See twisted.web.resource.NoResource.
+2012-01-20 07:31:17+0000 [StompProtocol,1,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '5bcd2736548ae659dce7f1c84dea5a7f'} || 
+2012-01-20 07:31:17+0000 [StompProtocol,1,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-20 07:31:17+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-20 07:31:17+0000 [StompProtocol,1,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk9'} || 
+2012-01-20 07:31:17+0000 [StompProtocol,1,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-20 07:31:17+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-20 07:31:42+0000 [StompProtocol,2,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '5bcd2736548ae659dce7f1c84dea5a7f'} || 
+2012-01-20 07:31:42+0000 [StompProtocol,2,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-20 07:31:42+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-20 07:31:42+0000 [StompProtocol,2,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk9'} || 
+2012-01-20 07:31:42+0000 [StompProtocol,2,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-20 07:31:42+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-20 07:32:17+0000 [StompProtocol,1,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  disconnect || {} || 
+2012-01-20 07:32:17+0000 [StompProtocol,1,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-20 07:32:17+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-20 07:59:30+0000 [StompProtocol,2,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  disconnect || {} || 
+2012-01-20 07:59:30+0000 [StompProtocol,2,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-20 07:59:30+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-20 07:59:30+0000 [StompProtocol,3,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '5bcd2736548ae659dce7f1c84dea5a7f'} || 
+2012-01-20 07:59:30+0000 [StompProtocol,3,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-20 07:59:30+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-20 07:59:30+0000 [StompProtocol,3,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk9'} || 
+2012-01-20 07:59:30+0000 [StompProtocol,3,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-20 07:59:30+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-20 07:59:41+0000 [StompProtocol,4,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '5bcd2736548ae659dce7f1c84dea5a7f'} || 
+2012-01-20 07:59:41+0000 [StompProtocol,4,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-20 07:59:41+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-20 07:59:41+0000 [StompProtocol,4,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk9'} || 
+2012-01-20 07:59:41+0000 [StompProtocol,4,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-20 07:59:41+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-20 08:00:30+0000 [StompProtocol,3,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  disconnect || {'username': 'suresh', 'content-length': 22} || 
+2012-01-20 08:00:30+0000 [StompProtocol,3,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-20 08:00:30+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-20 08:04:17+0000 [StompProtocol,4,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  disconnect || {'username': 'suresh', 'content-length': 44} || 
+2012-01-20 08:04:17+0000 [StompProtocol,4,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-20 08:04:17+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-21 05:15:56+0000 [-] Log opened.
+2012-01-21 05:15:56+0000 [-] twistd 11.0.0 (/usr/bin/python 2.6.5) starting up.
+2012-01-21 05:15:56+0000 [-] reactor class: twisted.internet.selectreactor.SelectReactor.
+2012-01-21 05:15:56+0000 [-] twisted.web.server.Site starting on 8000
+2012-01-21 05:15:56+0000 [-] Starting factory <twisted.web.server.Site instance at 0x310d6c8>
+2012-01-21 05:15:56+0000 [-] /usr/local/lib/python2.6/dist-packages/Twisted-11.0.0-py2.6-linux-x86_64.egg/twisted/application/internet.py:131: exceptions.DeprecationWarning: listenWith is deprecated since Twisted 10.1.  See IReactorFDSet.
+2012-01-21 05:15:56+0000 [-] realtime.stompfactory.StompFactoryCustom starting on 9999
+2012-01-21 05:15:56+0000 [-] Starting factory <realtime.stompfactory.StompFactoryCustom instance at 0x310dab8>
+2012-01-21 05:15:56+0000 [-] twisted.web.server.Site starting on 5000
+2012-01-21 05:15:56+0000 [-] Starting factory <twisted.web.server.Site instance at 0x31160e0>
+2012-01-21 05:16:06+0000 [StompProtocol,0,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '5bcd2736548ae659dce7f1c84dea5a7f'} || 
+2012-01-21 05:16:06+0000 [StompProtocol,0,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-21 05:16:06+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-21 05:16:06+0000 [StompProtocol,0,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk9'} || 
+2012-01-21 05:16:06+0000 [StompProtocol,0,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-21 05:16:06+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-21 05:28:48+0000 [-] Log opened.
+2012-01-21 05:28:48+0000 [-] twistd 11.0.0 (/usr/bin/python 2.6.5) starting up.
+2012-01-21 05:28:48+0000 [-] reactor class: twisted.internet.selectreactor.SelectReactor.
+2012-01-21 05:28:48+0000 [-] twisted.web.server.Site starting on 8000
+2012-01-21 05:28:48+0000 [-] Starting factory <twisted.web.server.Site instance at 0x3d9a6c8>
+2012-01-21 05:28:48+0000 [-] /usr/local/lib/python2.6/dist-packages/Twisted-11.0.0-py2.6-linux-x86_64.egg/twisted/application/internet.py:131: exceptions.DeprecationWarning: listenWith is deprecated since Twisted 10.1.  See IReactorFDSet.
+2012-01-21 05:28:48+0000 [-] realtime.stompfactory.StompFactoryCustom starting on 9999
+2012-01-21 05:28:48+0000 [-] Starting factory <realtime.stompfactory.StompFactoryCustom instance at 0x3d9aab8>
+2012-01-21 05:28:48+0000 [-] twisted.web.server.Site starting on 5000
+2012-01-21 05:28:48+0000 [-] Starting factory <twisted.web.server.Site instance at 0x3da30e0>
+2012-01-21 05:50:52+0000 [-] Log opened.
+2012-01-21 05:50:52+0000 [-] twistd 11.0.0 (/usr/bin/python 2.6.5) starting up.
+2012-01-21 05:50:52+0000 [-] reactor class: twisted.internet.selectreactor.SelectReactor.
+2012-01-21 05:50:52+0000 [-] twisted.web.server.Site starting on 8000
+2012-01-21 05:50:52+0000 [-] Starting factory <twisted.web.server.Site instance at 0x3cea6c8>
+2012-01-21 05:50:52+0000 [-] /usr/local/lib/python2.6/dist-packages/Twisted-11.0.0-py2.6-linux-x86_64.egg/twisted/application/internet.py:131: exceptions.DeprecationWarning: listenWith is deprecated since Twisted 10.1.  See IReactorFDSet.
+2012-01-21 05:50:52+0000 [-] realtime.stompfactory.StompFactoryCustom starting on 9999
+2012-01-21 05:50:52+0000 [-] Starting factory <realtime.stompfactory.StompFactoryCustom instance at 0x3ceaab8>
+2012-01-21 05:50:52+0000 [-] twisted.web.server.Site starting on 5000
+2012-01-21 05:50:52+0000 [-] Starting factory <twisted.web.server.Site instance at 0x3cf30e0>
+2012-01-21 05:51:08+0000 [StompProtocol,0,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '5bcd2736548ae659dce7f1c84dea5a7f'} || 
+2012-01-21 05:51:08+0000 [StompProtocol,0,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-21 05:51:08+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-21 05:51:08+0000 [StompProtocol,0,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk9'} || 
+2012-01-21 05:51:08+0000 [StompProtocol,0,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-21 05:51:08+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-21 05:51:12+0000 [StompProtocol,0,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  disconnect || {} || 
+2012-01-21 05:51:12+0000 [StompProtocol,0,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-21 05:51:12+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-21 05:51:15+0000 [StompProtocol,1,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '5bcd2736548ae659dce7f1c84dea5a7f'} || 
+2012-01-21 05:51:15+0000 [StompProtocol,1,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-21 05:51:15+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-21 05:51:15+0000 [StompProtocol,1,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk2'} || 
+2012-01-21 05:51:15+0000 [StompProtocol,1,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-21 05:51:15+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-21 05:51:16+0000 [StompProtocol,1,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  disconnect || {} || 
+2012-01-21 05:51:16+0000 [StompProtocol,1,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-21 05:51:16+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-21 05:51:24+0000 [StompProtocol,2,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '5bcd2736548ae659dce7f1c84dea5a7f'} || 
+2012-01-21 05:51:24+0000 [StompProtocol,2,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-21 05:51:24+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-21 05:51:24+0000 [StompProtocol,2,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk9'} || 
+2012-01-21 05:51:24+0000 [StompProtocol,2,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-21 05:51:24+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-21 05:51:27+0000 [StompProtocol,2,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  disconnect || {} || 
+2012-01-21 05:51:27+0000 [StompProtocol,2,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-21 05:51:27+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-21 05:51:41+0000 [StompProtocol,3,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '5bcd2736548ae659dce7f1c84dea5a7f'} || 
+2012-01-21 05:51:41+0000 [StompProtocol,3,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-21 05:51:41+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-21 05:51:42+0000 [StompProtocol,3,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  send || {'content-length': '134', 'destination': '/topic/frontdesk9'} || {"headerID": 208, "from": "suresh", "patient": {"signin": "23:51", "name": "as, asd, 1234-03-04"}, "type": "signin", "response": "OK"}
+2012-01-21 05:51:42+0000 [StompProtocol,3,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/send>
+2012-01-21 05:51:42+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/send>
+2012-01-21 05:51:46+0000 [StompProtocol,4,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '5bcd2736548ae659dce7f1c84dea5a7f'} || 
+2012-01-21 05:51:46+0000 [StompProtocol,4,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-21 05:51:46+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-21 05:51:46+0000 [StompProtocol,4,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk9'} || 
+2012-01-21 05:51:46+0000 [StompProtocol,4,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-21 05:51:46+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-21 05:51:47+0000 [StompProtocol,3,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  disconnect || {'content-length': '0'} || 
+2012-01-21 05:51:47+0000 [StompProtocol,3,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-21 05:51:47+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-23 08:47:49+0000 [-] Log opened.
+2012-01-23 08:47:49+0000 [-] twistd 11.0.0 (/usr/bin/python 2.6.5) starting up.
+2012-01-23 08:47:49+0000 [-] reactor class: twisted.internet.selectreactor.SelectReactor.
+2012-01-23 08:47:49+0000 [-] twisted.web.server.Site starting on 8000
+2012-01-23 08:47:49+0000 [-] Starting factory <twisted.web.server.Site instance at 0x2ab56c8>
+2012-01-23 08:47:50+0000 [-] /usr/local/lib/python2.6/dist-packages/Twisted-11.0.0-py2.6-linux-x86_64.egg/twisted/application/internet.py:131: exceptions.DeprecationWarning: listenWith is deprecated since Twisted 10.1.  See IReactorFDSet.
+2012-01-23 08:47:50+0000 [-] realtime.stompfactory.StompFactoryCustom starting on 9999
+2012-01-23 08:47:50+0000 [-] Starting factory <realtime.stompfactory.StompFactoryCustom instance at 0x2ab5ab8>
+2012-01-23 08:47:50+0000 [-] twisted.web.server.Site starting on 5000
+2012-01-23 08:47:50+0000 [-] Starting factory <twisted.web.server.Site instance at 0x2abe0e0>
+2012-01-23 08:48:36+0000 [HTTPChannel,0,192.168.1.91] /usr/local/lib/python2.6/dist-packages/Django-1.3-py2.6.egg/django/contrib/auth/models.py:393: exceptions.DeprecationWarning: The user messaging API is deprecated. Please update your code to use the new messages framework.
+2012-01-23 11:41:36+0000 [-] Log opened.
+2012-01-23 11:41:36+0000 [-] twistd 11.0.0 (/usr/bin/python 2.6.5) starting up.
+2012-01-23 11:41:36+0000 [-] reactor class: twisted.internet.selectreactor.SelectReactor.
+2012-01-23 11:41:36+0000 [-] twisted.web.server.Site starting on 8000
+2012-01-23 11:41:36+0000 [-] Starting factory <twisted.web.server.Site instance at 0x44376c8>
+2012-01-23 11:41:36+0000 [-] /usr/local/lib/python2.6/dist-packages/Twisted-11.0.0-py2.6-linux-x86_64.egg/twisted/application/internet.py:131: exceptions.DeprecationWarning: listenWith is deprecated since Twisted 10.1.  See IReactorFDSet.
+2012-01-23 11:41:36+0000 [-] realtime.stompfactory.StompFactoryCustom starting on 9999
+2012-01-23 11:41:36+0000 [-] Starting factory <realtime.stompfactory.StompFactoryCustom instance at 0x4437ab8>
+2012-01-23 11:41:36+0000 [-] twisted.web.server.Site starting on 5000
+2012-01-23 11:41:36+0000 [-] Starting factory <twisted.web.server.Site instance at 0x44400e0>
+2012-01-23 11:42:02+0000 [StompProtocol,0,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '81003e2681a9a1670e1b45c42bfec73a'} || 
+2012-01-23 11:42:02+0000 [StompProtocol,0,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-23 11:42:02+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-23 11:42:02+0000 [StompProtocol,0,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk9'} || 
+2012-01-23 11:42:02+0000 [StompProtocol,0,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-23 11:42:02+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-23 11:42:09+0000 [StompProtocol,0,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  disconnect || {} || 
+2012-01-23 11:42:09+0000 [StompProtocol,0,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-23 11:42:09+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-23 11:42:11+0000 [StompProtocol,1,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '81003e2681a9a1670e1b45c42bfec73a'} || 
+2012-01-23 11:42:11+0000 [StompProtocol,1,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-23 11:42:11+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-23 11:42:11+0000 [StompProtocol,1,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk2'} || 
+2012-01-23 11:42:11+0000 [StompProtocol,1,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-23 11:42:11+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-23 11:42:13+0000 [StompProtocol,1,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  disconnect || {} || 
+2012-01-23 11:42:13+0000 [StompProtocol,1,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-23 11:42:13+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-23 11:42:24+0000 [StompProtocol,2,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '81003e2681a9a1670e1b45c42bfec73a'} || 
+2012-01-23 11:42:24+0000 [StompProtocol,2,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-23 11:42:24+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-23 11:42:24+0000 [StompProtocol,2,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk9'} || 
+2012-01-23 11:42:24+0000 [StompProtocol,2,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-23 11:42:24+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-23 11:43:04+0000 [StompProtocol,3,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '81003e2681a9a1670e1b45c42bfec73a'} || 
+2012-01-23 11:43:04+0000 [StompProtocol,3,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-23 11:43:04+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-23 11:43:06+0000 [StompProtocol,3,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  send || {'content-length': '138', 'destination': '/topic/frontdesk9'} || {"headerID": 209, "from": "suresh", "patient": {"signin": "05:43", "name": "f, sssssss1, 4567-07-07"}, "type": "signin", "response": "OK"}
+2012-01-23 11:43:06+0000 [StompProtocol,3,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/send>
+2012-01-23 11:43:06+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/send>
+2012-01-23 11:43:11+0000 [StompProtocol,3,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  disconnect || {'content-length': '0'} || 
+2012-01-23 11:43:11+0000 [StompProtocol,3,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-23 11:43:11+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-23 11:43:25+0000 [StompProtocol,4,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  connect || {'username': 'suresh', 'password': '81003e2681a9a1670e1b45c42bfec73a'} || 
+2012-01-23 11:43:25+0000 [StompProtocol,4,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-23 11:43:25+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/connect>
+2012-01-23 11:43:25+0000 [StompProtocol,4,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  subscribe || {'destination': '/topic/frontdesk9'} || 
+2012-01-23 11:43:25+0000 [StompProtocol,4,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-23 11:43:25+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/subscribe>
+2012-01-23 11:43:32+0000 [StompProtocol,2,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  disconnect || {} || 
+2012-01-23 11:43:32+0000 [StompProtocol,2,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-23 11:43:32+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-23 11:45:33+0000 [StompProtocol,4,192.168.1.91] ** RestQ.submit (cmd || headers || body) =>  disconnect || {'username': 'suresh', 'content-length': 22} || 
+2012-01-23 11:45:33+0000 [StompProtocol,4,192.168.1.91] Starting factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>
+2012-01-23 11:45:33+0000 [HTTPPageGetter,client] Stopping factory <HTTPClientFactory: http://ditchyourip.com:5000/disconnect>

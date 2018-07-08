@@ -1,0 +1,37 @@
+{% extends "jqmobile/base_jqmobile.html" %}
+
+{% block main_page %}
+<div data-role="page" data-theme="c">
+
+	<div data-role="header" data-theme="a" data-position="fixed">
+
+	<h1>Date: 12/24/1982</h1>
+		
+
+			<a href="index.html" data-role="button" data-theme="b">Change Date</a>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+		
+	<ul data-role="listview" data-inset="true" data-theme="d" data-divider-theme="d">
+				<li data-role="list-divider"><h1>Pick a Route Below</h1></li>
+
+				<li><a href="../../index.html">Kay, Mary</a></li>
+				<li><a href="../../index.html">Gufford, Robin</a></li>
+				<li><a href="../../index.html">Smith, Mike</a></li>
+
+			</ul>
+
+
+
+	</div><!-- /content -->
+	
+	<div data-role="footer" data-theme="a" data-position="fixed">
+		<h4>Footer content</h4>
+	</div><!-- /footer -->
+	
+</div><!-- /page -->
+
+{% endblock %}
+
+

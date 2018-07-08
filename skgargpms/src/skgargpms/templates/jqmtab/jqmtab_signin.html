@@ -1,0 +1,299 @@
+<div data-role="page" id="id_jqmtab_signin">
+	<!-- Header Jqm page -->
+	<div data-role="header" data-position="fixed">
+		<a href="/jqmtab/" data-icon="home">Home</a>
+		<h3> Patient Signin </h3>
+		
+		<script type="text/javascript">
+ 
+			var USERNAME   =  "{{USER}}";
+					
+			var MUTEX  = true;  // A variable which will block the concurrent submission of signin requests.
+			
+			function clearForm(){
+				  $('input[type="text"]').each(function(){
+				      $(this).val("");  
+				  });
+				  $('input[type="radio"]').each(function(){
+				     $(this).attr('checked', false);
+				
+				  });
+			}
+				
+			function sendData(){
+				
+					var fi;
+					fi = {};
+					
+						
+					
+					fi["fname"] = $('#fname').val();
+					fi["lname"] = $('#lname').val();
+					
+					{% if location.dob_required %}
+						fi["day"] = $('#day').val();
+						fi["month"] = $('#month').val();
+						fi["year"] = $('#year').val();
+					{% endif %}
+					
+					fi['user'] = USERNAME;
+					
+					fi["clinic"] = $("input[name='clinic']:checked").val();
+					{% if location.appointment %}
+					  fi["appointment"] = $("input[name='appointment']:checked").val();
+					{% else %}  
+					  fi["appointment"] ="no";
+					{% endif %}  
+			
+					fi["locationID"] = $('#locationID').val();
+					
+					//alert(fi['clinic'] + fi['appointment']);
+			
+					//Clitical Section.
+					MUTEX = false;
+							
+					try{
+						$.ajax({
+					
+					   			url: "/dataSignUp/",
+					   			datatype: 'json',
+					      		data: fi,
+					      		type: "POST",
+					   			success: function(msg){
+					   				clearForm();
+					   				alert("You have successfully signed in, please wait for the front desk to call you up.");
+					   				//Reset the mutex variable, this prevent multiple signin before completing first one.
+					   				MUTEX = true;
+						
+								}
+					
+						});
+				
+					}
+					catch(e){
+						//console.log(e);
+					}
+				}
+			
+			
+			   function isValidDate2(value){
+			                    var sdt = value.split(" ");
+			                    var userDate = sdt[0];
+			                    // Checks for the following valid date formats:
+			                    
+			                    // Also separates date into month, day, and year variables
+			                    // MM/DD/YY   MM/DD/YYYY   MM-DD-YY   MM-DD-YYYY
+			                    //var datePat = /^(\d{1,2})(\/|-)(\d{1,2})\2(\d{2}|\d{4})$/;
+			                    
+			                    // YYYY-MM-DD, YYYY/MM/DD, YYYY.MM.DD
+			                    // To require a 4 digit year entry, use this line instead:
+			                    var datePat = /^(\d{4})(\/|-|.|\s|\\)(\d{1,2})\2(\d{1,2})$/;
+			                    var result = true;
+			                    
+			                    var matchArray = userDate.match(datePat); // is the format ok?
+			                    if (matchArray === null) {
+								//         	lert("Date is not in a valid format.");
+			                        return false;
+			                        result = false;
+			                    }
+			                    var month, day, year;
+			                    try {
+			                        month = matchArray[3]; // parse date into variables
+			                    } 
+			                    catch (err) {
+			                        month = 0;
+			                    }
+			                    try {
+			                        day = matchArray[4];
+			                    } 
+			                    catch (err) {
+			                        day = 0;
+			                    }
+			                    try {
+			                        year = matchArray[1];
+			                    } 
+			                    catch (err) {
+			                        year = 0;
+			                    }
+			                    
+			                    if (month < 1 || month > 12) { // check month range
+			                        result = false;
+			                    }
+			                    if (day < 1 || day > 31) {
+			                        result = false;
+			                    }
+			                    if ((month == 4 || month == 6 || month == 9 || month == 11) && day == 31) {
+			                        result = false;
+			                    }
+			                    if (month == 2) { // check for february 29th
+			                        var isleap = (year % 4 === 0 && (year % 100 !== 0 || year % 400 === 0));
+			                        if (day > 29 || (day == 29 && !isleap)) {
+			                            result = false;
+			                        }
+			                    }
+			                    if (result === true && userDate.length > 0) {
+			                        result = true;
+			                    }
+			                    return result;
+			                }
+			
+			
+			
+			
+				function submitButton(){
+			
+					var success = true; 
+					
+					{% if location.dob_required %}
+						var month = $('#month').val();
+						var year = $('#year').val();
+						var day = $('#day').val();
+						var together;
+						together = year + '.' + month + '.' + day;
+						//alert(together);
+						var result = isValidDate2(together);
+					{% endif %}
+					
+			
+					if($('#fname').val() == ""){
+						 success = false; 
+						 alert("Please enter your first name.")
+						 return "";
+					}
+				
+					
+					if($('#lname').val() == ""){
+						 success = false; 
+						 alert("Please enter your last name.")
+						 return "";
+					}
+					
+					{% if location.dob_required %}
+						if(result == false){
+							alert("Please make sure that your month and date are inputted in as numbers and that your year is in a four digit format.")
+							success = result 
+							return ""; 
+						}
+					{% endif  %}
+					
+					if ($("input[name=clinic]:checked").val() == undefined ) {
+					       alert('Please select the affordable or insurance clinic.');
+					       success = false; 
+					       return "";
+					    }
+					
+					
+					{% if location.appointment %}
+				
+					if ($("input[name=appointment]:checked").val() == undefined ) {
+					       alert('Please select the Appointment option...');
+					       success = false; 
+					       return "";
+					       
+					}
+					{% endif %}
+					
+					
+					//alert($("input[name=appointment]:checked").val());
+					//alert($("input[name=clinic]:checked").val());
+					//alert(success);
+					//success = confirm("Verify Patient informations..!");
+					if(success == true && MUTEX == true){
+						//alert(success);
+						sendData();
+					}
+					
+				}
+			
+				
+				$('#id_jqmtab_signin').live('pageshow',function(){
+					
+					clearForm();					
+				});
+				
+				
+				
+		</script>
+		
+		
+		
+		
+	</div>
+	
+	<!-- Content JQM page -->
+	<div data-role="content">
+	
+		<form action="" >
+			
+			<input type=hidden id="locationID" name="locationID" value="{{location.id}}">
+			
+			<div data-role="fieldcontain">
+				<label for="fname"> First Name:</label>
+				<input type=text id="fname">
+			</div>
+			
+			
+			<div data-role="fieldcontain">
+				<label for="lname"> Last Name:</label>
+				<input type=text id="lname">
+			</div>
+			
+			{% if location.dob_required %}
+				
+				<div data-role="fieldcontain">
+					<label for="month"> Month of Birth: </label>
+					<input type=text id="month">
+				</div>
+				
+				<div data-role="fieldcontain">
+					<label for="day"> Day of Birth:</label>
+					<input type=text id="day">
+				</div>
+				
+				<div data-role="fieldcontain">
+					<label for="year"> Year of Birth </label>
+					<input type=text id="year">
+				</div>
+			
+			{% endif %}
+			
+			<div data-role="fieldcontain">
+				<fieldset data-role="controlgroup">
+				<legend>Please pick a clinic: </legend>
+					{% for clinic in clinics %}	
+						<input type="radio" id="id_clinic_{{clinic.id}}" name="clinic" value="{{clinic.id}}"/>
+						<label for="id_clinic_{{clinic.id}}">{{clinic.name}}</label>
+					{% endfor %}
+				</fieldset>
+			</div>
+			
+			{% if location.appointment %}
+    			<div data-role="fieldcontain">
+    				<fieldset data-role="controlgroup" data-type="horizontal" >
+    					<legend>Do you have an appointment?</legend>
+    					
+		       			<input type="radio" id="appointment_yes" name="appointment" value='yes'  /> 
+		       			<label for="appointment_yes">Yes </label>
+		       			
+		       			<input type="radio" name="appointment" id="appointment_no" value='no'  />
+		       			<label for="appointment_no" > No </label>
+		       		</fieldset>
+	       		</div>
+      
+     		{% endif %}
+			
+			<button onClick="submitButton();">Submit</button>
+			<button onClick="clearForm();">Cancel</button>
+			
+		</form>
+		
+	</div>
+	
+	<!-- Footer -->
+	<div data-role="footer" data-position="fixed">
+		<p> ;&copy PracticeServe </p>
+	</div>
+	
+	
+</div>
+ 

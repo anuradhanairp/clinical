@@ -1,0 +1,106 @@
+{% extends "base-new.htm" %}
+
+{% block title %}Payment history{% endblock %}
+
+{% block title_image %}Payment history{% endblock %}
+
+{% block head %}
+{{block.super }}
+	
+	
+	<script type="text/javascript">
+	  function after_payment_add(header){
+	  $.ajax(	    
+	  {
+	  url: "/ajax/payment/",
+	  data: {header:header},
+	  type: "GET",
+	  success: function(text){
+	  $('#id_payment_content').html(text);
+	  }
+	  }
+	  )
+	  }
+	  var clinicID = {{clinic.id}};
+	  
+	  $('#id_header_tools_cal_value').change(function(){
+	//  alert(this);
+	  });
+	</script>
+	
+	<script src="{{STATIC_URL}}shadow.js" type="text/javascript"></script>
+	<script src="{{STATIC_URL}}payments.js" type="text/javascript"></script>
+{% endblock %}
+
+
+{% block tools_block %}
+<li><a href="javascript:void(0);" id="id_header_tools_pdf">PDF</a></li>
+{% endblock %}
+
+{% block sidebar_content %}
+{% regroup left_menu|dictsort:"location.name" by location as left_menu_location_list %}
+	{% for x in left_menu_location_list %}
+	<b>{{x.grouper.name}}</b><br/>
+		{% regroup x.list|dictsort:"start_time" by start_time as time_ordered_clinic %}
+			
+				{% for c in time_ordered_clinic  %}
+				
+									
+					{% for cli in c.list %}
+					
+						<!--  <a href="{% url signin.views.frontdesk %}?clinicID={{cli.id}}"> {{cli.name}}<i>({{cli.start_time|time}} to {{ cli.end_time }})</i> </a><br/>-->
+		                <a href="{% url signin.views.payment %}?clinicID={{cli.id}}"> {{cli.name}}<i>({{cli.start_time|time}} to {{ cli.end_time }})</i> </a><br/> 		
+					{% endfor %}
+					
+				{% endfor %}
+			
+			<br/>
+		
+		<br />
+	{% endfor %}
+{% endblock %}
+
+{% block content_title %}&laquo;{{clinic.name}}&raquo; at {{clinic.location.name}} (Timezone: {{clinic.location.timezone}}){% endblock %}
+{% block content %}
+<div id="id_payment_content">
+{% include "tools/payment-page.htm" %}
+</div>
+{% endblock %}
+
+
+{% block shadow_content %}
+<a href="#" onclick="" class="payment_form_close"><span>X</span> close</a>
+<ul>
+  <form method="post" id="id_add_payment_form" action="/">
+  <li class="shadow-payment"><a href="javascript:void(0)">Add payment</a>
+    <ul class="payment-form">
+      <li>
+	<label for="id_payment_type">Payment type</label>
+	<span>
+	  <select name="payment_type" id="id_payment_type">
+	    <option value="cc">Credit card</option>
+	    <option value="cash">Cash</option>
+	  </select>
+	</span>
+      </li>
+      <li class="cc_info">
+	<label for="id_cc_info">CC info (last 4 digits)</label>
+	<span>
+	  <input name="cc_info" id="id_cc_info" type="text" size="4" maxlength="4">
+	</span>
+      </li>
+      <li>
+	<label for="id_payment_amount">Payment amount</label>
+	<span>
+	  <input name="payment_amount" id="id_payment_amount" type="text">
+	</span>
+      </li>
+      <li>
+	<input type="button" value="Add payment" name="" id="id_add_payment_button">
+      </li>
+    </ul>
+  </li>
+  </form>
+  <li class="shadow-remove"><a href="javascript:void(0)">Delete entry</a></li>
+</ul>
+{% endblock %}

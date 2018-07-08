@@ -1,0 +1,101 @@
+{% extends "admin/base_site.html" %}
+{% load i18n %}
+
+{% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{% load adminmedia %}{% admin_media_prefix %}css/dashboard.css" />{% endblock %}
+
+{% block extrahead %}	
+	{# Here we specifiy the Extra headers like javascript and others #}
+	{{ block.super }}
+	
+	<script src="{{STATIC_URL}}jquery/js/jquery-1.4.4.min.js" type="text/javascript"></script>
+	<script src="{{STATIC_URL}}clinic_admin.js" type="text/javascript"></script>
+	
+{% endblock %}
+
+{% block coltype %}colMS{% endblock %}
+
+{% block bodyclass %} dashboard {% endblock %}
+
+{% block breadcrumbs %}{% endblock %}
+
+
+{% block content %}
+	<h2> {{clinic.location}} > {{ clinic.name }} > {{clinic.start_time}} to {{clinic.end_time}}</h2>
+	
+	
+	
+	<div id="content-main">
+		<h3>Design Mode: {% if default %} Default {% else %} Customized {% endif %}</h3>
+		<div class="module">
+			
+			{% if default %}
+			
+				<div id="id_event_div">
+					
+					<table id="id_event_table">
+						<tr>
+							<th align="left" >Event Order</th>
+							<th>Event Name</th>
+							<th> Select </th>
+						</tr>
+						
+						{% for clinic_event in clinic_events %}
+						
+						<tr id="event{{clinic_event.0}}" >
+							
+							
+							<td>
+								<b>{{ clinic_event.0 }}</b>
+							</td>
+							<td>
+							<select id = "id_event{{clinic_event.0}}_name" >
+								{% for event in events %}
+									{% if event.name == clinic_event.1 %}
+										<option value="{{ event.name }}" selected="selected"> {{ event.name }} </option>
+									{% else %}
+										<option value="{{ event.name }}" > {{ event.name }} </option>
+									{% endif %}
+								{% endfor %}
+							</select>
+							</td>
+							
+							<td align="left" >
+								<input type="checkbox" name="event{{clinic_event.0}}" />
+							</td>
+							
+						</tr>
+						
+						{% endfor %}
+						
+						<tr>
+							<td colspan="3">
+							<input type="button" id="id_submit_button" value = "Submit" />
+							<input type="button" id="id_add_button" value = "Add New" />
+							<input type="button" id="id_delete_button" value = "Delete" />
+							</td>
+						</tr>
+						
+					</table>
+				</div>
+			
+			{% else %}
+			
+			{% endif %}
+			
+		</div>
+
+	</div>
+
+{% endblock %}
+
+
+{% block sidebar %}
+	<div id="content-related">
+    	<div class="module" id="recent-actions-module">
+    		<a href="/admin/design_clinics/"><b>Go back</b></a>
+   		</div>
+   	</div>
+{% endblock %}
+
+
+  	

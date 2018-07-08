@@ -1,0 +1,9 @@
+{% extends "signin.htm" %}
+
+{% block body %}
+<ul>
+  {% for location in locations %}
+  <li><a href="?locationID={{location.id}}">{{location.name}}</a></li>
+  {% endfor %}
+  
+{% endblock %}

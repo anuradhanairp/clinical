@@ -1,0 +1,49 @@
+{% extends "jqmobile/base_jqmobile.html" %}
+
+
+<!-- Main Page -->
+{% block main_page %}
+
+<div data-role="page" data-theme="c">
+
+	<div data-role="header" data-theme="a" data-position="fixed">
+		<h1>		<a href="/jqmobile/" data-role="button" data-icon="home" data-theme="c">Home</a></h1>
+		<a href="" data-role="button" data-icon="back" data-rel="back" >Back</a>
+	
+			<a href="patients/" data-role="button" data-icon="arrow-r" data-theme="b">Patients</a>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+		
+	<ul data-role="listview" data-inset="true" data-theme="d" data-divider-theme="d">
+			  <li data-role="list-divider"><h1>Station Summary</h1></li>
+               {% for i  in stations %}
+				<li>
+					<a href="event/{{i.0}}/patients/">
+						<div class="ui-grid-a">
+							<div class="ui-block-a"><strong>{{ i.1|capfirst }} ({{i.2}})</strong></div>
+							<div class="ui-block-b">{{i.3|time }}</div>
+						</div><!-- /grid-a -->				
+					</a>
+				</li>
+				{% endfor %}
+
+				
+
+	</ul>
+
+
+
+	</div><!-- /content -->
+	
+	<div data-role="footer" data-theme="a" data-position="fixed">
+		<h4>Footer content</h4>
+	</div><!-- /footer -->
+	
+	
+	
+	
+	
+</div><!-- /page -->
+
+{% endblock %}

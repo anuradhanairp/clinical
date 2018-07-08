@@ -1,0 +1,118 @@
+{% extends "jqmtab/base_jqmtab.html" %}
+
+<!-- Frontdesk page of a clinic. -->
+{% block header %}
+	{{ block.super }}
+	
+	<!-- Including frontdesk specific js files each time we load it. -->
+	
+	<script>
+		
+		TCPSocket = Orbited.TCPSocket;
+		var HOST                 = "{{ HOST }}";
+		var SESSION_COOKIE_NAME  = "{{SESSION_COOKIE_NAME }}";
+		var CHANNEL_NAME         = "/topic/{{ CHANNEL_NAME }}";
+		var STOMP_PORT           =  {{STOMP_PORT}};
+		var USERNAME             =  "{{USER}}";
+		
+		var clinicID = {{clinic.id}};
+		
+		//To save the event order, it will used when an updated come from the server. 
+		var event_map = new Array();
+		
+		//To save attribute map when initializing this page.
+		var EventAttrMap = {};
+		
+	</script>
+	
+	
+	{% block hidden_header %}
+					<!-- To show the floating header while scrolling the page -->
+					<div id="id_hidden_header" style="display:none;" align="center">
+					<table align="center">
+						  				    
+						    <thead>
+								<tr>
+									<td align="center">
+										<div class="ui-bar-b"> # </div>
+									</td>
+									<td align="center">
+										<div class="ui-bar-b"> 
+											<b>Last Name, First Name DOB</b>
+										</div>
+									</td> 
+									{% for map in clinic_event_map %}
+										<td align="center" >
+											<div class="ui-bar-b">
+												<b>{{ map.1|capfirst }}</b>
+											</div>
+										</td> 
+									{% endfor %}
+								</tr>
+							</thead>
+							<tbody>
+							</tbody>
+							</table>
+					</div>
+			{% endblock %}
+{% endblock %}
+
+
+{% block content %}
+
+<div data-role="content">
+<div id="id_fdtable_div">
+			  <table id="fdtable"  width="100%" align="center">
+				  			    
+				    <thead>
+						<tr>
+							<td align="center">
+								<div class="ui-bar-b"> # </div>
+							</td>
+							<td align="center">
+								<div class="ui-bar-b"> 
+									<b>Last Name, First Name DOB</b>
+								</div>
+							</td> 
+							{% for map in clinic_event_map %}
+								<td align="center">
+									<div class="ui-bar-b">
+										<b>{{ map.1|capfirst }}</b>
+									</div>
+								</td> 
+							{% endfor %}
+						</tr>
+					</thead>
+										
+				    <tbody>
+					      {% for patient in patients %}
+						     <tr id="count{{ patient.header }}">
+					      		
+					      		    <td align="center"> <b> {{forloop.revcounter}} </b> </td>
+					      		
+					      		    <td align="center"> <a href="/jqmtab/patient/{{patient.header}}/"> {{ patient.patient_name}} </a> </td>
+					      		
+					      		
+					      		{% for event_time in patient.events %}
+					      		    
+					      		    <td align="center" width="150px" height="50px"> 
+					      		    	{% if event_time.0 %} 
+					      		    		{{ event_time.0 }} 
+					      		    	{% else %}
+					      		    			      		    		 				      		    		 
+					      		    		 <button href=""  class="frontdesk_button" id="button_{{patient.header}}_{{ event_time.1 }}" onClick="startEventForm('{{ event_time.1 }}','{{patient.header}}');"> X</button>
+					      		    	{% endif %}
+					      		    </td> 
+					      		{% endfor %}
+					      	</tr>
+					     	
+					      {% endfor %}
+					</tbody>
+				    
+				 </table>
+			</div>
+			
+</div>
+{% endblock %}
+
+

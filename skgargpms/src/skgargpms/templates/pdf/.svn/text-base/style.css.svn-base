@@ -1,0 +1,40 @@
+<style type="text/css">
+@page {
+  size: a4 portrait;
+  margin: 2cm 0.5cm 1cm 1cm;
+@frame header {
+   -pdf-frame-content: headerDiv;
+   top: 1cm;
+   margin-left: 1cm;
+   margin-right: 1cm;
+   height: 1cm;
+}
+} 
+body{
+font-size:15px;
+}
+table.report th{
+    /*border:1px solid black*/
+    padding:0.1cm 0px;
+    margin:0;
+    font-size:12px;
+}
+table.report td{
+   /* border:1px solid black;*/
+    padding:0.1cm 0.2cm;
+    margin:0;
+    font-size:13px; 
+    text-align:center;
+}
+
+table {
+   -pdf-keep-in-frame-mode: shrink;
+}
+#headerDiv{
+   text-align:right;
+   width:100%;
+}
+/*table .inner td{
+	border:0px;
+}*/
+</style>

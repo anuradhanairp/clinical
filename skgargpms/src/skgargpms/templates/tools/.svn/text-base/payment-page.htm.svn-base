@@ -1,0 +1,73 @@
+<div class="xr_s10">
+  <table id="fdtable"  width="100%" border=1>
+    <thead>
+      <tr>
+	<th>####</th>
+	<th>Last Name, First Name</th>
+	<th>DOB</th>
+	<th>interrupts</th>
+	<th>cash</th>
+	<th>card</th>
+	<!--  <th>Cash</th>
+	<th>Card</th>-->
+	<th>Total</th>
+    </thead>
+   <!--  <tr>
+      <td></td>
+      <th align="right" colspan="3">Total:</th>
+      
+      <td align="right">${{total.cash|stringformat:"0.2f"}}</td>
+      <td align="right">${{total.cc|stringformat:"0.2f"}}</td>
+      <td align="right">${{total.total|stringformat:"0.2f"}}</td>
+    </tr>--> 
+    <tbody>
+      {% for event in events %}
+      <tr>
+	<td>{{forloop.counter}}</td>
+	<td><a href="javascript:void(0)" onclick="displayDialog({{event.id}})">{{event.patient.lName}}, {{event.patient.fName}}</a></td>
+	<td>{{event.patient.dob}}</td>
+	<td colspan=3>
+	    <table border="0" width="100%">
+		{% for eve in event.patientinterruptlist %}
+		    <tr>
+			 <td>{% if eve.1 == None %}
+			       others
+			     {% else %}
+			       {{ eve.1 }}
+			     {% endif %}  
+			        
+			 </td>
+			 <td>{% if eve.3 == "cash" %} 
+			       ${{ eve.2 }}
+			     {% else %}
+			        $0
+			     {% endif %}    
+			 </td>
+			 <td>{% if eve.3 == "cc" %} 
+			       ${{ eve.2 }}
+			     {% else %}
+			        $0
+			     {% endif %}    
+			 </td>
+			</tr>
+		{% endfor %}
+		</table>
+	</td>
+	<!--  <td></td>
+	<td></td>--> 
+	<!-- <td align="right">${{event.get_cash|stringformat:"0.2f"}}</td>
+	<td align="right">${{event.get_cc|stringformat:"0.2f"}}</td> -->
+	<td align="right"><a href="javascript:void(0)" onclick="display_paymenthistory({{event.id}})">${{event.get_total|stringformat:"0.2f"}}</a></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+    {% if total.total %}
+    <tr>
+      <th align="right" colspan="4">Total:</th>
+      <td align="right">${{total.cash|stringformat:"0.2f"}}</td>
+      <td align="right">${{total.cc|stringformat:"0.2f"}}</td>
+      <td align="right">${{total.total|stringformat:"0.2f"}}</td>
+    </tr>
+    {% endif %}
+ </table>
+</div>
